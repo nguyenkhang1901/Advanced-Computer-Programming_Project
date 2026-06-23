@@ -1,0 +1,16 @@
+[
+  {
+    "id": "excellence_scholarship",
+    "name": "Asia University Excellence Scholarship",
+    "value": "50% to 100% of tuition fee",
+    "eligibility": "High GPA, outstanding academic records, and interview pass.",
+    "deadline": "August 30th"
+  },
+  {
+    "id": "academic_merit",
+    "name": "Academic Merit Scholarship",
+    "value": "20% to 30% of tuition fee",
+    "eligibility": "Good high school academic records.",
+    "deadline": "Rolling basis"
+  }
+]

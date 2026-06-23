@@ -1,0 +1,38 @@
+[
+  {
+    "id": "semiconductor",
+    "name": "Công nghệ bán dẫn",
+    "faculty": "Công nghệ",
+    "duration": "4 năm",
+    "tuition": "80,000,000 VND - 120,000,000 VND/năm",
+    "entry_requirements": "Tốt nghiệp THPT, xét tuyển học bạ hoặc điểm thi THPT Quốc gia.",
+    "description": "Chương trình đào tạo kỹ sư công nghệ bán dẫn chất lượng cao, cấp bằng bởi Asia University."
+  },
+  {
+    "id": "ai",
+    "name": "Trí tuệ nhân tạo (AI)",
+    "faculty": "Công nghệ",
+    "duration": "4 năm",
+    "tuition": "80,000,000 VND - 120,000,000 VND/năm",
+    "entry_requirements": "Tốt nghiệp THPT, xét tuyển học bạ hoặc điểm thi THPT Quốc gia.",
+    "description": "Đào tạo chuyên sâu về trí tuệ nhân tạo, học máy, phân tích dữ liệu tiên tiến."
+  },
+  {
+    "id": "business",
+    "name": "Quản trị kinh doanh",
+    "faculty": "Kinh tế",
+    "duration": "4 năm",
+    "tuition": "80,000,000 VND - 120,000,000 VND/năm",
+    "entry_requirements": "Tốt nghiệp THPT, xét tuyển học bạ hoặc điểm thi THPT Quốc gia.",
+    "description": "Đào tạo kỹ năng quản lý, marketing, phát triển chiến lược kinh doanh chuẩn quốc tế."
+  },
+  {
+    "id": "finance",
+    "name": "Tài chính",
+    "faculty": "Kinh tế",
+    "duration": "4 năm",
+    "tuition": "80,000,000 VND - 120,000,000 VND/năm",
+    "entry_requirements": "Tốt nghiệp THPT, xét tuyển học bạ hoặc điểm thi THPT Quốc gia.",
+    "description": "Chương trình chuyên sâu về tài chính doanh nghiệp, đầu tư, và phân tích tài chính quốc tế."
+  }
+]
