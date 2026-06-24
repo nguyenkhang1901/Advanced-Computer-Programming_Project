@@ -5,7 +5,7 @@ import Admin from './pages/Admin';
 import './index.css';
 
 function App() {
-  const [lang, setLang] = useState('vi');
+  const [lang, setLang] = useState('en');
   
   return (
     <BrowserRouter>

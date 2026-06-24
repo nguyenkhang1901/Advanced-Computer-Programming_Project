@@ -180,15 +180,6 @@ export default function Chat({ lang, setLang }) {
           <h1>Asia Uni AI Admission</h1>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <button 
-            className="admin-btn" 
-            onClick={() => setLang(lang === 'en' ? 'vi' : 'en')} 
-            title="Toggle Language"
-            style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1rem', background: 'var(--panel-border)', borderRadius: '20px', color: 'var(--text-primary)', border: 'none', cursor: 'pointer' }}
-          >
-            <Globe size={18} />
-            <span style={{ fontWeight: 'bold' }}>{t.lang_btn}</span>
-          </button>
         </div>
       </div>
 
@@ -226,10 +217,10 @@ export default function Chat({ lang, setLang }) {
                   <input type="tel" placeholder={t.phone} value={leadData.phone} onChange={e => setLeadData({...leadData, phone: e.target.value})} />
                   <select value={leadData.program} onChange={e => setLeadData({...leadData, program: e.target.value})}>
                     <option value="">{t.program_select}</option>
-                    <option value="Semiconductor Technology">Công nghệ bán dẫn</option>
-                    <option value="Artificial Intelligence">Trí tuệ nhân tạo (AI)</option>
-                    <option value="Business Administration">Quản trị kinh doanh</option>
-                    <option value="Finance">Tài chính</option>
+                    <option value="Semiconductor Technology">Semiconductor Technology</option>
+                    <option value="Artificial Intelligence">Artificial Intelligence (AI)</option>
+                    <option value="Business Administration">Business Administration</option>
+                    <option value="Finance">Finance</option>
                   </select>
                   <button type="submit" className="submit-btn">{t.submit_lead}</button>
                   <button type="button" className="cancel-btn" onClick={() => setShowLeadForm(false)}>{t.cancel_lead}</button>

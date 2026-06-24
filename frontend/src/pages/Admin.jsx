@@ -127,15 +127,6 @@ export default function Admin({ lang, setLang }) {
           <h1>{t.dashboard}</h1>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <button 
-            className="admin-btn" 
-            onClick={() => setLang(lang === 'en' ? 'vi' : 'en')} 
-            title="Toggle Language"
-            style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1rem', background: 'var(--panel-border)', borderRadius: '20px', color: 'var(--text-primary)', border: 'none', cursor: 'pointer' }}
-          >
-            <Globe size={18} />
-            <span style={{ fontWeight: 'bold' }}>{t.lang_btn}</span>
-          </button>
           <button className="admin-btn" onClick={() => navigate('/')}>
             <ArrowLeft size={24} /> {t.back}
           </button>
