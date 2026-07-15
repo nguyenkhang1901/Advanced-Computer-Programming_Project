@@ -70,6 +70,7 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [showLeadForm, setShowLeadForm] = useState(false);
+  const [leadDismissed, setLeadDismissed] = useState(false);
   const [leadData, setLeadData] = useState({ name: '', email: '', phone: '', program: '' });
   const [leadSubmitted, setLeadSubmitted] = useState(false);
   
@@ -95,11 +96,11 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
   useEffect(() => {
     scrollToBottom();
     const userMessageCount = messages.filter(m => m.sender === 'user').length;
-    if (userMessageCount >= 3 && !leadSubmitted && !showLeadForm) {
+    if (userMessageCount >= 3 && !leadSubmitted && !showLeadForm && !leadDismissed) {
       setShowLeadForm(true);
     }
     localStorage.setItem('chat_messages', JSON.stringify(messages));
-  }, [messages, isLoading, leadSubmitted, showLeadForm]);
+  }, [messages, isLoading, leadSubmitted, showLeadForm, leadDismissed]);
 
   // Update initial message when language changes
   useEffect(() => {
@@ -485,7 +486,7 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
                 <option value="Finance">Finance</option>
               </select>
               <button type="submit" className="submit-btn">{t.submit_lead}</button>
-              <button type="button" className="cancel-btn" onClick={() => setShowLeadForm(false)}>{t.cancel_lead}</button>
+              <button type="button" className="cancel-btn" onClick={() => { setShowLeadForm(false); setLeadDismissed(true); }}>{t.cancel_lead}</button>
             </form>
           </div>
         </div>
