@@ -37,61 +37,59 @@ RAW_DIR = os.path.join(DATA_DIR, 'Data_raw')
 if not os.path.exists(RAW_DIR):
     RAW_DIR = os.path.join(DATA_DIR, 'data_raw')
 
-# RAG System Logic (Pure Python)
+# RAG System Logic (SQLite Hybrid Search)
 import re
 import math
 from collections import Counter
 
-knowledge_chunks = []
-
+# Keep load_knowledge as a dummy function so admin API doesn't crash when reloading
 def load_knowledge():
-    global knowledge_chunks
-    knowledge_chunks = []
-    try:
-        if os.path.exists(RAW_DIR):
-            for file in os.listdir(RAW_DIR):
-                file_path = os.path.join(RAW_DIR, file)
-                if os.path.isfile(file_path) and file.endswith('.txt'):
-                    with open(file_path, 'r', encoding='utf-8') as f:
-                        content = f.read()
-                        # Split by paragraphs
-                        paragraphs = re.split(r'\n\s*\n', content)
-                        for p in paragraphs:
-                            clean_p = p.strip()
-                            if len(clean_p) > 30:
-                                knowledge_chunks.append(f"[Source: {file}]\n{clean_p}")
-        print(f"Loaded {len(knowledge_chunks)} knowledge chunks for RAG.")
-    except Exception as e:
-        print("Could not load raw data files dynamically from Data_raw.", e)
-
-load_knowledge()
-
-def tokenize(text):
-    return re.findall(r'\w+', text.lower())
+    pass
 
 def retrieve_context(query, top_k=5):
-    if not knowledge_chunks:
-        return "No context available."
-        
-    query_tokens = set(tokenize(query))
+    query_tokens = [t for t in re.findall(r'\w+', query.lower()) if len(t) > 2]
     if not query_tokens:
-        return "\n\n---\n\n".join(knowledge_chunks[:top_k])
+        query_tokens = ['asia', 'university'] # fallback default
+    
+    conn = get_db_connection()
+    try:
+        # SQLite does the heavy lifting: filter to max 50 relevant pages instantly
+        conditions = " OR ".join(["content LIKE ?" for _ in query_tokens])
+        params = [f"%{word}%" for word in query_tokens]
         
-    scores = []
-    for chunk in knowledge_chunks:
-        chunk_tokens = tokenize(chunk)
-        if not chunk_tokens:
-            scores.append(0)
-            continue
+        query_sql = f"SELECT content FROM knowledge_base WHERE {conditions} LIMIT 50"
+        rows = conn.execute(query_sql, params).fetchall()
+        
+        if not rows:
+            return "No relevant context found."
             
-        chunk_counts = Counter(chunk_tokens)
-        score = sum(chunk_counts[q] for q in query_tokens)
-        score = score / (math.sqrt(len(chunk_tokens)) + 1)
-        scores.append(score)
+        # Re-score the paragraphs in Python
+        retrieved_chunks = []
+        for row in rows:
+            content = row['content']
+            paragraphs = re.split(r'\n\s*\n', content)
+            for p in paragraphs:
+                if len(p.strip()) > 50:
+                    retrieved_chunks.append(p.strip())
+                    
+        # Score the extracted paragraphs
+        scores = []
+        for chunk in retrieved_chunks:
+            chunk_tokens = re.findall(r'\w+', chunk.lower())
+            chunk_counts = Counter(chunk_tokens)
+            score = sum(chunk_counts[q] for q in query_tokens)
+            score = score / (math.sqrt(len(chunk_tokens)) + 1) if chunk_tokens else 0
+            scores.append(score)
+            
+        top_indices = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:top_k]
+        best_chunks = [retrieved_chunks[i] for i in top_indices if scores[i] > 0]
         
-    top_indices = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:top_k]
-    retrieved = [knowledge_chunks[i] for i in top_indices if scores[i] > 0]
-    return "\n\n---\n\n".join(retrieved) if retrieved else "No relevant context found."
+        return "\n\n---\n\n".join(best_chunks) if best_chunks else "No relevant context found."
+    except Exception as e:
+        print("SQLite RAG Error:", e)
+        return "No relevant context found."
+    finally:
+        conn.close()
 
 @app.route('/api/chat', methods=['POST'])
 @limiter.limit("20 per minute")
