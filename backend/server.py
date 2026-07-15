@@ -34,6 +34,8 @@ ai_client = genai.Client(api_key=api_key) if api_key else None
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, '..', 'data')
 RAW_DIR = os.path.join(DATA_DIR, 'Data_raw')
+if not os.path.exists(RAW_DIR):
+    RAW_DIR = os.path.join(DATA_DIR, 'data_raw')
 
 # RAG System Logic (Pure Python)
 import re
