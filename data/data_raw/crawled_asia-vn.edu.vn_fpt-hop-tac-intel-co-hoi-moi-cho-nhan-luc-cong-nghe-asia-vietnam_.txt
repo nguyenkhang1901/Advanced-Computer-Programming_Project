@@ -1,0 +1,152 @@
+Nguồn: https://asia-vn.edu.vn/fpt-hop-tac-intel-co-hoi-moi-cho-nhan-luc-cong-nghe-asia-vietnam/
+--------------------------------------------------
+
+FPT hợp tác Intel thúc đẩy mô hình nhà máy tự vận hành bằng AI: Cơ hội mới cho sinh viên Asia Vietnam
+Bỏ qua nội dung
+FPT vừa thiết lập quan hệ hợp tác chiến lược với Intel, tập đoàn công nghệ toàn cầu trong lĩnh vực bán dẫn và AI, nhằm phát triển các giải pháp tối ưu hóa vận hành nhà máy bằng trí tuệ nhân tạo, công nghệ mô phỏng và các nền tảng số trong sản xuất.
+Theo thông tin từ FPT, hai bên sẽ phối hợp triển khai mô hình “trí tuệ khép kín cho nhà máy”, hướng tới việc tháo gỡ các điểm nghẽn trong vận hành, rút ngắn thời gian ra quyết định và tăng cường khả năng phục hồi của doanh nghiệp khi xảy ra gián đoạn. Mục tiêu của hợp tác là thúc đẩy quá trình chuyển đổi từ mô hình nhà máy truyền thống sang nhà máy có khả năng tự vận hành dựa trên AI.
+Trong bối cảnh hoạt động sản xuất ngày càng phức tạp, doanh nghiệp phải xử lý khối lượng dữ liệu lớn hơn, đồng thời đối mặt với yêu cầu tối ưu chi phí, tốc độ và chất lượng. AI vì thế không còn chỉ là công cụ hỗ trợ phân tích, mà đang tham gia sâu hơn vào quy trình vận hành, từ dự báo gián đoạn, mô phỏng kịch bản sản xuất, tối ưu luồng nguyên vật liệu đến phát hiện điểm nghẽn trước khi ảnh hưởng tới toàn hệ thống.
+AI đi vào lõi vận hành sản xuất
+Theo nội dung hợp tác, FPT và Intel sẽ kết hợp thế mạnh của Intel về công nghệ mô phỏng tốc độ cao và bản sao số với kinh nghiệm phát triển nền tảng dữ liệu, triển khai hệ thống sản xuất số và tích hợp giải pháp của FPT.
+Bộ giải pháp Intel Automated Factory Solutions, gồm Intel Factory Pathfinder và Intel Factory Recon, cho phép doanh nghiệp có cái nhìn toàn diện hơn về hoạt động nhà máy. Trong khi đó, các nền tảng sản xuất số của FPT như FleziOps, FleziQMS, FleziUDP và hệ thống điều hành sản xuất MES hỗ trợ đồng bộ dữ liệu và kết nối vận hành trên toàn hệ thống.
+Các giải pháp này được kỳ vọng giúp doanh nghiệp thực hiện hàng nghìn kịch bản mô phỏng dựa trên AI, từ đó tìm ra phương án sản xuất tối ưu, điều chỉnh lịch trình, quản lý luồng nguyên vật liệu và trực quan hóa hoạt động nhà máy theo thời gian thực.
+Ông Paul Schneider, Kỹ sư trưởng Tập đoàn Intel cho biết:
+“Sản xuất là một trong những môi trường phức tạp nhất thế giới. Để tối ưu sản xuất đòi hỏi một hệ thống kết nối thông minh, thay cho các công cụ rời rạc. Hợp tác với FPT giúp mở rộng khả năng ứng dụng các công nghệ tối ưu hóa nhà máy của Intel, đồng thời hỗ trợ các nhà sản xuất khai thác hiệu quả các phân tích dữ liệu bằng AI trên quy mô lớn”
+.
+Ông Nguyễn Khải Hoàn, Phó Tổng Giám đốc FPT Software kiêm Giám đốc FPT khu vực châu Mỹ, Tập đoàn FPT khẳng định
+: “Ngành sản xuất đang chuyển mình mạnh mẽ, khi AI không chỉ là công cụ hỗ trợ mà trực tiếp tham gia vào quy trình vận hành. Tại FPT, chúng tôi ghi nhận nhu cầu ngày càng lớn đối với việc phát triển các hệ thống sản xuất thông minh, có khả năng thích ứng linh hoạt theo điều kiện thực tế. Kết hợp giữa thế mạnh của Intel và các giải pháp AI-First cùng năng lực triển khai toàn cầu của FPT sẽ hỗ trợ các doanh nghiệp sản xuất nâng cao  khả năng thích ứng linh hoạt và hiệu quả vận hành”.
+FPT vừa thiết lập quan hệ hợp tác chiến lược với Intel – tập đoàn toàn cầu tiên phong về công nghệ bán dẫn và AI, nhằm ứng dụng AI phát triển các giải pháp tối ưu hóa toàn diện vận hành nhà máy
+Khi AI, dữ liệu và bán dẫn cùng tham gia vào một hệ thống
+Hợp tác giữa FPT và Intel cho thấy một xu hướng rõ nét trong ngành công nghệ: các lĩnh vực như AI, dữ liệu, phần mềm, bán dẫn và tự động hóa không còn phát triển tách rời. Trong một nhà máy thông minh, AI cần dữ liệu để phân tích, hệ thống phần mềm để vận hành, chip và hạ tầng xử lý để thực thi, cùng năng lực kỹ thuật để kết nối các thành phần thành một quy trình thống nhất.
+Điều này cũng đặt ra yêu cầu mới đối với nhân lực công nghệ. Người học không chỉ cần biết sử dụng công cụ AI, mà cần hiểu cách công nghệ được triển khai trong bối cảnh thực tế. Với các ngành sản xuất, logistics, tài chính, y tế hay dịch vụ, AI chỉ tạo ra giá trị khi được gắn với dữ liệu đúng, hệ thống vận hành phù hợp và khả năng giải quyết vấn đề cụ thể của doanh nghiệp.
+Trong lĩnh vực bán dẫn, nhu cầu này càng rõ hơn. Chip không chỉ là một linh kiện nằm phía sau thiết bị, mà trở thành nền tảng giúp các hệ thống AI, thiết bị thông minh và dây chuyền tự động có thể xử lý dữ liệu nhanh hơn, chính xác hơn và tiết kiệm năng lượng hơn. Vì vậy, nhân lực công nghệ tương lai cần được chuẩn bị để hiểu cả phần mềm, phần cứng và cách hai yếu tố này phối hợp trong một hệ thống.
+Đây cũng là lý do các chương trình đào tạo công nghệ hiện nay cần chuyển từ cách tiếp cận theo từng môn học riêng lẻ sang hướng liên ngành, thực hành và gắn với bài toán doanh nghiệp. Sinh viên cần có cơ hội học qua dự án, tiếp cận tình huống thực tế và hiểu cách công nghệ được ứng dụng trong sản xuất, quản trị, tài chính hoặc các lĩnh vực công nghiệp mới.
+Lợi thế học tập trong hệ sinh thái công nghệ quốc tế
+Từ những chuyển động của FPT trong hợp tác với các tập đoàn công nghệ toàn cầu như Intel, có thể thấy hệ sinh thái công nghệ đang mở ra nhiều cơ hội mới cho nhân lực trẻ, đặc biệt ở các lĩnh vực AI, bán dẫn, dữ liệu và sản xuất thông minh.
+Tại Asia Vietnam, các ngành Trí tuệ nhân tạo và Công nghệ bán dẫn được đặt trong bối cảnh đó. Sinh viên không chỉ tiếp cận kiến thức nền tảng về lập trình, dữ liệu, mô hình AI, điện tử, mạch hay vật liệu, mà còn được định hướng hiểu cách công nghệ tham gia vào các hệ thống thực tế, từ sản phẩm thông minh, nhà máy số đến các bài toán vận hành trong doanh nghiệp.
+Với ngành Trí tuệ nhân tạo, người học được tiếp cận AI như một năng lực giải quyết vấn đề, thay vì chỉ là một nhóm công cụ phần mềm. Các nội dung về dữ liệu, mô hình, ứng dụng và bối cảnh kinh doanh giúp sinh viên hiểu AI có thể tạo ra giá trị như thế nào trong sản xuất, dịch vụ, tài chính, y tế hoặc quản trị.
+Với ngành Công nghệ bán dẫn, sinh viên được trang bị nền tảng để hiểu vai trò của chip trong chuỗi công nghệ hiện đại. Khi AI ngày càng đi sâu vào sản xuất, thiết bị thông minh và tự động hóa, bán dẫn trở thành một trong những nền tảng quan trọng giúp các hệ thống này vận hành hiệu quả.
+Một lợi thế khác của Asia Vietnam là lộ trình học tập gắn với Đài Loan (Trung Quốc), khu vực có vai trò quan trọng trong chuỗi cung ứng công nghệ và bán dẫn toàn cầu. Việc học tập trong môi trường quốc tế giúp sinh viên có cơ hội quan sát cách kiến thức công nghệ được kết nối với phòng thí nghiệm, doanh nghiệp, chuỗi cung ứng và nhu cầu nhân lực thực tế.
+Cùng với đó, việc Asia Vietnam nằm trong hệ sinh thái FPT cũng tạo thêm lợi thế cho sinh viên khi tiếp cận các chuyển động mới của ngành công nghệ. FPT hiện có mặt tại hơn 30 quốc gia và vùng lãnh thổ, đã triển khai chuyển đổi số cho hơn 150 doanh nghiệp sản xuất và đang phát triển các hướng chiến lược về chuyển đổi số, chuyển đổi AI và chuyển đổi xanh. Những kết nối này góp phần mở rộng môi trường thực hành, định hướng nghề nghiệp và cơ hội tiếp cận doanh nghiệp cho người học.
+Khi AI ngày càng tham gia sâu vào hoạt động sản xuất và vận hành, thị trường lao động sẽ cần nhiều hơn những nhân sự có khả năng hiểu công nghệ ở cấp độ hệ thống. Đó không chỉ là người biết dùng AI, mà là người có thể hiểu dữ liệu, phần mềm, chip, quy trình và nhu cầu doanh nghiệp để tham gia vào quá trình tạo ra giải pháp.
+Với học sinh đang lựa chọn ngành học, những hợp tác công nghệ như FPT và Intel là một tín hiệu đáng chú ý: cơ hội nghề nghiệp trong tương lai sẽ không chỉ nằm ở việc theo đuổi một ngành “hot”, mà ở khả năng xây dựng nền tảng đủ rộng để thích nghi với các thay đổi của công nghệ toàn cầu.
+LIÊN HỆ VỚI CHÚNG TÔI
+Cơ sở Hà Nội:
+Số 8 Tôn Thất Thuyết, Phường Cầu Giấy, TP. Hà Nội
+asiaunivietnam@fpt.edu.vn
+0775 127 333
+Cơ sở TP. Hồ Chí Minh:
+Global Education Space, số 485 Lê Quang Định, Phường Hạnh Thông, TP. Hồ Chí Minh
+asiaunivietnam@fpt.edu.vn
+0775 867 333
+TIN TỨC MỚI NHẤT
+Asia University
+2026/07/15
+Mùa hoa tử vi nở rộ tại Asia University – một góc Đài Loan đang chờ sinh viên Asia University Program khám phá
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/15
+Asia University tăng 100 bậc tại THE Impact Rankings 2026, gắn phát triển bền vững với chương trình học và trải nghiệm quốc tế
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+“Asia Summer Cup 2026” khởi tranh, khuấy động mùa hè bằng những trận cầu sinh viên rực lửa
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+Ngoại ngữ trở thành lợi thế giúp nam sinh Đồng Tháp “bước vào” ngành bán dẫn
+9 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/13
+Học Tài chính trong kỷ nguyên AI: 3 nhóm vị trí đòi hỏi năng lực dữ liệu và công nghệ
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Tin tức liên quan
+Asia University
+2026/07/15
+Mùa hoa tử vi nở rộ tại Asia University – một góc Đài Loan đang chờ sinh viên Asia University Program khám phá
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/15
+Asia University tăng 100 bậc tại THE Impact Rankings 2026, gắn phát triển bền vững với chương trình học và trải nghiệm quốc tế
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+“Asia Summer Cup 2026” khởi tranh, khuấy động mùa hè bằng những trận cầu sinh viên rực lửa
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Tải thêm
+Về chúng tôi
+Giới thiệu chung
+Lý do chọn chúng tôi
+Giải thưởng và thành tựu
+Giảng viên và chuyên gia
+Các câu hỏi thường gặp
+Mẫu văn bằng
+Quy định cho phép mở ngành
+Kết nối doanh nghiệp
+Cuộc sống sinh viên
+Công dân toàn cầu
+Cuộc sống sinh viên ở Đài Loan
+Cuộc sống sinh viên ở Việt Nam
+Trải nghiệm quốc tế
+Dịch vụ sinh viên
+Ngành học
+Công nghệ bán dẫn
+Trí tuệ nhân tạo (AI)
+Quản trị kinh doanh
+Tài chính
+Nghiên cứu khoa học
+Tuyển sinh
+Thông báo tuyển sinh
+Học bổng
+Học phí
+Tài liệu tuyển sinh
+Tin tức
+Sự kiện
+Sinh viên hiện tại
+Đăng nhập
+Đăng nhập Canvas
+Quy định đào tạo
+Dịch vụ sinh viên
+Hỗ trợ học tập
+Kết nối phụ huynh
+Career success
+Sinh viên tương lai
+Liên hệ
+Chat Zalo
+Chat Zalo
+Hotline 0775127333
+Hotline 0775127333
+Đăng ký tư vấn
+Đăng ký tư vấn

@@ -1,0 +1,149 @@
+Nguồn: https://asia-vn.edu.vn/en/tao-ra-ung-dung-studyflow-tich-hop-ai/
+--------------------------------------------------
+
+Từ nhu cầu nhắc lịch học, nhóm sinh viên tạo ra ứng dụng StudyFlow tích hợp AI
+Skip to content
+Trong học phần
+“Computer Programming and Application” (Lập trình máy tính và ứng dụng)
+, nhóm sinh viên ngành Công nghệ bán dẫn tại Asia University Vietnam đã phát triển
+StudyFlow: Student Timetable & AI Study Companion (Ứng dụng quản lý thời khóa biểu và trợ lý học tập bằng AI)
+. Đây là ứng dụng di động được xây dựng trên nền tảng MIT App Inventor 2, giúp người dùng quản lý lịch học, theo dõi các hoạt động và hỗ trợ học tập bằng AI.
+Bám sát nhu cầu thiết thực của sinh viên
+StudyFlow là một công cụ giúp người dùng chuyển việc quản lý các hoạt động học tập thành một thời khóa biểu trực quan hơn, có lưu trữ dữ liệu, nhắc nhở và thêm trợ lý học tập bằng AI. Ứng dụng hướng tới nhóm người dùng là học sinh, sinh viên cần sắp xếp thời gian và duy trì năng suất học tập.
+Ở giai đoạn hiện tại, ứng dụng gồm các chức năng nền tảng như thêm lớp học, lưu và hiển thị hoạt động bằng TinyDB, hỗ trợ chatbot AI, nhập giọng nói và phản hồi bằng giọng nói. Cấu trúc ứng dụng được thiết kế theo mô hình hai màn hình, tách phần quản lý thời khóa biểu và phần hỗ trợ học tập để người dùng dễ thao tác hơn.
+Điểm đáng chú ý của StudyFlow nằm ở cách nhóm tiếp cận vấn đề. Từ những tình huống quen thuộc trong quá trình học tập, việc quản lý lịch học và thời gian được nhìn nhận như một nhu cầu cốt lõi, có thể giải quyết bằng công nghệ. Từ đó, sinh viên cũng từng bước hình thành tư duy phát triển sản phẩm từ chính những trải nghiệm hằng ngày.
+StudyFlow – ứng dụng quản lý thời khóa biểu và hỗ trợ học tập bằng AI do sinh viên Asia University Vietnam phát triển
+5 tuần xây dựng và hoàn thiện StudyFlow
+Theo Nguyễn Gia Hưng – Sinh viên ngành Công nghệ bán dẫn Asia University Vietnam, quá trình phát triển StudyFlow kéo dài trong khoảng 5 tuần. Hai tuần đầu, nhóm tập trung dựng giao diện và xây dựng hệ thống lưu, tải dữ liệu hoạt động. Các tuần tiếp theo dành cho việc phát triển đồng hồ, thêm và xóa lớp học nhanh, bộ đếm thời gian tập trung, sau đó tích hợp chatbot AI vào ứng dụng. Hiện sản phẩm đã hình thành được một phiên bản nguyên mẫu với các chức năng cốt lõi phục vụ quản lý lịch học và hỗ trợ học tập.
+Trong quá trình triển khai, nhóm dành nhiều thời gian cho việc tích hợp AI vào ứng dụng. Lưu Minh Tuấn – Sinh viên ngành Công nghệ bán dẫn Asia University Vietnam cho biết:
+“Về mặt kỹ thuật, tích hợp AI là công đoạn phức tạp nhất đối với nhóm em. Đây là phần việc mà nhóm em phải tự nghiên cứu và nhờ giúp đỡ từ các thầy cô, các bạn, các anh có nhiều kinh nghiệm trong ngành”.
+Quá trình triển khai được chia theo mục tiêu từng tuần, bám sát hướng dẫn của giảng viên để phân chia đầu việc và hoàn thiện dần từng chức năng. Bên cạnh lập trình, các thành viên còn sử dụng lưu đồ khối (flowchart) để hình dung cách ứng dụng vận hành, từ đó xây dựng cấu trúc và triển khai các tính năng một cách nhất quán.
+Theo chia sẻ của nhóm, giao diện là phần được chỉnh sửa nhiều nhất. Mục tiêu đặt ra là xây dựng một ứng dụng dễ sử dụng, rõ ràng và phù hợp với thói quen của học sinh, sinh viên. Để đạt được điều đó, nhiều chi tiết về hiển thị và tương tác phải được thử nghiệm và chỉnh sửa nhiều lần nhằm đảm bảo trải nghiệm sử dụng mượt mà.
+Giá trị đào tạo từ một dự án ứng dụng thực tế
+Ngoài các chức năng hiện có, StudyFlow đang tiếp tục được hoàn thiện theo hướng thuận tiện hơn cho người dùng, với các tính năng như lọc lịch học theo từng ngày, xử lý các nhiệm vụ đã cũ, tối ưu thông báo và cải thiện giao diện.
+Theo Nguyễn Gia Hưng, mục tiêu của ứng dụng là giúp người học chuyển từ việc theo dõi lịch học một cách thủ công sang quản lý thời gian có kế hoạch hơn. “
+Ứng dụng giúp người dùng xây dựng một hệ thống quản lý rõ ràng hơn, từ đó nâng cao năng suất và cải thiện kỹ năng tổ chức học tập
+”, Gia Hưng chia sẻ.
+Nhìn ở góc độ đào tạo, giá trị của dự án nằm ở cách sinh viên tiếp cận bài toán thực tế. Trong học phần “Computer Programming and Application”, các bạn sinh viên được tiếp cận toàn bộ quy trình phát triển một ứng dụng, từ xác định nhu cầu, xây dựng chức năng, phân chia tiến độ đến kiểm tra và hoàn thiện trước khi đưa vào sử dụng.
+Cách tiếp cận này phản ánh mô hình đào tạo gắn với thực hành mà Asia University Vietnam đang triển khai, trong đó sinh viên được tham gia các dự án ngay trong quá trình học để giải quyết những vấn đề cụ thể. Chương trình cũng được xây dựng theo hướng tăng cường trải nghiệm thực tế, kết hợp giữa học phần trên lớp, dự án và cơ hội tiếp cận môi trường làm việc từ sớm.
+Với sinh viên khối ngành công nghệ, những dự án như StudyFlow giúp kết nối kiến thức học phần với tư duy ngành học ở phạm vi rộng hơn. Đây cũng là bước đệm để sinh viên làm quen với cách phát triển sản phẩm, từ đó sẵn sàng thích nghi với yêu cầu công việc trong các doanh nghiệp và tập đoàn lớn sau khi tốt nghiệp.
+LIÊN HỆ VỚI CHÚNG TÔI
+Cơ sở Hà Nội:
+Số 8 Tôn Thất Thuyết, Phường Cầu Giấy, TP. Hà Nội
+asiaunivietnam@fpt.edu.vn
+0775 127 333
+Cơ sở TP. Hồ Chí Minh:
+Global Education Space, số 485 Lê Quang Định, Phường Hạnh Thông, TP. Hồ Chí Minh
+asiaunivietnam@fpt.edu.vn
+0775 867 333
+TIN TỨC MỚI NHẤT
+Asia University
+2026/07/15
+Mùa hoa tử vi nở rộ tại Asia University – một góc Đài Loan đang chờ sinh viên Asia University Program khám phá
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/15
+Asia University tăng 100 bậc tại THE Impact Rankings 2026, gắn phát triển bền vững với chương trình học và trải nghiệm quốc tế
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+“Asia Summer Cup 2026” khởi tranh, khuấy động mùa hè bằng những trận cầu sinh viên rực lửa
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+Ngoại ngữ trở thành lợi thế giúp nam sinh Đồng Tháp “bước vào” ngành bán dẫn
+9 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/13
+Học Tài chính trong kỷ nguyên AI: 3 nhóm vị trí đòi hỏi năng lực dữ liệu và công nghệ
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Tin tức liên quan
+Asia University
+2026/07/15
+Mùa hoa tử vi nở rộ tại Asia University – một góc Đài Loan đang chờ sinh viên Asia University Program khám phá
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/15
+Asia University tăng 100 bậc tại THE Impact Rankings 2026, gắn phát triển bền vững với chương trình học và trải nghiệm quốc tế
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+“Asia Summer Cup 2026” khởi tranh, khuấy động mùa hè bằng những trận cầu sinh viên rực lửa
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Tải thêm
+Về chúng tôi
+Giới thiệu chung
+Lý do chọn chúng tôi
+Giải thưởng và thành tựu
+Giảng viên và chuyên gia
+Các câu hỏi thường gặp
+Mẫu văn bằng
+Quy định cho phép mở ngành
+Kết nối doanh nghiệp
+Cuộc sống sinh viên
+Công dân toàn cầu
+Cuộc sống sinh viên ở Đài Loan
+Cuộc sống sinh viên ở Việt Nam
+Trải nghiệm quốc tế
+Dịch vụ sinh viên
+Ngành học
+Công nghệ bán dẫn
+Trí tuệ nhân tạo (AI)
+Quản trị kinh doanh
+Tài chính
+Nghiên cứu khoa học
+Tuyển sinh
+Thông báo tuyển sinh
+Học bổng
+Học phí
+Tài liệu tuyển sinh
+Tin tức
+Sự kiện
+Sinh viên hiện tại
+Đăng nhập
+Đăng nhập Canvas
+Quy định đào tạo
+Dịch vụ sinh viên
+Hỗ trợ học tập
+Kết nối phụ huynh
+Career success
+Sinh viên tương lai
+Liên hệ
+Chat Zalo
+Chat Zalo
+Hotline 0775127333
+Hotline 0775127333
+Đăng ký tư vấn
+Đăng ký tư vấn

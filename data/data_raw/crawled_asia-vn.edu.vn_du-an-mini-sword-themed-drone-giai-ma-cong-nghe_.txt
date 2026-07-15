@@ -1,0 +1,146 @@
+Nguồn: https://asia-vn.edu.vn/du-an-mini-sword-themed-drone-giai-ma-cong-nghe/
+--------------------------------------------------
+
+Dự án "Mini Sword-Themed Drone" - Giải mã công nghệ điều khiển bay từ linh kiện cơ bản
+Bỏ qua nội dung
+Dự án mang tên “Mini Sword-Themed Drone” được xây dựng như một bước thử nghiệm thực tế, giúp sinh viên trực tiếp tìm hiểu cấu trúc, cơ chế điều khiển và sự phối hợp giữa phần cứng – phần mềm của một hệ thống bay thu nhỏ.
+Tò mò giải mã “hộp đen” công nghệ của những sinh viên
+Khác với việc sử dụng các thiết bị bay có sẵn trên thị trường, nhóm sinh viên chọn cách tự chế (DIY – Do It Yourself) để hiểu tường tận nguyên lý hoạt động của máy móc. Nguyễn Sơn Nam, sinh viên ngành Công nghệ bán dẫn Asia University Vietnam, trưởng nhóm dự án chia sẻ rằng các dòng drone thương mại hiện nay giống như một “hộp đen” đối với người học – mọi cấu trúc bên trong đều được che giấu, khiến người mới tiếp cận khó có thể hiểu được các nguyên lý cốt lõi.
+“Em luôn tò mò liệu một sinh viên năm nhất, với những kiến thức nền tảng ban đầu, có thể thực sự làm cho một thiết bị bay cất cánh hay không. Ý tưởng này xuất phát từ mong muốn phá vỡ sự khép kín của công nghệ, để chúng em có thể tự tay xây dựng, tùy chỉnh linh kiện theo ý muốn”, Sơn Nam cho biết.
+Điểm độc đáo thu hút sự chú ý tại cuộc thi chính là ngoại hình của sản phẩm. Thay vì khung nhựa hình vuông hay tròn thông thường, nhóm đã lấy cảm hứng từ hình dáng những thanh kiếm trong các tác phẩm văn hóa Á Đông để thiết kế khung cho chiếc drone siêu nhỏ. Sự kết hợp giữa nét thẩm mỹ truyền thống và công nghệ điều khiển hiện đại này không chỉ tạo ra sự khác biệt về thị giác mà còn thể hiện cá tính sáng tạo mang đậm dấu ấn cá nhân của các thành viên.
+Nhóm sinh viên năm nhất giới thiệu ý tưởng và mô hình Mini Sword-Themed Drone tại sân chơi học thuật Asia Semicom, đánh dấu bước thử sức đầu tiên với hệ thống bay tự chế
+Hành trình từ bản vẽ thanh kiếm đến mô hình thực tế
+Để đưa một ý tưởng từ video trên mạng trở thành một mô hình có thể vận hành, nhóm đã phải đối mặt với những bài toán hóc búa về trọng lượng và sự cân bằng. Với một dòng drone siêu nhỏ, mỗi gram linh kiện đều ảnh hưởng trực tiếp đến khả năng cất cánh. Các thành viên đã lựa chọn những linh kiện điện tử có khối lượng tối thiểu, chỉ khoảng 3 đến 4 gram cho bộ vi điều khiển và cảm biến, để đảm bảo thiết bị đạt được độ linh hoạt cao nhất.
+Nguyễn Mạnh Hùng, sinh viên ngành Công nghệ bán dẫn Asia University Vietnam, thành viên phụ trách phần cứng, nhớ lại những ngày miệt mài bên bàn hàn mạch:
+“Việc lựa chọn linh kiện nhỏ gọn giúp drone nhẹ và tiêu thụ ít năng lượng hơn, nhưng cũng đòi hỏi sự tỉ mỉ tuyệt đối. Vì linh kiện rất bé, chỉ cần một sai sót nhỏ trong lúc hàn là có thể dẫn đến hỏng hóc toàn bộ hệ thống. Chúng em đã phải kiên nhẫn làm lại mạch điều chỉnh năng lượng nhiều lần để đảm bảo nguồn điện cung cấp cho các động cơ luôn ổn định
+”.
+Bên cạnh đó, thiết kế hình thanh kiếm mang lại vẻ ngoài ấn tượng nhưng cũng đặt ra thử thách về phân bổ trọng tâm. Do cấu trúc không đối xứng như các dòng drone phổ thông, thiết bị dễ gặp hiện tượng mất thăng bằng khi bắt đầu vận hành. Thay vì thay đổi thiết kế ban đầu, nhóm đã khéo léo tinh chỉnh vị trí các viên pin và tối ưu hóa cách sắp xếp dây dẫn để bù đắp cho phần trọng tâm bị lệch, giúp chiếc “kiếm bay” duy trì được trạng thái cân bằng cơ bản.
+Mô hình drone siêu nhỏ được lắp ráp từ các linh kiện cơ bản, nổi bật với thiết kế khung hình thanh kiếm và hệ thống điều khiển do sinh viên tự phát triển
+Trải nghiệm làm nghề và tư duy giải quyết vấn đề trong môi trường quốc tế
+Phần quan trọng nhất của sản phẩn nằm ở hệ thống điều khiển thông minh. Để drone có thể hiểu và thực hiện lệnh từ tay cầm điều khiển, nhóm đã xây dựng một quy trình truyền nhận dữ liệu qua sóng vô tuyến. Tín hiệu từ người dùng được mã hóa và truyền đi liên tục, cho phép các động cơ phản ứng kịp thời với những thay đổi dù là nhỏ nhất.
+Dù đã chuẩn bị kỹ lưỡng về lý thuyết, quá trình thử nghiệm thực tế vẫn mang lại nhiều bài học cho nhóm. Có những thời điểm, thiết bị di chuyển chưa hoàn toàn theo ý muốn do ảnh hưởng của rung động từ động cơ hoặc sụt giảm điện áp đột ngột. Trần Chí Thanh, sinh viên ngành Công nghệ bán dẫn Asia University Vietnam, phụ trách phần mềm, chia sẻ rằng việc đối mặt với những tình huống này đã giúp nhóm rèn luyện tư duy giải quyết vấn đề.
+“
+Chúng em học được rằng khi một hệ thống phức tạp gặp lỗi, cách hiệu quả nhất là tách rời từng phần để kiểm tra độc lập, từ nguồn điện, sóng tín hiệu đến thuật toán điều chỉnh thăng bằng. Sự kiên nhẫn trong quá trình xử lý từng lỗi nhỏ chính là chìa khóa để chúng em hiểu rõ hơn về sự phối hợp giữa phần cứng và phần mềm
+”, Chí Thanh bày tỏ.
+Thành công của dự án “Mini Sword-Themed Drone” không chỉ nằm ở việc mô hình có thể di chuyển, mà quan trọng hơn là tinh thần tự học và khả năng ứng dụng kiến thức của các bạn sinh viên. Những điểm cần cải thiện như việc tối ưu cảm biến hay tích hợp thêm camera sẽ là động lực để các bạn tiếp tục nghiên cứu trong những năm học tới.
+Sự chủ động thử sức với một hệ thống bay ngay từ năm đầu đại học cho thấy tinh thần dám làm, dám thử và sẵn sàng học hỏi của sinh viên. Với sự năng động, sáng tạo và môi trường đào tạo quốc tế đầy tiềm năng, những kỹ sư tương lai tại Asia University Vietnam đang từng bước khẳng định năng lực của mình, sẵn sàng tham gia vào chuỗi giá trị công nghệ cao toàn cầu.
+LIÊN HỆ VỚI CHÚNG TÔI
+Cơ sở Hà Nội:
+Số 8 Tôn Thất Thuyết, Phường Cầu Giấy, TP. Hà Nội
+asiaunivietnam@fpt.edu.vn
+0775 127 333
+Cơ sở TP. Hồ Chí Minh:
+Global Education Space, số 485 Lê Quang Định, Phường Hạnh Thông, TP. Hồ Chí Minh
+asiaunivietnam@fpt.edu.vn
+0775 867 333
+TIN TỨC MỚI NHẤT
+Asia University
+2026/07/15
+Mùa hoa tử vi nở rộ tại Asia University – một góc Đài Loan đang chờ sinh viên Asia University Program khám phá
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/15
+Asia University tăng 100 bậc tại THE Impact Rankings 2026, gắn phát triển bền vững với chương trình học và trải nghiệm quốc tế
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+“Asia Summer Cup 2026” khởi tranh, khuấy động mùa hè bằng những trận cầu sinh viên rực lửa
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+Ngoại ngữ trở thành lợi thế giúp nam sinh Đồng Tháp “bước vào” ngành bán dẫn
+9 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/13
+Học Tài chính trong kỷ nguyên AI: 3 nhóm vị trí đòi hỏi năng lực dữ liệu và công nghệ
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Tin tức liên quan
+Asia University
+2026/07/15
+Mùa hoa tử vi nở rộ tại Asia University – một góc Đài Loan đang chờ sinh viên Asia University Program khám phá
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/15
+Asia University tăng 100 bậc tại THE Impact Rankings 2026, gắn phát triển bền vững với chương trình học và trải nghiệm quốc tế
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+“Asia Summer Cup 2026” khởi tranh, khuấy động mùa hè bằng những trận cầu sinh viên rực lửa
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Tải thêm
+Về chúng tôi
+Giới thiệu chung
+Lý do chọn chúng tôi
+Giải thưởng và thành tựu
+Giảng viên và chuyên gia
+Các câu hỏi thường gặp
+Mẫu văn bằng
+Quy định cho phép mở ngành
+Kết nối doanh nghiệp
+Cuộc sống sinh viên
+Công dân toàn cầu
+Cuộc sống sinh viên ở Đài Loan
+Cuộc sống sinh viên ở Việt Nam
+Trải nghiệm quốc tế
+Dịch vụ sinh viên
+Ngành học
+Công nghệ bán dẫn
+Trí tuệ nhân tạo (AI)
+Quản trị kinh doanh
+Tài chính
+Nghiên cứu khoa học
+Tuyển sinh
+Thông báo tuyển sinh
+Học bổng
+Học phí
+Tài liệu tuyển sinh
+Tin tức
+Sự kiện
+Sinh viên hiện tại
+Đăng nhập
+Đăng nhập Canvas
+Quy định đào tạo
+Dịch vụ sinh viên
+Hỗ trợ học tập
+Kết nối phụ huynh
+Career success
+Sinh viên tương lai
+Liên hệ
+Chat Zalo
+Chat Zalo
+Hotline 0775127333
+Hotline 0775127333
+Đăng ký tư vấn
+Đăng ký tư vấn

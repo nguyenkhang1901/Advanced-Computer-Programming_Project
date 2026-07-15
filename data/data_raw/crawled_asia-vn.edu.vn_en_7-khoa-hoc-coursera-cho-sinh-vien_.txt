@@ -1,0 +1,183 @@
+Nguồn: https://asia-vn.edu.vn/en/7-khoa-hoc-coursera-cho-sinh-vien/
+--------------------------------------------------
+
+7 khóa học Coursera hữu ích cho sinh viên ngành bán dẫn, AI
+Skip to content
+Trong bối cảnh ngành công nghiệp bán dẫn và AI đang định hình lại nền kinh tế toàn cầu, việc cập nhật kiến thức theo chuẩn quốc tế là yếu tố then chốt giúp nhân sự trẻ tạo lợi thế cạnh tranh. Bên cạnh kiến thức nền tảng được trang bị tại giảng đường, sinh viên Asia University Vietnam được khuyến khích tiếp cận thêm nguồn học liệu bổ trợ chất lượng cao trên Coursera.
+Nhóm kiến thức bán dẫn và hạ tầng phần cứng
+1. Semiconductor Devices Specialization
+Nhà cung cấp:
+University of Colorado Boulder
+Khóa học này bao gồm 3 phần liên kết chặt chẽ, tập trung vào các linh kiện cốt lõi của ngành bán dẫn. Sinh viên sẽ đi sâu vào cấu trúc của tiếp giáp P-N, tranzito MOSFET và BJT – những thành phần cơ bản tạo nên mọi vi mạch hiện đại.
+Nội dung khóa học giúp người học hiểu rõ nguyên lý hoạt động của thiết bị từ cấp độ nguyên tử đến ứng dụng thực tế.
+Với tổng thời lượng khoảng 50 giờ học, chuyên ngành này được đánh giá 4.6/5 sao từ hơn 6.000 đánh giá và thu hút hơn 40.000 học viên. Đây là nguồn kiến thức nền tảng thiết yếu giúp sinh viên nắm vững vật lý thiết bị trước khi bước vào các môn chuyên ngành về thiết kế vi mạch (IC Design).
+Xem thêm về khóa học
+tại đây
+2. Semiconductor Physics
+Nhà cung cấp:
+University of Colorado Boulder
+Dành cho những sinh viên muốn nắm bắt bản chất vật lý của công nghệ bán dẫn, khóa học đi sâu vào lý thuyết dải năng lượng (energy bands) và cơ chế vận chuyển hạt tải điện. Nội dung bao gồm các mô-đun về cấu trúc tinh thể, thống kê hạt tải điện và các phương trình vận chuyển cơ bản.
+Khóa học kéo dài khoảng 18 giờ với nhiều bài tập kiểm tra kiến thức, đạt đánh giá 4.6/5 sao. Việc hoàn thành khóa học này trang bị cho sinh viên tư duy vật lý vững chắc, điều kiện tiên quyết để giải quyết các vấn đề phức tạp trong quy trình thiết kế và sản xuất chip.
+Xem thêm về khóa học
+tại đây
+3. Introduction to Semiconductor Packaging
+Nhà cung cấp:
+Arizona State University
+Đóng gói vi mạch (Packaging) đang trở thành khâu quan trọng quyết định hiệu năng của chip. Khóa học cung cấp cái nhìn toàn diện về phân cấp đóng gói, chức năng, các khiếm khuyết thường gặp và tiêu chuẩn độ tin cậy. Sinh viên sẽ học cách xác định vai trò của packaging trong việc bảo vệ và kết nối vi mạch với hệ thống bên ngoài.
+Với thời lượng ngắn gọn khoảng 12 giờ, khóa học được cộng đồng người học đánh giá rất cao ở mức 4.8/5 sao. Đây là tài liệu nhập môn lý tưởng giúp sinh viên hiểu rõ vai trò của công đoạn OSAT (Lắp ráp và Kiểm thử) trong chuỗi cung ứng toàn cầu.
+Xem thêm về khóa học
+tại đây
+4. Semiconductor Packaging Manufacturing
+Nhà cung cấp:
+Arizona State University
+Nếu khóa học nhập môn thiên về lý thuyết, học phần này tập trung vào quy trình kỹ thuật thực tế tại nhà máy. Sinh viên sẽ tìm hiểu quy trình sản xuất từ thiết kế chất nền, lắp ráp flip-chip đến các công nghệ hàn gắn và quy trình kiểm soát chất lượng.
+Khóa học có thời lượng khoảng 10 giờ, đạt đánh giá 4.8/5 sao. Kiến thức từ khóa học giúp sinh viên hình dung rõ ràng môi trường làm việc công nghiệp, từ đó rút ngắn khoảng cách giữa kiến thức sách vở và thực tế sản xuất tại các nhà máy bán dẫn.
+Xem thêm về khóa học
+tại đây
+Nhóm kiến thức AI, Học máy và Công nghệ mới
+5. Emerging Technologies: From Smartphones to IoT to Big Data Specialization
+Nhà cung cấp:
+Yonsei University
+Khóa học này phù hợp với sinh viên muốn nắm bắt bức tranh toàn cảnh về sự hội tụ công nghệ. Nội dung phân tích mối liên hệ giữa Dữ liệu lớn (Big Data), Điện toán đám mây, IoT và thiết bị di động thông minh. Sinh viên sẽ hiểu cách các công nghệ này tương tác để tạo nên hạ tầng số hiện đại.
+Chương trình gồm 4 phần nhỏ với tổng thời lượng khoảng 40 giờ, thu hút hơn 90.000 học viên toàn cầu và đạt đánh giá 4.6/5 sao. Khóa học giúp sinh viên phát triển tư duy công nghệ tổng quát, kỹ năng cần thiết để định vị bản thân trong thị trường lao động biến đổi nhanh chóng.
+Xem thêm về khóa học
+tại đây
+6. Introduction to Artificial Intelligence (AI)
+Nhà cung cấp:
+IBM
+Khóa học này cung cấp nền tảng cơ bản về Trí tuệ nhân tạo dành cho người mới bắt đầu. Sinh viên sẽ được tiếp cận các khái niệm cốt lõi như Học máy (Machine Learning), Học sâu (Deep Learning), Mạng nơ-ron và Đạo đức trong AI. Nội dung cũng giới thiệu các trường hợp sử dụng thực tế (use cases) của AI trong các ngành công nghiệp khác nhau.
+Với thời lượng linh hoạt khoảng 9 giờ, khóa học đã thu hút hơn 350.000 người học và nhận đánh giá 4.7/5 sao. Sau khóa học, sinh viên sẽ nắm được các thuật ngữ chuyên ngành và hiểu rõ quy trình ứng dụng AI trong doanh nghiệp.
+Xem thêm về khóa học
+tại đây
+7. Introduction to Generative AI
+Nhà cung cấp:
+Google Cloud
+Đây là khóa học nhập môn tập trung vào AI tạo sinh (Generative AI) – xu hướng công nghệ nổi bật nhất hiện nay. Nội dung giải thích sự khác biệt giữa phương pháp AI truyền thống và AI tạo sinh, cách sử dụng các mô hình ngôn ngữ lớn (LLMs) và công cụ Google AI Studio để phát triển ứng dụng.
+Khóa học được thiết kế ngắn gọn trong khoảng 1-2 giờ, tập trung vào kiến thức cô đọng và thực tiễn. Với hơn 1 triệu lượt đăng ký và đánh giá 4.7/5 sao, đây là bước khởi đầu hoàn hảo để sinh viên tiếp cận công nghệ AI tiên tiến nhất từ chính các chuyên gia Google.
+Xem thêm về khóa học
+tại đây
+Sinh viên Asia University Vietnam hăng say thảo luận về bán dẫn và AI, thể hiện tinh thần học tập chủ động và tư duy toàn cầu
+Với hình thức học tập linh hoạt, sinh viên có thể chủ động trau dồi kiến thức mọi lúc mọi nơi. Sau khi hoàn thành, người học sẽ nhận được chứng chỉ từ Coursera. Bên cạnh kiến thức chuyên môn, chứng chỉ hoàn thành từ Coursera là điểm cộng sáng giá cho hồ sơ năng lực, tạo bước đệm vững chắc cho lộ trình hội nhập quốc tế.
+Việc cấp tài khoản và định hướng học tập trên Coursera thể hiện cam kết của
+Asia University Vietnam
+trong việc khuyến khích tinh thần tự học và tư duy toàn cầu. Thông qua việc giới thiệu kho học liệu chất lượng từ các trường đại học và tập đoàn công nghệ hàng đầu thế giới, nhà trường kỳ vọng sinh viên sẽ chủ động tích lũy kiến thức, phát triển kỹ năng toàn diện để sẵn sàng cho giai đoạn học tập chuyển tiếp tại Đài Loan cũng như đáp ứng các yêu cầu khắt khe của thị trường lao động.
+LIÊN HỆ VỚI CHÚNG TÔI
+Cơ sở Hà Nội:
+Số 8 Tôn Thất Thuyết, Phường Cầu Giấy, TP. Hà Nội
+asiaunivietnam@fpt.edu.vn
+0775 127 333
+Cơ sở TP. Hồ Chí Minh:
+Global Education Space, số 485 Lê Quang Định, Phường Hạnh Thông, TP. Hồ Chí Minh
+asiaunivietnam@fpt.edu.vn
+0775 867 333
+TIN TỨC MỚI NHẤT
+Asia University
+2026/07/15
+Mùa hoa tử vi nở rộ tại Asia University – một góc Đài Loan đang chờ sinh viên Asia University Program khám phá
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/15
+Asia University tăng 100 bậc tại THE Impact Rankings 2026, gắn phát triển bền vững với chương trình học và trải nghiệm quốc tế
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+“Asia Summer Cup 2026” khởi tranh, khuấy động mùa hè bằng những trận cầu sinh viên rực lửa
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+Ngoại ngữ trở thành lợi thế giúp nam sinh Đồng Tháp “bước vào” ngành bán dẫn
+9 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/13
+Học Tài chính trong kỷ nguyên AI: 3 nhóm vị trí đòi hỏi năng lực dữ liệu và công nghệ
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Tin tức liên quan
+Asia University
+2026/07/15
+Mùa hoa tử vi nở rộ tại Asia University – một góc Đài Loan đang chờ sinh viên Asia University Program khám phá
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/15
+Asia University tăng 100 bậc tại THE Impact Rankings 2026, gắn phát triển bền vững với chương trình học và trải nghiệm quốc tế
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+“Asia Summer Cup 2026” khởi tranh, khuấy động mùa hè bằng những trận cầu sinh viên rực lửa
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Tải thêm
+Về chúng tôi
+Giới thiệu chung
+Lý do chọn chúng tôi
+Giải thưởng và thành tựu
+Giảng viên và chuyên gia
+Các câu hỏi thường gặp
+Mẫu văn bằng
+Quy định cho phép mở ngành
+Kết nối doanh nghiệp
+Cuộc sống sinh viên
+Công dân toàn cầu
+Cuộc sống sinh viên ở Đài Loan
+Cuộc sống sinh viên ở Việt Nam
+Trải nghiệm quốc tế
+Dịch vụ sinh viên
+Ngành học
+Công nghệ bán dẫn
+Trí tuệ nhân tạo (AI)
+Quản trị kinh doanh
+Tài chính
+Nghiên cứu khoa học
+Tuyển sinh
+Thông báo tuyển sinh
+Học bổng
+Học phí
+Tài liệu tuyển sinh
+Tin tức
+Sự kiện
+Sinh viên hiện tại
+Đăng nhập
+Đăng nhập Canvas
+Quy định đào tạo
+Dịch vụ sinh viên
+Hỗ trợ học tập
+Kết nối phụ huynh
+Career success
+Sinh viên tương lai
+Liên hệ
+Chat Zalo
+Chat Zalo
+Hotline 0775127333
+Hotline 0775127333
+Đăng ký tư vấn
+Đăng ký tư vấn

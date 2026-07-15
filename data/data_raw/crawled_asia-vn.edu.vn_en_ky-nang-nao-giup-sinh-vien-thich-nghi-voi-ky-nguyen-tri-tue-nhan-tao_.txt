@@ -1,0 +1,140 @@
+Nguồn: https://asia-vn.edu.vn/en/ky-nang-nao-giup-sinh-vien-thich-nghi-voi-ky-nguyen-tri-tue-nhan-tao/
+--------------------------------------------------
+
+Kỹ năng nào giúp sinh viên thích nghi với kỷ nguyên Trí tuệ nhân tạo?
+Skip to content
+Trong bối cảnh trí tuệ nhân tạo (AI) phát triển với tốc độ nhanh chóng, nhiều chuyên gia nhận định công nghệ này sẽ tiếp tục tạo ra những thay đổi sâu rộng đối với thị trường lao động và cách con người làm việc trong thập kỷ tới. Không chỉ là một xu hướng công nghệ, AI đang dần trở thành nền tảng quan trọng của nhiều lĩnh vực kinh tế – xã hội.
+Theo TS. Lê Minh Đức – Trưởng khoa Công nghệ thông tin Swinburne Vietnam, dù rất khó dự đoán chính xác điều gì sẽ xảy ra trong 5–10 năm tới, nhưng có thể thấy rõ AI đã và đang mang lại những thay đổi đáng kể trong đời sống cũng như môi trường làm việc. Đặc biệt, những công việc mang tính lặp lại nhiều khả năng sẽ dần được tự động hóa, kéo theo sự dịch chuyển của cơ cấu việc làm trong nhiều ngành nghề.
+Kỹ năng nào giúp sinh viên thích nghi với kỷ nguyên AI?
+Theo TS. Lê Minh Đức, trong tương lai gần sẽ xuất hiện nhiều cơ hội việc làm mới xoay quanh việc sử dụng AI, quản trị hệ thống AI và thiết kế, phát triển các mô hình trí tuệ nhân tạo. Đồng thời, các báo cáo gần đây của Diễn đàn Kinh tế Thế giới (WEF) cũng cho thấy mối quan hệ giữa con người và AI trong tương lai không phải là sự thay thế hoàn toàn, mà là sự hợp tác và bổ trợ giữa con người với công nghệ.
+Ở góc nhìn doanh nghiệp, ông Phạm Đăng Khôi – Giám đốc Công nghệ (CTO) chuỗi bán lẻ dược phẩm Long Châu cho rằng, hiện nay tồn tại nhiều dự đoán khác nhau về tương lai của AI. Một số ý kiến lo ngại AI sẽ thay thế nhiều vị trí việc làm, trong khi những quan điểm khác cho rằng AI sẽ giúp nâng cao năng suất và hiệu quả làm việc của con người. Theo ông, điều quan trọng không nằm ở việc AI sẽ phát triển đến đâu, mà là mỗi cá nhân cần chuẩn bị gì từ hôm nay để thích nghi với những thay đổi đó.
+Trong khi đó, PGS. TS. Trần Mạnh Huy – CEO Công ty Rainscales Vietnam nhận định, sau giai đoạn phát triển ban đầu, AI đang bước vào thời kỳ phân hóa mạnh mẽ với nhiều hướng ứng dụng khác nhau. Điều này đồng nghĩa với việc nguồn nhân lực cần có định hướng học tập rõ ràng hơn để đáp ứng nhu cầu thực tế của thị trường.
+Theo ông, khi tuyển dụng kỹ sư AI, doanh nghiệp không chỉ quan tâm đến bằng cấp mà còn đặc biệt chú trọng kinh nghiệm thực hành, các dự án đã tham gia và những sản phẩm cụ thể mà ứng viên từng phát triển.
+Các chuyên gia nhận định Trí tuệ nhân tạo trong 10 năm tới sẽ không thay thế hoàn toàn con người, mà đặt ra yêu cầu mới về năng lực để giải quyết các bài toán thực tiễn
+Đồng quan điểm về tầm quan trọng của thực hành, ông Bùi Viết Thanh Phong – Phó Tổng Giám đốc KMS Technology, Giám đốc điều hành KMS Đà Nẵng cho rằng, sinh viên cần dành nhiều thời gian để học và sử dụng các công cụ AI trong thực tế. Theo ông, việc làm chủ công nghệ này cũng giống như quá trình tích lũy kinh nghiệm theo “quy luật 10.000 giờ”: khi thực hành đủ nhiều, người học sẽ dần hình thành năng lực khai thác AI hiệu quả trong công việc.
+Ở góc nhìn học thuật, Giáo sư Leandro Soares Indrusiak – Nhóm Nghiên cứu Hệ thống & Dịch vụ Phân tán, Khoa Khoa học Máy tính, Đại học Leeds (Vương quốc Anh) nhấn mạnh rằng, sinh viên không nên chỉ dừng lại ở việc sử dụng các công cụ AI. Theo ông, việc hiểu nền tảng toán học và các thuật toán cốt lõi của AI là yếu tố quan trọng giúp người học có thể kiểm chứng, đánh giá và hiểu rõ cách hệ thống AI đưa ra kết quả.
+Giáo dục đại học cần thích nghi với sự phát triển của AI
+Từ những góc nhìn trên, có thể thấy AI không chỉ tạo ra những thay đổi về công nghệ mà còn đặt ra yêu cầu mới đối với giáo dục đại học và quá trình chuẩn bị nghề nghiệp của sinh viên.
+Bên cạnh kiến thức chuyên môn, người học cần phát triển đồng thời năng lực công nghệ, khả năng thực hành và tư duy phản biện, những yếu tố giúp sinh viên có thể làm việc hiệu quả cùng với các hệ thống AI trong tương lai.
+Trong bối cảnh đó, nhiều chuyên gia đánh giá cao cách tiếp cận đào tạo AI theo hướng đa chiều của Asia University Vietnam gồm: công nghệ AI, ứng dụng AI, AI trong kinh doanh. Cách tiếp cận này phản ánh xu hướng phát triển của AI hiện nay, khi công nghệ không còn giới hạn trong lĩnh vực kỹ thuật mà đang được ứng dụng rộng rãi trong nhiều ngành nghề và mô hình kinh doanh.
+Theo các chuyên gia, việc đào tạo AI theo nhiều hướng khác nhau giúp sinh viên có cái nhìn toàn diện về công nghệ, từ nền tảng kỹ thuật, khả năng ứng dụng cho đến tư duy kinh doanh – những yếu tố ngày càng quan trọng trong kỷ nguyên trí tuệ nhân tạo.
+LIÊN HỆ VỚI CHÚNG TÔI
+Cơ sở Hà Nội:
+Số 8 Tôn Thất Thuyết, Phường Cầu Giấy, TP. Hà Nội
+asiaunivietnam@fpt.edu.vn
+0775 127 333
+Cơ sở TP. Hồ Chí Minh:
+Global Education Space, số 485 Lê Quang Định, Phường Hạnh Thông, TP. Hồ Chí Minh
+asiaunivietnam@fpt.edu.vn
+0775 867 333
+TIN TỨC MỚI NHẤT
+Asia University
+2026/07/15
+Mùa hoa tử vi nở rộ tại Asia University – một góc Đài Loan đang chờ sinh viên Asia University Program khám phá
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/15
+Asia University tăng 100 bậc tại THE Impact Rankings 2026, gắn phát triển bền vững với chương trình học và trải nghiệm quốc tế
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+“Asia Summer Cup 2026” khởi tranh, khuấy động mùa hè bằng những trận cầu sinh viên rực lửa
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+Ngoại ngữ trở thành lợi thế giúp nam sinh Đồng Tháp “bước vào” ngành bán dẫn
+9 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/13
+Học Tài chính trong kỷ nguyên AI: 3 nhóm vị trí đòi hỏi năng lực dữ liệu và công nghệ
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Tin tức liên quan
+Asia University
+2026/07/15
+Mùa hoa tử vi nở rộ tại Asia University – một góc Đài Loan đang chờ sinh viên Asia University Program khám phá
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/15
+Asia University tăng 100 bậc tại THE Impact Rankings 2026, gắn phát triển bền vững với chương trình học và trải nghiệm quốc tế
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+“Asia Summer Cup 2026” khởi tranh, khuấy động mùa hè bằng những trận cầu sinh viên rực lửa
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Tải thêm
+Về chúng tôi
+Giới thiệu chung
+Lý do chọn chúng tôi
+Giải thưởng và thành tựu
+Giảng viên và chuyên gia
+Các câu hỏi thường gặp
+Mẫu văn bằng
+Quy định cho phép mở ngành
+Kết nối doanh nghiệp
+Cuộc sống sinh viên
+Công dân toàn cầu
+Cuộc sống sinh viên ở Đài Loan
+Cuộc sống sinh viên ở Việt Nam
+Trải nghiệm quốc tế
+Dịch vụ sinh viên
+Ngành học
+Công nghệ bán dẫn
+Trí tuệ nhân tạo (AI)
+Quản trị kinh doanh
+Tài chính
+Nghiên cứu khoa học
+Tuyển sinh
+Thông báo tuyển sinh
+Học bổng
+Học phí
+Tài liệu tuyển sinh
+Tin tức
+Sự kiện
+Sinh viên hiện tại
+Đăng nhập
+Đăng nhập Canvas
+Quy định đào tạo
+Dịch vụ sinh viên
+Hỗ trợ học tập
+Kết nối phụ huynh
+Career success
+Sinh viên tương lai
+Liên hệ
+Chat Zalo
+Chat Zalo
+Hotline 0775127333
+Hotline 0775127333
+Đăng ký tư vấn
+Đăng ký tư vấn
