@@ -20,8 +20,11 @@ exit
 
 :run_offline
 echo.
-echo Starting Backend...
-start cmd /k "cd /d %~dp0backend && npm run dev"
+echo Installing Python requirements...
+start /b cmd /c "cd /d %~dp0backend && py -m pip install -r requirements.txt -q"
+timeout /t 5 >nul
+echo Starting Backend (Python)...
+start cmd /k "cd /d %~dp0backend && py server.py"
 echo Starting Frontend...
 start cmd /k "cd /d %~dp0frontend && npm run dev"
 echo.
@@ -36,27 +39,28 @@ cd /d "%~dp0frontend"
 call npm run build
 
 echo.
-echo 2. Getting your Public IP address for Localtunnel password...
-for /f "delims=" %%i in ('powershell -ExecutionPolicy Bypass -Command "(Invoke-WebRequest -Uri 'https://api.ipify.org' -UseBasicParsing).Content"') do set MY_IP=%%i
+echo 2. Installing Python requirements...
+cd /d "%~dp0backend"
+call py -m pip install -r requirements.txt -q
 
 echo.
-echo 3. Starting Backend and Static Server (Port 5000)...
-start cmd /k "cd /d %~dp0backend && npm start"
+echo 3. Starting Backend (Python) and Static Server (Port 5000)...
+start cmd /k "cd /d %~dp0backend && py server.py"
 
 echo.
-echo 4. Creating Internet sharing link (Localtunnel)...
+echo 4. Creating Ultra-Stable Internet sharing link (Cloudflare)...
 echo ========================================================
 echo ONLINE INSTRUCTIONS:
-echo - A Localtunnel window will open and provide a link like: https://xxxx.loca.lt
-echo - When accessing the link for the first time, you need a security password.
-echo - Use this IP address as the password: %MY_IP%
+echo - A new window will open and generate a Cloudflare Tunnel.
+echo - Look for the URL ending with .trycloudflare.com in the box.
+echo - That is your permanent link for this session. NO PASSWORD REQUIRED!
 echo ========================================================
 echo.
-timeout /t 5
-start cmd /k "echo Your Public IP (Copy here): %MY_IP% && echo. && npx -y localtunnel --port 5000"
+timeout /t 3
+start cmd /k "echo Starting Cloudflare Tunnel... && echo. && npx -y cloudflared tunnel --url http://localhost:5000"
 
 echo.
 echo [OK] Online mode startup complete!
-echo Please copy the link from the Localtunnel window and enter IP: %MY_IP% when prompted.
+echo Please copy the link from the Cloudflare window to share with others.
 pause
 exit

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { Send, GraduationCap, Users, Globe } from 'lucide-react';
+import remarkGfm from 'remark-gfm';
+import { Send, GraduationCap, Users, Globe, Sun, Moon, Mic, Volume2, Paperclip, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const TRANSLATIONS = {
@@ -50,24 +51,40 @@ const TRANSLATIONS = {
   }
 };
 
-export default function Chat({ lang, setLang }) {
+export default function Chat({ lang, setLang, theme, setTheme }) {
   const navigate = useNavigate();
   const t = TRANSLATIONS[lang];
 
-  const [messages, setMessages] = useState([
-    {
-      id: 1,
-      sender: 'bot',
-      text: t.welcome
-    }
-  ]);
+  const [messages, setMessages] = useState(() => {
+    const saved = localStorage.getItem('chat_messages');
+    if (saved) return JSON.parse(saved);
+    return [
+      {
+        id: 1,
+        sender: 'bot',
+        text: t.welcome
+      }
+    ];
+  });
+  
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [showLeadForm, setShowLeadForm] = useState(false);
   const [leadData, setLeadData] = useState({ name: '', email: '', phone: '', program: '' });
   const [leadSubmitted, setLeadSubmitted] = useState(false);
-  const [sessionId] = useState(() => 'sess_' + Date.now().toString(36) + Math.random().toString(36).substr(2));
+  
+  const [sessionId] = useState(() => {
+    const saved = localStorage.getItem('chat_session_id');
+    if (saved) return saved;
+    const newId = 'sess_' + Date.now().toString(36) + Math.random().toString(36).substr(2);
+    localStorage.setItem('chat_session_id', newId);
+    return newId;
+  });
   const [showRecommendationBtn, setShowRecommendationBtn] = useState(false);
+  const [isListening, setIsListening] = useState(false);
+  const [speakingMsgId, setSpeakingMsgId] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const fileInputRef = useRef(null);
 
   const messagesEndRef = useRef(null);
 
@@ -81,7 +98,8 @@ export default function Chat({ lang, setLang }) {
     if (userMessageCount >= 3 && !leadSubmitted && !showLeadForm) {
       setShowLeadForm(true);
     }
-  }, [messages, isLoading]);
+    localStorage.setItem('chat_messages', JSON.stringify(messages));
+  }, [messages, isLoading, leadSubmitted, showLeadForm]);
 
   // Update initial message when language changes
   useEffect(() => {
@@ -91,28 +109,77 @@ export default function Chat({ lang, setLang }) {
   }, [lang, t.welcome]);
 
   const handleSendMessage = async (text) => {
-    if (!text.trim()) return;
+    if (!text.trim() && !selectedImage) return;
 
-    const userMsg = { id: Date.now(), sender: 'user', text };
+    const userMsg = { id: Date.now(), sender: 'user', text, hasImage: !!selectedImage };
     setMessages((prev) => [...prev, userMsg]);
+    
+    const imageToSend = selectedImage;
     setInputMessage('');
+    setSelectedImage(null);
     setIsLoading(true);
 
     try {
       const history = messages.map(m => ({ role: m.sender, text: m.text }));
       
+      const payload = { message: text, history, sessionId, language: lang };
+      if (imageToSend) {
+        payload.imageBase64 = imageToSend; // Format: "data:image/png;base64,iVBORw0KGgo..."
+      }
+
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: text, history, sessionId, language: lang }),
+        body: JSON.stringify(payload),
       });
 
-      const data = await response.json();
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
 
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder("utf-8");
+      
+      const botMessageId = Date.now() + 1;
       setMessages((prev) => [
         ...prev,
-        { id: Date.now() + 1, sender: 'bot', text: data.reply || "Sorry, I couldn't process that request." }
+        { id: botMessageId, sender: 'bot', text: "" }
       ]);
+      
+      let done = false;
+      let fullText = "";
+
+      while (!done) {
+        const { value, done: readerDone } = await reader.read();
+        done = readerDone;
+        
+        if (value) {
+          const chunk = decoder.decode(value, { stream: true });
+          const lines = chunk.split('\n\n');
+          
+          for (const line of lines) {
+            if (line.startsWith('data: ')) {
+              const dataStr = line.substring(6).trim();
+              if (dataStr === '[DONE]') {
+                done = true;
+                break;
+              }
+              try {
+                const parsed = JSON.parse(dataStr);
+                if (parsed.text) {
+                  setIsLoading(false);
+                  fullText += parsed.text;
+                  setMessages(prev => prev.map(m => 
+                    m.id === botMessageId ? { ...m, text: fullText } : m
+                  ));
+                }
+              } catch (e) {
+                console.error("Error parsing chunk:", e, dataStr);
+              }
+            }
+          }
+        }
+      }
     } catch (error) {
       console.error('Error sending message:', error);
       setMessages((prev) => [
@@ -172,6 +239,66 @@ export default function Chat({ lang, setLang }) {
     }
   };
 
+  const handleListen = () => {
+    if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+      alert("Voice recognition is not supported in this browser.");
+      return;
+    }
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+    recognition.lang = lang === 'vi' ? 'vi-VN' : 'en-US';
+    recognition.continuous = false;
+    recognition.interimResults = false;
+
+    recognition.onstart = () => setIsListening(true);
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      setInputMessage(prev => (prev ? prev + ' ' : '') + transcript);
+    };
+    recognition.onerror = (e) => console.error(e);
+    recognition.onend = () => setIsListening(false);
+    
+    recognition.start();
+  };
+
+  const handleSpeak = (text, id) => {
+    if (!('speechSynthesis' in window)) return;
+    window.speechSynthesis.cancel();
+    if (speakingMsgId === id) {
+      setSpeakingMsgId(null);
+      return;
+    }
+    const utterance = new SpeechSynthesisUtterance(text.replace(/[*#]/g, ''));
+    const targetLang = lang === 'vi' ? 'vi-VN' : 'en-US';
+    utterance.lang = targetLang;
+    
+    // Explicitly set voice to fix Vietnamese reading issue in some browsers
+    const voices = window.speechSynthesis.getVoices();
+    if (voices.length > 0) {
+      const voice = voices.find(v => v.lang === targetLang || v.lang.startsWith(lang));
+      if (voice) utterance.voice = voice;
+    }
+    
+    utterance.onend = () => setSpeakingMsgId(null);
+    setSpeakingMsgId(id);
+    window.speechSynthesis.speak(utterance);
+  };
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) { // 5MB limit
+        alert("Image size should be less than 5MB");
+        return;
+      }
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setSelectedImage(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   return (
     <div className="app-container">
       <div className="header" style={{ justifyContent: 'space-between' }}>
@@ -180,6 +307,34 @@ export default function Chat({ lang, setLang }) {
           <h1>Asia Uni AI Admission</h1>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <button 
+            className="admin-btn" 
+            onClick={() => navigate('/admin')} 
+            title="Admin Dashboard"
+            style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1rem', background: 'var(--panel-border)', borderRadius: '20px', color: 'var(--text-primary)', border: 'none', cursor: 'pointer' }}
+          >
+            <Users size={18} />
+            <span style={{ fontWeight: 'bold' }}>Admin</span>
+          </button>
+
+          <button 
+            className="admin-btn" 
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} 
+            title="Toggle Theme"
+            style={{ padding: '0.5rem', background: 'var(--panel-border)', borderRadius: '50%', color: 'var(--text-primary)', border: 'none', cursor: 'pointer', display: 'flex' }}
+          >
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+          
+          <button 
+            className="admin-btn" 
+            onClick={() => setLang(lang === 'en' ? 'vi' : 'en')} 
+            title="Toggle Language"
+            style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1rem', background: 'var(--panel-border)', borderRadius: '20px', color: 'var(--text-primary)', border: 'none', cursor: 'pointer' }}
+          >
+            <Globe size={18} />
+            <span style={{ fontWeight: 'bold' }}>{t.lang_btn}</span>
+          </button>
         </div>
       </div>
 
@@ -189,9 +344,27 @@ export default function Chat({ lang, setLang }) {
             <div key={msg.id} className={`message ${msg.sender}`}>
               <div className="message-content">
                 {msg.sender === 'bot' ? (
-                  <ReactMarkdown>{msg.text}</ReactMarkdown>
+                  <div style={{ position: 'relative' }}>
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>{msg.text}</ReactMarkdown>
+                    {msg.text && (
+                      <button 
+                        onClick={() => handleSpeak(msg.text, msg.id)}
+                        style={{ position: 'absolute', top: '0', right: '-25px', background: 'none', border: 'none', color: speakingMsgId === msg.id ? 'var(--asia-green)' : 'var(--text-primary)', cursor: 'pointer', padding: '5px' }}
+                        title="Read aloud"
+                      >
+                        <Volume2 size={16} />
+                      </button>
+                    )}
+                  </div>
                 ) : (
-                  <p>{msg.text}</p>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+                    {msg.hasImage && (
+                      <div style={{ fontSize: '0.8rem', opacity: 0.8, marginBottom: '0.5rem', background: 'rgba(255,255,255,0.2)', padding: '2px 8px', borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                        <Paperclip size={12}/> Image Attached
+                      </div>
+                    )}
+                    <p>{msg.text}</p>
+                  </div>
                 )}
               </div>
             </div>
@@ -207,27 +380,7 @@ export default function Chat({ lang, setLang }) {
             </div>
           )}
 
-          {showLeadForm && (
-            <div className="message bot lead-form-container">
-              <div className="message-content">
-                <p><strong>{t.lead_prompt}</strong></p>
-                <form onSubmit={handleLeadSubmit} className="lead-form">
-                  <input required type="text" placeholder={t.name} value={leadData.name} onChange={e => setLeadData({...leadData, name: e.target.value})} />
-                  <input required type="email" placeholder={t.email} value={leadData.email} onChange={e => setLeadData({...leadData, email: e.target.value})} />
-                  <input type="tel" placeholder={t.phone} value={leadData.phone} onChange={e => setLeadData({...leadData, phone: e.target.value})} />
-                  <select value={leadData.program} onChange={e => setLeadData({...leadData, program: e.target.value})}>
-                    <option value="">{t.program_select}</option>
-                    <option value="Semiconductor Technology">Semiconductor Technology</option>
-                    <option value="Artificial Intelligence">Artificial Intelligence (AI)</option>
-                    <option value="Business Administration">Business Administration</option>
-                    <option value="Finance">Finance</option>
-                  </select>
-                  <button type="submit" className="submit-btn">{t.submit_lead}</button>
-                  <button type="button" className="cancel-btn" onClick={() => setShowLeadForm(false)}>{t.cancel_lead}</button>
-                </form>
-              </div>
-            </div>
-          )}
+
 
           {showRecommendationBtn && (
             <div className="message bot">
@@ -260,26 +413,83 @@ export default function Chat({ lang, setLang }) {
           </div>
         )}
 
-        <div className="input-area">
-          <input
-            type="text"
-            className="chat-input"
-            placeholder={t.placeholder}
-            value={inputMessage}
-            onChange={(e) => setInputMessage(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') handleSendMessage(inputMessage);
-            }}
-          />
-          <button 
-            className="send-button"
-            onClick={() => handleSendMessage(inputMessage)}
-            disabled={!inputMessage.trim() || isLoading}
-          >
-            <Send size={20} />
-          </button>
+        <div style={{ position: 'relative' }}>
+          {selectedImage && (
+            <div className="image-preview-container">
+              <img src={selectedImage} alt="Preview" className="image-preview" />
+              <button className="remove-image-btn" onClick={() => { setSelectedImage(null); if (fileInputRef.current) fileInputRef.current.value = ''; }}>
+                <X size={14} />
+              </button>
+            </div>
+          )}
+          <div className="input-area">
+            <input 
+              type="file" 
+              accept="image/*" 
+              ref={fileInputRef} 
+              style={{ display: 'none' }} 
+              onChange={handleImageChange} 
+            />
+            <button 
+              className="send-button"
+              onClick={() => fileInputRef.current?.click()}
+              disabled={isLoading}
+              style={{ marginRight: '0.5rem', background: 'var(--panel-border)', color: selectedImage ? 'var(--asia-green)' : 'var(--text-primary)' }}
+              title="Attach Image"
+            >
+              <Paperclip size={20} />
+            </button>
+            <input
+              type="text"
+              className="chat-input"
+              placeholder={t.placeholder}
+              value={inputMessage}
+              onChange={(e) => setInputMessage(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') handleSendMessage(inputMessage);
+              }}
+            />
+            <button 
+              className="send-button"
+              onClick={handleListen}
+              disabled={isLoading}
+              style={{ marginRight: '0.5rem', background: isListening ? '#ff4d4d' : 'var(--panel-border)', color: isListening ? '#fff' : 'var(--text-primary)' }}
+              title="Speak"
+            >
+              <Mic size={20} />
+            </button>
+            <button 
+              className="send-button"
+              onClick={() => handleSendMessage(inputMessage)}
+              disabled={(!inputMessage.trim() && !selectedImage) || isLoading}
+            >
+              <Send size={20} />
+            </button>
+          </div>
         </div>
       </div>
+      
+      {showLeadForm && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h2>{t.lead_prompt}</h2>
+            <form onSubmit={handleLeadSubmit} className="lead-form">
+              <input required type="text" placeholder={t.name} value={leadData.name} onChange={e => setLeadData({...leadData, name: e.target.value})} />
+              <input required type="email" placeholder={t.email} value={leadData.email} onChange={e => setLeadData({...leadData, email: e.target.value})} />
+              <input type="tel" placeholder={t.phone} value={leadData.phone} onChange={e => setLeadData({...leadData, phone: e.target.value})} />
+              <select value={leadData.program} onChange={e => setLeadData({...leadData, program: e.target.value})}>
+                <option value="">{t.program_select}</option>
+                <option value="Semiconductor Technology">Semiconductor Technology</option>
+                <option value="Artificial Intelligence">Artificial Intelligence (AI)</option>
+                <option value="Business Administration">Business Administration</option>
+                <option value="Finance">Finance</option>
+              </select>
+              <button type="submit" className="submit-btn">{t.submit_lead}</button>
+              <button type="button" className="cancel-btn" onClick={() => setShowLeadForm(false)}>{t.cancel_lead}</button>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

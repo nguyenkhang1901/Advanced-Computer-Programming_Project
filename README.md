@@ -24,18 +24,19 @@ An automated admission consulting system powered by Artificial Intelligence (Goo
 ## 🛠️ Technology Stack
 
 - **Frontend:** React.js (Vite), React Router, Lucide-react (Icons), React-markdown.
-- **Backend:** Node.js, Express.js.
+- **Backend:** Python (Flask).
 - **Database:** SQLite (Local storage for leads and chat history).
-- **AI Engine:** `@google/genai` (Model: `gemini-2.5-flash`).
-- **Deployment:** Localtunnel (Publicly exposes the website).
+- **AI Engine:** `google-genai` (Model: `gemini-2.5-flash`).
+- **Deployment:** Cloudflare Tunnels (Publicly exposes the website).
 
 ---
 
 ## 🚀 Setup & Execution Guide
 
 ### 1. System Requirements:
-- **Node.js** installed (Version 18 or higher).
-- Initialize libraries: Open the terminal in both the `backend` and `frontend` folders, and run the `npm install` command.
+- **Node.js** installed (Version 18 or higher) for the frontend.
+- **Python** installed (Version 3.8 or higher) for the backend.
+- Initialize frontend: Open the terminal in the `frontend` folder and run the `npm install` command.
 
 ### 2. API Configuration (Very Important):
 For security reasons, the real API Key is hidden. When downloading the code, you need to configure it as follows:
@@ -58,9 +59,8 @@ The project includes an extremely convenient quick-start file.
 #### Mode [2]: Online (For Deployment / Demo)
 - Automatically builds the Frontend interface.
 - Runs Backend and Frontend together on a single port (Port 5000).
-- Automatically fetches your public IP address.
-- Automatically initializes **Localtunnel** and provides a link like `https://xxx.loca.lt` to share with others.
-- *(Tip: When others access it for the first time, provide them with the IP number displayed on your screen to bypass Localtunnel's security check).*
+- Automatically initializes **Cloudflare Tunnels** (the most stable networking service) and provides a secure URL like `https://some-random-words.trycloudflare.com` for you to share.
+- *(Tip: The Cloudflare link is fully public and does NOT require any security password or IP address. Simply copy the link from the box and share it!)*
 
 ---
 
