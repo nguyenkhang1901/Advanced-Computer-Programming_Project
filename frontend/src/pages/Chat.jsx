@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import { Send, GraduationCap, Users, Globe, Sun, Moon, Mic, Volume2, Paperclip, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -302,39 +301,22 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
 
   return (
     <div className="app-container">
-      <div className="header" style={{ justifyContent: 'space-between' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <GraduationCap size={40} color="var(--asia-green)" />
+      <div className="header">
+        <div className="header-title">
+          <GraduationCap className="header-icon" size={40} color="var(--asia-green)" />
           <h1>Asia Uni AI Admission</h1>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <button 
-            className="admin-btn" 
-            onClick={() => navigate('/admin')} 
-            title="Admin Dashboard"
-            style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1rem', background: 'var(--panel-border)', borderRadius: '20px', color: 'var(--text-primary)', border: 'none', cursor: 'pointer' }}
-          >
+        <div className="header-actions">
+          <button className="admin-btn" onClick={() => navigate('/admin')} title="Admin Dashboard">
             <Users size={18} />
-            <span style={{ fontWeight: 'bold' }}>Admin</span>
+            <span>Admin</span>
           </button>
-
-          <button 
-            className="admin-btn" 
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} 
-            title="Toggle Theme"
-            style={{ padding: '0.5rem', background: 'var(--panel-border)', borderRadius: '50%', color: 'var(--text-primary)', border: 'none', cursor: 'pointer', display: 'flex' }}
-          >
+          <button className="theme-btn" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} title="Toggle Theme">
             {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
           </button>
-          
-          <button 
-            className="admin-btn" 
-            onClick={() => setLang(lang === 'en' ? 'vi' : 'en')} 
-            title="Toggle Language"
-            style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1rem', background: 'var(--panel-border)', borderRadius: '20px', color: 'var(--text-primary)', border: 'none', cursor: 'pointer' }}
-          >
+          <button className="lang-btn" onClick={() => setLang(lang === 'en' ? 'vi' : 'en')} title="Toggle Language">
             <Globe size={18} />
-            <span style={{ fontWeight: 'bold' }}>{t.lang_btn}</span>
+            <span>{t.lang_btn}</span>
           </button>
         </div>
       </div>
@@ -346,7 +328,7 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
               <div className="message-content">
                 {msg.sender === 'bot' ? (
                   <div style={{ position: 'relative' }}>
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>{msg.text}</ReactMarkdown>
+                    <ReactMarkdown>{msg.text}</ReactMarkdown>
                     {msg.text && (
                       <button 
                         onClick={() => handleSpeak(msg.text, msg.id)}
