@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Chat from './pages/Chat';
 import Admin from './pages/Admin';
+import CareerQuiz from './pages/CareerQuiz';
 import './index.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Chat lang={lang} setLang={setLang} theme={theme} setTheme={setTheme} />} />
         <Route path="/admin" element={<Admin lang={lang} setLang={setLang} theme={theme} setTheme={setTheme} />} />
+        <Route path="/quiz" element={<CareerQuiz lang={lang} />} />
       </Routes>
     </BrowserRouter>
   );

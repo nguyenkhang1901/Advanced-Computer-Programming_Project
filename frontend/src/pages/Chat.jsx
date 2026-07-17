@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { Send, GraduationCap, Users, Globe, Sun, Moon, Mic, Volume2, Paperclip, X } from 'lucide-react';
+import { Send, GraduationCap, Users, Globe, Sun, Moon, Mic, Volume2, Paperclip, X, Compass } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const TRANSLATIONS = {
@@ -307,6 +307,10 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
           <h1>Asia Uni AI Admission</h1>
         </div>
         <div className="header-actions">
+          <button className="admin-btn" onClick={() => navigate('/quiz')} title="Career Quiz" style={{ background: 'var(--asia-gold)', color: '#000', fontWeight: 'bold' }}>
+            <Compass size={18} />
+            <span>Quiz</span>
+          </button>
           <button className="admin-btn" onClick={() => navigate('/admin')} title="Admin Dashboard">
             <Users size={18} />
             <span>Admin</span>

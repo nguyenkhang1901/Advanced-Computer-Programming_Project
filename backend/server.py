@@ -264,6 +264,48 @@ RULES:
         print("AI Error:", e)
         return jsonify({"error": "Failed to process chat request"}), 500
 
+@app.route('/api/quiz', methods=['POST'])
+@limiter.limit("10 per minute")
+def career_quiz():
+    try:
+        data = request.json
+        answers = data.get('answers', [])
+        language = data.get('language', 'vi')
+        
+        client = get_next_ai_client()
+        if not client:
+            return jsonify({"recommendation": "Hệ thống đang bảo trì, vui lòng liên hệ Ban Tuyển sinh."})
+
+        prompt = f"""Bạn là một chuyên gia hướng nghiệp xuất sắc của Asia University Vietnam.
+Nhiệm vụ của bạn là dựa vào các câu trả lời trắc nghiệm của học sinh dưới đây, phân tích và đề xuất 1 trong 4 ngành học sau:
+1. Công nghệ bán dẫn (Semiconductor Technology)
+2. Trí tuệ nhân tạo (Artificial Intelligence)
+3. Quản trị kinh doanh (Business Administration)
+4. Tài chính (Finance)
+
+Câu trả lời của học sinh:
+{answers}
+
+YÊU CẦU:
+- Phân tích ngắn gọn (dưới 150 chữ).
+- Nêu rõ tên ngành học phù hợp nhất và giải thích TẠI SAO nó phù hợp với tính cách/sở thích của họ.
+- Xưng hô "bạn" và "chúng tôi". Luôn thân thiện, khích lệ.
+"""
+        lang_instruction = "\nCRITICAL: Reply in English." if language == 'en' else "\nCRITICAL: Reply in Vietnamese."
+        
+        response = client.models.generate_content(
+            model='gemini-2.5-flash',
+            contents=prompt,
+            config={
+                'system_instruction': prompt + lang_instruction,
+                'temperature': 0.7
+            }
+        )
+        return jsonify({"recommendation": response.text})
+    except Exception as e:
+        print("Quiz API Error:", e)
+        return jsonify({"error": "Failed to generate recommendation"}), 500
+
 @app.route('/api/leads', methods=['POST'])
 def save_lead():
     try:
