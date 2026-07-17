@@ -91,6 +91,23 @@ def retrieve_context(query, top_k=5):
     finally:
         conn.close()
 
+import time
+import unicodedata
+
+# Simple in-memory cache to bypass Google API limits
+response_cache = {}
+
+def normalize_query(query):
+    # Remove accents
+    s = ''.join(c for c in unicodedata.normalize('NFD', query) if unicodedata.category(c) != 'Mn')
+    s = s.lower()
+    # Remove common stop words and filler words
+    stop_words = ["cho", "em", "hoi", "a", "da", "ad", "admin", "thay", "co", "truong", "minh", "ban", "vay", "la", "nhieu"]
+    # Keep only alphanumeric
+    s = re.sub(r'[^a-z0-9\s]', '', s)
+    tokens = [t for t in s.split() if t not in stop_words and len(t) > 1]
+    return " ".join(sorted(tokens))
+
 @app.route('/api/chat', methods=['POST'])
 @limiter.limit("20 per minute")
 def chat():
@@ -118,6 +135,23 @@ def chat():
             conn.close()
             return jsonify({"reply": reply})
 
+        # Check Cache before calling Google API
+        cache_key = normalize_query(message)
+        if cache_key and cache_key in response_cache:
+            print(f"CACHE HIT: {cache_key}")
+            from flask import stream_with_context
+            import json
+            def cached_stream():
+                cached_text = response_cache[cache_key]
+                words = cached_text.split()
+                # Simulate fast streaming
+                for i in range(0, len(words), 5):
+                    chunk = " ".join(words[i:i+5]) + " "
+                    yield f"data: {json.dumps({'text': chunk})}\n\n"
+                    time.sleep(0.05)
+                yield "data: [DONE]\n\n"
+            return Response(stream_with_context(cached_stream()), mimetype='text/event-stream')
+
         chat_contents = "\n".join([h.get('text', '') for h in history]) + f"\n{message}"
         
         # Retrieve context for this specific message using RAG
@@ -142,9 +176,10 @@ RULES:
         from flask import stream_with_context
         from google.genai import types
         
-        image_base64 = data.get('imageBase64')
+        # Setup contents list
         contents_list = [chat_contents]
         
+        image_base64 = data.get('imageBase64')
         if image_base64:
             try:
                 # Remove data URI prefix if present
@@ -187,8 +222,10 @@ RULES:
                 yield f"data: {json.dumps({'error': 'Stream failed'})}\n\n"
             
             finally:
-                # Save the complete reply to the database
+                # Save the complete reply to the database and cache
                 if full_reply:
+                    if cache_key:
+                        response_cache[cache_key] = full_reply
                     conn = get_db_connection()
                     conn.execute('INSERT INTO chat_logs (session_id, role, message) VALUES (?, ?, ?)',
                                  (session_id, 'bot', full_reply))
