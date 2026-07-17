@@ -121,7 +121,7 @@ def chat():
         chat_contents = "\n".join([h.get('text', '') for h in history]) + f"\n{message}"
         
         # Retrieve context for this specific message using RAG
-        context = retrieve_context(message)
+        context = retrieve_context(message, top_k=3)
         
         system_prompt = f"""You are a professional admission consultant for Asia University Vietnam.
 Use the following RELEVANT CONTEXT to answer the student's question. If the context doesn't contain the answer, say you don't know and advise them to contact admissions@asia-vn.edu.vn.
@@ -131,7 +131,8 @@ RELEVANT CONTEXT:
 
 RULES:
 1. Always be polite and welcoming.
-2. Provide clear, detailed, and comprehensive answers. Use Markdown.
+2. Provide complete and helpful answers. Give enough information to fully address the user's question, but avoid unnecessary overly detailed fluff.
+3. Use Markdown for formatting.
 """
 
         lang_instruction = "\nCRITICAL: You must reply in English." if language == 'en' else "\nCRITICAL: You must reply in Vietnamese."

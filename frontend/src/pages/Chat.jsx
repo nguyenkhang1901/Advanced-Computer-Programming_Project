@@ -19,10 +19,10 @@ const TRANSLATIONS = {
     server_error: "Sorry, the server is currently unavailable. Please try again later.",
     lead_thanks: "Thank you! Our admission team will contact you soon with more details.",
     quick_replies: [
-      "What are the entry requirements?",
-      "Tell me about the IT programs",
-      "Are there any scholarships?",
-      "What is the tuition fee?"
+      { icon: "📝", text: "What are the entry requirements?" },
+      { icon: "💻", text: "Tell me about the IT programs" },
+      { icon: "🏆", text: "Are there any scholarships?" },
+      { icon: "💰", text: "What is the tuition fee?" }
     ],
     lang_btn: "EN"
   },
@@ -41,10 +41,10 @@ const TRANSLATIONS = {
     server_error: "Xin lỗi, máy chủ hiện không khả dụng. Vui lòng thử lại sau.",
     lead_thanks: "Cảm ơn bạn! Đội ngũ tuyển sinh sẽ sớm liên hệ với bạn.",
     quick_replies: [
-      "Điều kiện đầu vào là gì?",
-      "Thông tin về ngành Công nghệ",
-      "Trường có những học bổng nào?",
-      "Học phí bao nhiêu một năm?"
+      { icon: "📝", text: "Quy trình nộp hồ sơ?" },
+      { icon: "💻", text: "Ngành CNTT học những gì?" },
+      { icon: "🏠", text: "Có ký túc xá không?" },
+      { icon: "💰", text: "Học phí một năm bao nhiêu?" }
     ],
     lang_btn: "VI"
   }
@@ -388,9 +388,10 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
               <button 
                 key={idx} 
                 className="quick-reply-chip"
-                onClick={() => handleSendMessage(reply)}
+                onClick={() => handleSendMessage(reply.text)}
               >
-                {reply}
+                <span className="quick-reply-icon">{reply.icon}</span>
+                <span className="quick-reply-text">{reply.text}</span>
               </button>
             ))}
           </div>
