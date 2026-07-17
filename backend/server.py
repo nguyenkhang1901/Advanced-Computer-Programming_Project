@@ -129,6 +129,10 @@ def normalize_query(query):
     tokens = [t for t in s.split() if t not in stop_words and len(t) > 1]
     return " ".join(sorted(tokens))
 
+@app.route('/api/health', methods=['GET'])
+def health_check():
+    return jsonify({"status": "awake", "message": "Render server is running!"}), 200
+
 @app.route('/api/chat', methods=['POST'])
 @limiter.limit("20 per minute")
 def chat():
