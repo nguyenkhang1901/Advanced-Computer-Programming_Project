@@ -26,9 +26,30 @@ PORT = int(os.environ.get('PORT', 5000))
 # Setup database on startup
 setup_database()
 
-# Initialize Google Gen AI
-api_key = os.environ.get('GEMINI_API_KEY')
-ai_client = genai.Client(api_key=api_key) if api_key else None
+# Initialize Gemini AI with Round-Robin strategy for multiple keys
+api_keys_str = os.environ.get('GEMINI_API_KEY')
+ai_clients = []
+current_client_index = 0
+
+if api_keys_str:
+    # Split keys by comma if the user provides multiple keys
+    api_keys = [k.strip() for k in api_keys_str.split(',') if k.strip()]
+    for key in api_keys:
+        try:
+            client = genai.Client(api_key=key)
+            ai_clients.append(client)
+        except Exception as e:
+            print(f"Failed to initialize Gemini Client for key {key[:5]}...: {e}")
+
+def get_next_ai_client():
+    global current_client_index
+    if not ai_clients:
+        return None
+    
+    client = ai_clients[current_client_index]
+    # Move to the next key for the next request (Round-Robin)
+    current_client_index = (current_client_index + 1) % len(ai_clients)
+    return client
 
 # Load Knowledge Data
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -126,7 +147,8 @@ def chat():
                      (session_id, 'user', message))
         conn.commit()
 
-        if not ai_client:
+        client = get_next_ai_client()
+        if not client:
             # Fallback
             reply = "I am currently running in offline mode (no API key). Please contact admissions@asia-vn.edu.vn for more information."
             conn.execute('INSERT INTO chat_logs (session_id, role, message) VALUES (?, ?, ?)',
@@ -199,7 +221,7 @@ RULES:
         def generate():
             full_reply = ""
             try:
-                response = ai_client.models.generate_content_stream(
+                response = client.models.generate_content_stream(
                     model='gemini-2.5-flash',
                     contents=contents_list,
                     config={
