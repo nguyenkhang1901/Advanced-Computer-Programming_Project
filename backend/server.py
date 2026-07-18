@@ -51,6 +51,26 @@ def get_next_ai_client():
     current_client_index = (current_client_index + 1) % len(ai_clients)
     return client
 
+def execute_with_retry(func, *args, **kwargs):
+    """
+    Tries to execute an AI function using the Round-Robin clients.
+    If a client throws an error (e.g. Rate Limit, Bad Key), it catches it
+    and tries the next client in the list, up to len(ai_clients) times.
+    """
+    if not ai_clients:
+        return None
+    
+    last_exception = None
+    for _ in range(len(ai_clients)):
+        client = get_next_ai_client()
+        try:
+            return func(client, *args, **kwargs)
+        except Exception as e:
+            print(f"API Client failed (rotating to next): {e}")
+            last_exception = e
+            
+    raise last_exception
+
 # Load Knowledge Data
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, '..', 'data')
@@ -222,17 +242,29 @@ RULES:
             except Exception as e:
                 print("Image decoding error:", e)
         
+        # Helper function for retry logic
+        def ai_call(client, contents, config):
+            return client.models.generate_content_stream(
+                model='gemini-2.5-flash',
+                contents=contents,
+                config=config
+            )
+
         def generate():
             full_reply = ""
             try:
-                response = client.models.generate_content_stream(
-                    model='gemini-2.5-flash',
-                    contents=contents_list,
-                    config={
-                        'system_instruction': system_prompt + lang_instruction,
-                        'temperature': 0.3
-                    }
-                )
+                # Use retry logic to handle rate limits or bad keys
+                config = {
+                    'system_instruction': system_prompt + lang_instruction,
+                    'temperature': 0.3
+                }
+                
+                # Ensure we have at least one client
+                if not ai_clients:
+                    yield f"data: {json.dumps({'error': 'No API keys configured'})}\n\n"
+                    return
+                    
+                response = execute_with_retry(ai_call, contents_list, config)
                 
                 for chunk in response:
                     text = chunk.text
@@ -245,7 +277,7 @@ RULES:
                 
             except Exception as e:
                 print("Stream error:", e)
-                yield f"data: {json.dumps({'error': 'Stream failed'})}\n\n"
+                yield f"data: {json.dumps({'error': 'Google Gemini API Limit Exceeded'})}\n\n"
             
             finally:
                 # Save the complete reply to the database and cache
@@ -293,13 +325,17 @@ YÊU CẦU:
 """
         lang_instruction = "\nCRITICAL: Reply in English." if language == 'en' else "\nCRITICAL: Reply in Vietnamese."
         
-        response = client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=prompt,
-            config={
-                'system_instruction': prompt + lang_instruction,
-                'temperature': 0.7
-            }
+        def quiz_ai_call(client, contents, config):
+            return client.models.generate_content(
+                model='gemini-2.5-flash',
+                contents=contents,
+                config=config
+            )
+
+        response = execute_with_retry(
+            quiz_ai_call, 
+            prompt, 
+            {'system_instruction': prompt + lang_instruction, 'temperature': 0.7}
         )
         return jsonify({"recommendation": response.text})
     except Exception as e:
