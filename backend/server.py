@@ -71,6 +71,41 @@ def execute_with_retry(func, *args, **kwargs):
             
     raise last_exception
 
+def execute_stream_with_retry(func, *args, **kwargs):
+    """
+    Special retry logic for streaming responses.
+    Generator network requests only fire upon iteration, so we must manually
+    fetch the first chunk to catch rate limit/auth errors before yielding.
+    """
+    if not ai_clients:
+        return
+        
+    last_exception = None
+    for _ in range(len(ai_clients)):
+        client = get_next_ai_client()
+        try:
+            response = func(client, *args, **kwargs)
+            iterator = iter(response)
+            
+            # Fetch first chunk to trigger any immediate API errors
+            try:
+                first_chunk = next(iterator)
+            except StopIteration:
+                return # Empty stream, valid
+                
+            # If we reach here, the API key works!
+            yield first_chunk
+            for chunk in iterator:
+                yield chunk
+                
+            return # Success
+            
+        except Exception as e:
+            print(f"API Stream Client failed (rotating to next): {e}")
+            last_exception = e
+            
+    raise last_exception
+
 # Load Knowledge Data
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, '..', 'data')
@@ -264,7 +299,7 @@ RULES:
                     yield f"data: {json.dumps({'error': 'No API keys configured'})}\n\n"
                     return
                     
-                response = execute_with_retry(ai_call, contents_list, config)
+                response = execute_stream_with_retry(ai_call, contents_list, config)
                 
                 for chunk in response:
                     text = chunk.text
