@@ -172,6 +172,12 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
                   setMessages(prev => prev.map(m => 
                     m.id === botMessageId ? { ...m, text: fullText } : m
                   ));
+                } else if (parsed.error) {
+                  setIsLoading(false);
+                  fullText = "⚠️ " + parsed.error + ". Please try again in a minute (API Rate Limit).";
+                  setMessages(prev => prev.map(m => 
+                    m.id === botMessageId ? { ...m, text: fullText } : m
+                  ));
                 }
               } catch (e) {
                 console.error("Error parsing chunk:", e, dataStr);
