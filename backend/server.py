@@ -129,11 +129,11 @@ def retrieve_context(query, top_k=5):
     
     conn = get_db_connection()
     try:
-        # SQLite does the heavy lifting: filter to max 50 relevant pages instantly
+        # SQLite does the heavy lifting: filter to max 100 relevant pages, prioritizing newest additions
         conditions = " OR ".join(["content LIKE ?" for _ in query_tokens])
         params = [f"%{word}%" for word in query_tokens]
         
-        query_sql = f"SELECT content FROM knowledge_base WHERE {conditions} LIMIT 50"
+        query_sql = f"SELECT content FROM knowledge_base WHERE {conditions} ORDER BY id DESC LIMIT 100"
         rows = conn.execute(query_sql, params).fetchall()
         
         if not rows:
