@@ -19,9 +19,9 @@ const TRANSLATIONS = {
     server_error: "Sorry, the server is currently unavailable. Please try again later.",
     lead_thanks: "Thank you! Our admission team will contact you soon with more details.",
     quick_replies: [
-      { icon: "📝", text: "What are the entry requirements?" },
-      { icon: "💻", text: "Tell me about the IT programs" },
-      { icon: "🏆", text: "Are there any scholarships?" },
+      { icon: "🤖", text: "Does the university offer AI programs?" },
+      { icon: "🔌", text: "Tell me about Semiconductor Technology" },
+      { icon: "⚽", text: "Are there any student clubs?" },
       { icon: "💰", text: "What is the tuition fee?" }
     ],
     lang_btn: "EN"
@@ -41,9 +41,9 @@ const TRANSLATIONS = {
     server_error: "Xin lỗi, máy chủ hiện không khả dụng. Vui lòng thử lại sau.",
     lead_thanks: "Cảm ơn bạn! Đội ngũ tuyển sinh sẽ sớm liên hệ với bạn.",
     quick_replies: [
-      { icon: "📝", text: "Quy trình nộp hồ sơ?" },
-      { icon: "💻", text: "Ngành CNTT học những gì?" },
-      { icon: "🏠", text: "Có ký túc xá không?" },
+      { icon: "🤖", text: "Trường có đào tạo ngành AI không?" },
+      { icon: "🔌", text: "Ngành Bán dẫn học những gì?" },
+      { icon: "⚽", text: "Có các câu lạc bộ sinh viên nào?" },
       { icon: "💰", text: "Học phí một năm bao nhiêu?" }
     ],
     lang_btn: "VI"
