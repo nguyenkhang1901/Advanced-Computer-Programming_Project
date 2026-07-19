@@ -280,7 +280,7 @@ RULES:
         # Helper function for retry logic
         def ai_call(client, contents, config):
             return client.models.generate_content_stream(
-                model='gemini-1.5-flash',
+                model='gemini-2.5-flash',
                 contents=contents,
                 config=config
             )
@@ -370,7 +370,7 @@ YÊU CẦU:
         
         def quiz_ai_call(client, contents, config):
             return client.models.generate_content(
-                model='gemini-1.5-flash',
+                model='gemini-2.5-flash',
                 contents=contents,
                 config=config
             )
