@@ -312,7 +312,15 @@ RULES:
                 
             except Exception as e:
                 print("Stream error:", e)
-                yield f"data: {json.dumps({'error': 'Google Gemini API Limit Exceeded'})}\n\n"
+                error_msg = str(e).replace('"', "'")
+                # Format a user-friendly message based on the exception type
+                if "429" in error_msg or "Quota" in error_msg:
+                    display_error = "Google Gemini API Limit Exceeded (429 Quota). Please try again later."
+                elif "400" in error_msg or "INVALID_ARGUMENT" in error_msg:
+                    display_error = "Invalid Google Gemini API Key configured in backend."
+                else:
+                    display_error = f"API Error: {error_msg[:100]}"
+                yield f"data: {json.dumps({'error': display_error})}\n\n"
             
             finally:
                 # Save the complete reply to the database and cache
