@@ -1,0 +1,146 @@
+Nguồn: https://asia-vn.edu.vn/en/asia-university-vietnam-phat-trien-nhan-luc-ban-dan/
+--------------------------------------------------
+
+Asia University Vietnam phát triển nguồn nhân lực bán dẫn có khả năng làm chủ AI
+Skip to content
+Áp lực tối ưu chi phí đang buộc nhiều hãng công nghệ phải tìm cách tích hợp tính năng thông minh vào những dòng chip giá rẻ thay vì chạy đua nâng cấp phần cứng. Chia sẻ về thực tế này, ông Vũ Quốc Thiều – Project Manager tại FPT Software cho biết đây là một thách thức kỹ thuật lớn nhưng lại mở ra cánh cửa cơ hội rộng mở cho nhân sự kỹ thuật tại Việt Nam.
+Cuộc đua tối ưu chi phí phần cứng
+Thị trường thiết bị thông minh (IoT) đang có sự chuyển mình mạnh mẽ về tư duy sản xuất. Thay vì chạy đua nâng cấp phần cứng đắt đỏ, các tập đoàn công nghệ chuyển sang tận dụng tối đa sức mạnh của những con chip vi xử lý sẵn có (thường là các dòng chip giá rẻ, cấu hình thấp) để giảm giá thành sản phẩm. Một chiếc cửa cuốn, một bóng đèn hay một chiếc quạt máy đời cũ có thể trở thành thiết bị thông minh, hiểu được lệnh từ điện thoại nếu kỹ sư biết cách can thiệp vào chip xử lý của chúng.
+Chia sẻ về thực tế này, tại một hội thảo về bán dẫn và AI do Asia University Vietnam tổ chức, ông Vũ Quốc Thiều cho biết, các doanh nghiệp quốc tế đang đặt ra những bài toán rất cụ thể. Họ muốn sản phẩm của mình phải kết nối được với các hệ sinh thái lớn như Apple hay Google nhưng không muốn tăng chi phí sản xuất.
+Ông Thiều dẫn chứng cụ thể về dự án phát triển bộ điều khiển cửa garage (Garage Door Opener) cho một đối tác lớn tại thị trường Bắc Mỹ do đội ngũ kỹ sư của FPT Software đã triển khai. Khách hàng đặt bài toán nâng cấp thiết bị vốn chỉ dùng điều khiển cầm tay thành sản phẩm thông minh, hỗ trợ điều khiển bằng giọng nói và kết nối với các hệ sinh thái lớn như Apple, Samsung, Google hay Amazon.
+Thách thức nằm ở chỗ phần cứng của thiết bị đã được cố định từ trước, sử dụng dòng chip vi xử lý có bộ nhớ rất thấp và tài nguyên hạn chế nhằm tiết kiệm chi phí sản xuất.
+Ông Vũ Quốc Thiều – Project Manager tại FPT Software chia sẻ giải pháp đưa tính năng thông minh vào các dòng chip giá rẻ, giúp doanh nghiệp tiết kiệm chi phí sản xuất
+Theo ông Vũ Quốc Thiều, các doanh nghiệp sản xuất thường rất hạn chế việc thay đổi phần cứng vì chỉ một điều chỉnh nhỏ cũng có thể khiến chi phí tăng mạnh khi áp dụng cho hàng trăm nghìn sản phẩm. Do đó, bài toán lớn đặt ra cho kỹ sư là phải làm sao bổ sung những tính năng thông minh, hiện đại vào một con chip vốn có dung lượng bộ nhớ và tài nguyên rất hạn chế.
+Giải bài toán khó bằng năng lực làm chủ công nghệ
+Đứng trước bài toán khó này, thay vì đề xuất khách hàng mua linh kiện mới đắt tiền hơn, đội ngũ kỹ sư đã lựa chọn giải pháp nâng cấp phần mềm. Các kỹ sư phải tính toán chi tiết, cắt giảm những mã lệnh dư thừa để mọi tính năng mới đều vận hành mượt mà trên nền tảng phần cứng cũ.
+Kết quả là thiết bị sau khi được nâng cấp phần mềm đã hoạt động ổn định và tương thích với cả 4 hệ sinh thái lớn là Apple, Samsung, Google và Amazon mà không làm tăng giá thành sản xuất.
+Chia sẻ thêm, ông Thiều cho biết mục tiêu của đội ngũ là tìm ra cách làm tiết kiệm và nhanh nhất cho khách hàng. Theo ông, đích đến cuối cùng không chỉ là làm cho thiết bị chạy ổn định, mà còn phải giúp sản phẩm vượt qua các bài kiểm tra khắt khe để lấy được chứng chỉ quốc tế. Đây là điều kiện bắt buộc để sản phẩm có thể được bán rộng rãi trên thị trường toàn cầu.
+Thực tế cho thấy, để biến các thiết bị đơn giản thành sản phẩm thông minh (như nhận diện giọng nói, tự động báo lỗi), thị trường lao động hiện nay cần những kỹ sư công nghệ biết cách ứng dụng trí tuệ nhân tạo (AI) trực tiếp lên vi mạch. Đồng thời hiểu được bài toán kinh tế của doanh nghiệp để đưa ra giải pháp tối ưu nhất.
+Chương trình đào tạo tích hợp kiến thức AI vào Công nghệ bán dẫn
+Từ yêu cầu thực tế của thị trường, chương trình đào tạo
+ngành Công nghệ bán dẫn
+của Asia University Vietnam được xây dựng  theo hướng tích hợp toàn diện. Sinh viên được trang bị tư duy ứng dụng Trí tuệ nhân tạo (AI) xuyên suốt quá trình học.
+Sinh viên Asia University Vietnam được trang bị năng lực kép về bán dẫn và AI, sẵn sàng giải quyết các bài toán công nghệ của thị trường toàn cầu
+Từ những học phần nền tảng, người học đã được làm quen với việc kết hợp lập trình và AI. Kiến thức này sau đó được nâng cao qua các học phần chuyên sâu trong chương trình học như Introduction to Artificial Intelligence & Internet of Things – AIoT (Nhập môn Trí tuệ nhân tạo và Internet vạn vật – AIoT) hay Introduction to Intelligent Manufacturing System (Nhập môn Hệ thống sản xuất thông minh). Nhờ đó, sinh viên biết cách đưa trí tuệ nhân tạo vào bên trong các vi mạch nhỏ gọn, giúp con chip có thể tự xử lý dữ liệu – đáp ứng năng lực mà các tập đoàn công nghệ toàn cầu đang tìm kiếm.
+Sinh viên ngành Công nghệ bán dẫn sẽ được trang bị những kiến thức thực tế nhất để giải quyết bài toán cân bằng giữa phần cứng và phần mềm. Các bạn sẽ hiểu được cách làm sao để một thuật toán AI có thể chạy tốt trên một con chip nhỏ gọn, hay làm sao để thiết kế mạch điện tiết kiệm năng lượng nhất. Đây chính là năng lực “tối ưu chi phí sản xuất” mà các chuyên gia như ông Vũ Quốc Thiều đã nhắc đến.
+Điểm vượt trội của Asia University Vietnam nằm ở chiến lược đào tạo nhân lực bán dẫn tích hợp sâu với trí tuệ nhân tạo. Sinh viên ra trường không chỉ am hiểu phần cứng mà còn làm chủ công nghệ thông minh. Chính năng lực kép này sẽ tạo nên lợi thế cạnh tranh khác biệt, giúp các kỹ sư tương lai tự tin gia nhập và khẳng định vị thế trên thị trường lao động toàn cầu.
+LIÊN HỆ VỚI CHÚNG TÔI
+Cơ sở Hà Nội:
+Số 8 Tôn Thất Thuyết, Phường Cầu Giấy, TP. Hà Nội
+asiaunivietnam@fpt.edu.vn
+0775 127 333
+Cơ sở TP. Hồ Chí Minh:
+Global Education Space, số 485 Lê Quang Định, Phường Hạnh Thông, TP. Hồ Chí Minh
+asiaunivietnam@fpt.edu.vn
+0775 867 333
+TIN TỨC MỚI NHẤT
+Asia University
+2026/07/15
+Mùa hoa tử vi nở rộ tại Asia University – một góc Đài Loan đang chờ sinh viên Asia University Program khám phá
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/15
+Asia University tăng 100 bậc tại THE Impact Rankings 2026, gắn phát triển bền vững với chương trình học và trải nghiệm quốc tế
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+“Asia Summer Cup 2026” khởi tranh, khuấy động mùa hè bằng những trận cầu sinh viên rực lửa
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+Ngoại ngữ trở thành lợi thế giúp nam sinh Đồng Tháp “bước vào” ngành bán dẫn
+9 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/13
+Học Tài chính trong kỷ nguyên AI: 3 nhóm vị trí đòi hỏi năng lực dữ liệu và công nghệ
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Tin tức liên quan
+Asia University
+2026/07/15
+Mùa hoa tử vi nở rộ tại Asia University – một góc Đài Loan đang chờ sinh viên Asia University Program khám phá
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/15
+Asia University tăng 100 bậc tại THE Impact Rankings 2026, gắn phát triển bền vững với chương trình học và trải nghiệm quốc tế
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+“Asia Summer Cup 2026” khởi tranh, khuấy động mùa hè bằng những trận cầu sinh viên rực lửa
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Tải thêm
+Về chúng tôi
+Giới thiệu chung
+Lý do chọn chúng tôi
+Giải thưởng và thành tựu
+Giảng viên và chuyên gia
+Các câu hỏi thường gặp
+Mẫu văn bằng
+Quy định cho phép mở ngành
+Kết nối doanh nghiệp
+Cuộc sống sinh viên
+Công dân toàn cầu
+Cuộc sống sinh viên ở Đài Loan
+Cuộc sống sinh viên ở Việt Nam
+Trải nghiệm quốc tế
+Dịch vụ sinh viên
+Ngành học
+Công nghệ bán dẫn
+Trí tuệ nhân tạo (AI)
+Quản trị kinh doanh
+Tài chính
+Nghiên cứu khoa học
+Tuyển sinh
+Thông báo tuyển sinh
+Học bổng
+Học phí
+Tài liệu tuyển sinh
+Tin tức
+Sự kiện
+Sinh viên hiện tại
+Đăng nhập
+Đăng nhập Canvas
+Quy định đào tạo
+Dịch vụ sinh viên
+Hỗ trợ học tập
+Kết nối phụ huynh
+Career success
+Sinh viên tương lai
+Liên hệ
+Chat Zalo
+Chat Zalo
+Hotline 0775127333
+Hotline 0775127333
+Đăng ký tư vấn
+Đăng ký tư vấn

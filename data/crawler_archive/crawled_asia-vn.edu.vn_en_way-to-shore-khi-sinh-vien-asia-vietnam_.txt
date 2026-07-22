@@ -1,0 +1,148 @@
+Nguồn: https://asia-vn.edu.vn/en/way-to-shore-khi-sinh-vien-asia-vietnam/
+--------------------------------------------------
+
+"Way to Shore": Khi sinh viên Asia Vietnam phát triển game di động truyền tải thông điệp bảo vệ môi trường biển - Trang thông tin chính thức của ASIA University Vietnam
+Skip to content
+Trong số đó, “Way to Shore” (Đường về bờ) là một dự án tiêu biểu, được triển khai theo hướng trò chơi di động nhằm nâng cao nhận thức về bảo vệ môi trường biển. Sản phẩm với ý tưởng xoay quanh hành trình của một sinh vật biển vượt qua rác thải và các mối nguy trong đại dương để tiếp tục sinh tồn.
+Khi bài toán môi trường trở thành chất liệu cho dự án của sinh viên
+Điểm khác biệt trong cách đào tạo tại Asia Vietnam chính là áp dụng phương pháp học tập qua dự án (Project-based learning). Ngay từ những học kỳ đầu, sinh viên đã bắt đầu làm quen với việc phát triển một ứng dụng hoàn chỉnh trong thời gian giới hạn, bên cạnh việc tiếp thu kiến thức trên lớp. Quá trình này giúp người học từng bước hiểu cách một ý tưởng được triển khai, cách các vai trò trong nhóm được phân chia và phối hợp để đi đến kết quả cuối cùng.
+Dự án
+“Way to Shore”
+là một ví dụ rõ nét. Ý tưởng của trò chơi nảy sinh từ một vấn đề mang tính thời sự: ô nhiễm rác thải nhựa đại dương. Trần Trung Hiếu – Sinh viên ngành Công nghệ bán dẫn Asia Vietnam, thành viên phụ trách đề xuất ý tưởng và kiểm thử sản phẩm chia sẻ:
+“Ý tưởng về trò chơi nảy ra khi chúng em vô tình đọc được bài báo về thực trạng xả rác bừa bãi ra biển. Nhóm quyết định dùng chính dự án này để nhắc nhở mọi người về việc bảo vệ sinh vật biển, đặc biệt là những loài dễ bị tổn thương như rùa”.
+Way to Shore – trò chơi di động do sinh viên Asia University Vietnam phát triển với thông điệp bảo vệ môi trường biển
+Trong trò chơi, người chơi điều khiển một chú rùa di chuyển trong đại dương, tránh các chướng ngại vật là rác thải do con người tạo ra để tiếp tục hành trình về phía trước. Cách xây dựng này giúp câu chuyện trong game trở nên dễ tiếp cận, đồng thời gợi mở một góc nhìn trực quan hơn về những tác động của ô nhiễm môi trường đối với sinh vật biển.
+Việc đưa những vấn đề gần gũi vào nội dung học tập giúp sinh viên có thêm cơ hội suy nghĩ về ý nghĩa của sản phẩm mình tạo ra, hình thành tư duy trách nhiệm với cộng đồng ngay từ khi còn ngồi trên ghế nhà trường.
+Ứng dụng công nghệ và trí tuệ nhân tạo trong sản phẩm đầu tay
+Dù mới ở năm học đầu tiên của các ngành Công nghệ bán dẫn, nhóm sinh viên đã tiếp cận và vận dụng được các công cụ công nghệ trong quá trình phát triển sản phẩm. Trong khoảng 7 tuần, các thành viên tự triển khai nhiều phần việc khác nhau, từ thiết kế hình ảnh, xây dựng chuyển động đến lập trình và hoàn thiện chức năng cơ bản của trò chơi.
+Ứng dụng được thiết kế trên nền tảng MIT App Inventor 2, với hệ thống logic được tổ chức theo các khối lệnh trực quan. Bên cạnh đó, nhóm tận dụng các công cụ trí tuệ nhân tạo để hỗ trợ thiết kế bản đồ môi trường và lớp nền cho từng cấp độ, giúp rút ngắn thời gian xử lý và cải thiện chất lượng hình ảnh.
+Về mặt kỹ thuật, trò chơi sử dụng thao tác vuốt trên màn hình để điều khiển nhân vật di chuyển, tạo cảm giác tương tác trực tiếp cho người chơi. Hệ thống cũng tích hợp bộ nhớ cục bộ TinyDB để lưu trữ điểm số, qua đó cho phép theo dõi tiến trình sau mỗi lượt chơi. Phần hình ảnh được xây dựng theo hướng đơn giản, dễ nhận diện, tập trung vào chuyển động và sự tương tác giữa nhân vật với các chướng ngại vật.
+Trần Minh Sơn – Sinh viên ngành Công nghệ bán dẫn, thành viên phụ trách animation (hoạt họa) chia sẻ:
+“Chúng em cố gắng xây dựng hình ảnh chú rùa và bối cảnh biển sao cho gần gũi nhất. Quan trọng là làm sao để người chơi thấy được tác động của rác thải thông qua các va chạm trong trò chơi, từ đó tác động đến nhận thức bảo vệ môi trường biển”.
+Trong quá trình hoàn thiện, nhóm cũng gặp một số vướng mắc về vận hành, chẳng hạn lỗi các vật cản không trở về trạng thái ban đầu sau khi kết thúc lượt chơi. Sau khi kiểm thử, các thành viên đã điều chỉnh lại logic để trò chơi hoạt động ổn định hơn. Những trải nghiệm như vậy giúp sinh viên hình dung rõ hơn về quy trình tạo ra sản phẩm, từ xây dựng tính năng đến kiểm tra và cải tiến trước khi hoàn thiện.
+Sơ đồ logic vận hành của game Way to Shore do sinh viên Asia Vietnam xây dựng
+Hình thành kỹ năng thiết yếu cho môi trường làm việc toàn cầu
+Quá trình thực hiện dự án tại Asia Vietnam mang lại nhiều trải nghiệm vượt ra ngoài phạm vi kiến thức trên giảng được. Với môi trường học tập 100% bằng tiếng Anh và làm việc nhóm liên tục, sinh viên năm nhất từng bước hình thành khả năng giao tiếp, tư duy phản biện và quản lý tiến độ công việc.
+Với “Way to Shore”, nhóm gồm 5 thành viên đảm nhận các vai trò khác nhau như trưởng nhóm, lập trình chính, hỗ trợ lập trình, thiết kế chuyển động và kiểm thử sản phẩm. Cách phân công này giúp từng thành viên hiểu rõ trách nhiệm của mình, đồng thời tạo điều kiện để cả nhóm phối hợp hiệu quả trong suốt quá trình phát triển.
+Từ nền tảng ban đầu, nhóm cũng đã tính đến việc tiếp tục hoàn thiện sản phẩm với một số ý tưởng mới như bổ sung hiệu ứng ánh sáng dưới biển, mở rộng hệ thống sinh vật trong game và xây dựng thêm các cơ chế hỗ trợ nhân vật. Những chi tiết như tia nắng xuyên qua làn nước hay hiệu ứng làm mờ khi rùa đi qua khu vực nhiều rác được kỳ vọng sẽ giúp trải nghiệm chơi trở nên sinh động hơn.
+Qua “Way to Shore”, sinh viên từng bước hình dung rõ hơn về cách một sản phẩm công nghệ được xây dựng và hoàn thiện. Từ việc phân chia công việc, theo dõi tiến độ đến thử nghiệm và điều chỉnh, mỗi giai đoạn đều mang lại những kinh nghiệm cụ thể. Đây cũng là nền tảng để người học tiếp tục hoàn thiện năng lực cá nhân và sẵn sàng tham gia vào môi trường làm việc có tính kết nối và yêu cầu cao trong tương lai.
+LIÊN HỆ VỚI CHÚNG TÔI
+Cơ sở Hà Nội:
+Số 8 Tôn Thất Thuyết, Phường Cầu Giấy, TP. Hà Nội
+asiaunivietnam@fpt.edu.vn
+0775 127 333
+Cơ sở TP. Hồ Chí Minh:
+Global Education Space, số 485 Lê Quang Định, Phường Hạnh Thông, TP. Hồ Chí Minh
+asiaunivietnam@fpt.edu.vn
+0775 867 333
+TIN TỨC MỚI NHẤT
+Asia University
+2026/07/15
+Mùa hoa tử vi nở rộ tại Asia University – một góc Đài Loan đang chờ sinh viên Asia University Program khám phá
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/15
+Asia University tăng 100 bậc tại THE Impact Rankings 2026, gắn phát triển bền vững với chương trình học và trải nghiệm quốc tế
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+“Asia Summer Cup 2026” khởi tranh, khuấy động mùa hè bằng những trận cầu sinh viên rực lửa
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+Ngoại ngữ trở thành lợi thế giúp nam sinh Đồng Tháp “bước vào” ngành bán dẫn
+9 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/13
+Học Tài chính trong kỷ nguyên AI: 3 nhóm vị trí đòi hỏi năng lực dữ liệu và công nghệ
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Tin tức liên quan
+Asia University
+2026/07/15
+Mùa hoa tử vi nở rộ tại Asia University – một góc Đài Loan đang chờ sinh viên Asia University Program khám phá
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/15
+Asia University tăng 100 bậc tại THE Impact Rankings 2026, gắn phát triển bền vững với chương trình học và trải nghiệm quốc tế
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+“Asia Summer Cup 2026” khởi tranh, khuấy động mùa hè bằng những trận cầu sinh viên rực lửa
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Tải thêm
+Về chúng tôi
+Giới thiệu chung
+Lý do chọn chúng tôi
+Giải thưởng và thành tựu
+Giảng viên và chuyên gia
+Các câu hỏi thường gặp
+Mẫu văn bằng
+Quy định cho phép mở ngành
+Kết nối doanh nghiệp
+Cuộc sống sinh viên
+Công dân toàn cầu
+Cuộc sống sinh viên ở Đài Loan
+Cuộc sống sinh viên ở Việt Nam
+Trải nghiệm quốc tế
+Dịch vụ sinh viên
+Ngành học
+Công nghệ bán dẫn
+Trí tuệ nhân tạo (AI)
+Quản trị kinh doanh
+Tài chính
+Nghiên cứu khoa học
+Tuyển sinh
+Thông báo tuyển sinh
+Học bổng
+Học phí
+Tài liệu tuyển sinh
+Tin tức
+Sự kiện
+Sinh viên hiện tại
+Đăng nhập
+Đăng nhập Canvas
+Quy định đào tạo
+Dịch vụ sinh viên
+Hỗ trợ học tập
+Kết nối phụ huynh
+Career success
+Sinh viên tương lai
+Liên hệ
+Chat Zalo
+Chat Zalo
+Hotline 0775127333
+Hotline 0775127333
+Đăng ký tư vấn
+Đăng ký tư vấn

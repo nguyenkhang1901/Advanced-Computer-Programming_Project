@@ -1,0 +1,152 @@
+Nguồn: https://asia-vn.edu.vn/en/chuyen-gia-ai-ban-dan-va-an-ninh-mang-sci-2026/
+--------------------------------------------------
+
+Quy tụ chuyên gia AI, bán dẫn và an ninh mạng tại diễn đàn công nghệ trong khuôn khổ SCI-2026 - Trang thông tin chính thức của ASIA University Vietnam
+Skip to content
+Khác với không gian học thuật rộng của SCI-2026, QASS tập trung vào câu hỏi cụ thể hơn: các công nghệ mới đang được ứng dụng như thế nào trong sản xuất, vận hành và quản trị doanh nghiệp. Nội dung chương trình được xây dựng theo hướng dễ tiếp cận, gắn với bài toán thực tiễn, giúp người tham dự hình dung rõ hơn cách công nghệ đi vào hoạt động hằng ngày.
+Từ ứng dụng AI trong vận hành đến hạ tầng công nghệ của doanh nghiệp
+Một trong những nội dung đáng chú ý của diễn đàn là việc đưa trí tuệ nhân tạo vào vận hành doanh nghiệp. Ông Phạm Duy Phúc – Giám đốc Dự án Chiến lược, Tập đoàn FPT, dự kiến chia sẻ cách AI đang được ứng dụng trong quá trình chuyển đổi doanh nghiệp, từ phân tích dữ liệu đến hỗ trợ ra quyết định và nâng cao hiệu quả hoạt động. Đây cũng là hướng đi mà nhiều doanh nghiệp đang quan tâm, khi AI dần trở thành công cụ phục vụ trực tiếp cho công việc hằng ngày.
+Bên cạnh đó, ông Dongwoo Hwang, đại diện Quantum AI Co., Ltd., cùng TS. Nguyễn Quốc Hùng – Giám đốc Viện Công nghệ Lượng tử Việt Nam, Đại học Quốc gia Hà Nội, sẽ đề cập đến các phương pháp tối ưu mới, trong đó có AI lượng tử. Nội dung này giúp người tham dự hiểu rõ hơn cách công nghệ có thể hỗ trợ giải những bài toán phức tạp như lập kế hoạch sản xuất, tối ưu chuỗi cung ứng hay phân bổ nguồn lực trong doanh nghiệp.
+Không chỉ dừng ở phần mềm và thuật toán, diễn đàn cũng dành sự quan tâm đến nền tảng phần cứng. Giáo sư Oh Hyunseok – Trưởng khoa Thiết kế bán dẫn, Đại học Gachon (Hàn Quốc) sẽ trình bày về vai trò của chip trong các hệ thống công nghiệp hiện đại. Các hệ thống như tự động hóa, robot hay thiết bị kết nối chỉ có thể hoạt động hiệu quả khi có phần cứng đủ mạnh, xử lý nhanh và tiết kiệm năng lượng.
+Khi trí tuệ nhân tạo và công nghệ bán dẫn được đưa vào cùng một chương trình, người tham dự có thể nhìn rõ hơn mối liên hệ giữa phần mềm và phần cứng. Trong thực tế, một hệ thống công nghệ chỉ phát huy hiệu quả khi cả hai yếu tố này được phát triển đồng thời và phù hợp với nhu cầu sử dụng.
+Người tham dự diễn đàn công nghệ trong khuôn khổ SCI-2026 sẽ được tìm hiểu cách ứng dụng AI, chip thông minh và bảo mật hệ thống vào sản xuất và vận hành doanh nghiệp
+An ninh mạng trở thành điều kiện để hệ thống số vận hành ổn định
+Cùng với AI và bán dẫn, an ninh mạng được xem là một trụ cột quan trọng trong nội dung của diễn đàn. Ông Ngô Tuấn Anh – Chủ tịch Mạng lưới Đổi mới sáng tạo và Chuyên gia An ninh mạng Việt Nam (VISECURITY); Tổng Giám đốc SafeGate và ông Lê Anh Bình – Giám đốc Toàn cầu kiêm Quản lý Sản phẩm, SafeGate (SCS) cùng TS. Phương Cao – Nhà nghiên cứu an ninh mạng, Trung tâm Ứng dụng Siêu máy tính Quốc gia (NCSA), Đại học Illinois Urbana-Champaign (Hoa Kỳ) sẽ tập trung vào các giải pháp bảo mật cho hệ thống doanh nghiệp trong môi trường số.
+Các nội dung tập trung vào cách bảo vệ hệ thống ngay từ khâu thiết kế, nhận diện sớm nguy cơ tấn công và đảm bảo dữ liệu được vận hành an toàn. Khi thiết bị, máy móc và dữ liệu ngày càng được kết nối, yêu cầu bảo mật không còn là vấn đề riêng của bộ phận công nghệ, mà trở thành yếu tố cần thiết để duy trì hoạt động ổn định của doanh nghiệp.
+An ninh mạng cũng được đặt như một nội dung quan trọng trong chương trình, cho thấy cách tiếp cận toàn diện đối với công nghệ hiện nay. Một hệ thống thông minh không chỉ cần hoạt động hiệu quả mà còn phải đảm bảo an toàn trong suốt quá trình vận hành.
+Theo chương trình dự kiến, diễn đàn gồm các phiên trình bày chuyên đề và một phiên thảo luận giữa các diễn giả. Nội dung được xây dựng theo hướng gắn với thực tế, giúp người tham dự hiểu rõ hơn cách các công nghệ được áp dụng trong doanh nghiệp và những vấn đề có thể phát sinh khi triển khai.
+Gắn đào tạo AI và Công nghệ bán dẫn với thực tế doanh nghiệp
+Hiện nay, AI không còn phát triển riêng lẻ mà gắn chặt với dữ liệu, phần cứng và hệ thống kết nối. Trong khi đó, công nghệ bán dẫn đóng vai trò nền tảng, giúp các hệ thống AI vận hành nhanh và ổn định. Điều này đòi hỏi người học không chỉ nắm vững kiến thức mà còn hiểu cách các công nghệ này được ứng dụng trong thực tế.
+Những nội dung tại diễn đàn như tối ưu vận hành bằng AI, ứng dụng trong sản xuất, vai trò của chip thông minh hay bảo mật hệ thống đều là các tình huống mà sinh viên có thể gặp khi đi làm. Đây cũng là những hướng mà chương trình đào tạo tại Asia University Vietnam đang tập trung.
+Thông qua các hội thảo chuyên môn, sinh viên có cơ hội tiếp cận cách doanh nghiệp triển khai công nghệ trong thực tế, từ xử lý dữ liệu đến vận hành và bảo vệ hệ thống. Nhờ đó, kiến thức trên lớp được kết nối rõ ràng hơn với môi trường làm việc, đồng thời giúp người học định hình kỹ năng cần thiết cho tương lai.
+Cách tiếp cận này hướng tới việc giúp sinh viên không chỉ hiểu công nghệ, mà còn biết cách sử dụng công nghệ để giải quyết vấn đề cụ thể, phù hợp với yêu cầu ngày càng cao của thị trường lao động quốc tế.
+Thông tin sự kiện
+Tên sự kiện:
+Hội thảo doanh nghiệp “AI lượng tử, Chip thông minh & Giải pháp an toàn cho ngành Công nghiệp thế hệ mới”
+Thời gian:
+08:00 – 12:00, Thứ Ba ngày 28/04/2026
+Địa điểm:
+Diamond Conference Hall, Tầng 8, Hall C, FPT Tower, số 10 Phạm Văn Bạch, Cầu Giấy, Hà Nội
+Link đăng ký:
+https://asia-vn.edu.vn/hoithao-ai-luong-tu-va-chip-thong-minh
+Ban tổ chức dành 100 vé miễn phí cho 100 người đăng ký đầu tiên.
+LIÊN HỆ VỚI CHÚNG TÔI
+Cơ sở Hà Nội:
+Số 8 Tôn Thất Thuyết, Phường Cầu Giấy, TP. Hà Nội
+asiaunivietnam@fpt.edu.vn
+0775 127 333
+Cơ sở TP. Hồ Chí Minh:
+Global Education Space, số 485 Lê Quang Định, Phường Hạnh Thông, TP. Hồ Chí Minh
+asiaunivietnam@fpt.edu.vn
+0775 867 333
+TIN TỨC MỚI NHẤT
+Asia University
+2026/07/15
+Mùa hoa tử vi nở rộ tại Asia University – một góc Đài Loan đang chờ sinh viên Asia University Program khám phá
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/15
+Asia University tăng 100 bậc tại THE Impact Rankings 2026, gắn phát triển bền vững với chương trình học và trải nghiệm quốc tế
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+“Asia Summer Cup 2026” khởi tranh, khuấy động mùa hè bằng những trận cầu sinh viên rực lửa
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+Ngoại ngữ trở thành lợi thế giúp nam sinh Đồng Tháp “bước vào” ngành bán dẫn
+9 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/13
+Học Tài chính trong kỷ nguyên AI: 3 nhóm vị trí đòi hỏi năng lực dữ liệu và công nghệ
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Tin tức liên quan
+Asia University
+2026/07/15
+Mùa hoa tử vi nở rộ tại Asia University – một góc Đài Loan đang chờ sinh viên Asia University Program khám phá
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/15
+Asia University tăng 100 bậc tại THE Impact Rankings 2026, gắn phát triển bền vững với chương trình học và trải nghiệm quốc tế
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+“Asia Summer Cup 2026” khởi tranh, khuấy động mùa hè bằng những trận cầu sinh viên rực lửa
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Tải thêm
+Về chúng tôi
+Giới thiệu chung
+Lý do chọn chúng tôi
+Giải thưởng và thành tựu
+Giảng viên và chuyên gia
+Các câu hỏi thường gặp
+Mẫu văn bằng
+Quy định cho phép mở ngành
+Kết nối doanh nghiệp
+Cuộc sống sinh viên
+Công dân toàn cầu
+Cuộc sống sinh viên ở Đài Loan
+Cuộc sống sinh viên ở Việt Nam
+Trải nghiệm quốc tế
+Dịch vụ sinh viên
+Ngành học
+Công nghệ bán dẫn
+Trí tuệ nhân tạo (AI)
+Quản trị kinh doanh
+Tài chính
+Nghiên cứu khoa học
+Tuyển sinh
+Thông báo tuyển sinh
+Học bổng
+Học phí
+Tài liệu tuyển sinh
+Tin tức
+Sự kiện
+Sinh viên hiện tại
+Đăng nhập
+Đăng nhập Canvas
+Quy định đào tạo
+Dịch vụ sinh viên
+Hỗ trợ học tập
+Kết nối phụ huynh
+Career success
+Sinh viên tương lai
+Liên hệ
+Chat Zalo
+Chat Zalo
+Hotline 0775127333
+Hotline 0775127333
+Đăng ký tư vấn
+Đăng ký tư vấn

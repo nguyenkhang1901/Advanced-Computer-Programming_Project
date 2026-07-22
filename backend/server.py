@@ -129,32 +129,48 @@ def retrieve_context(query, top_k=5):
     
     conn = get_db_connection()
     try:
-        # SQLite does the heavy lifting: filter to max 100 relevant pages, prioritizing newest additions
-        conditions = " OR ".join(["content LIKE ?" for _ in query_tokens])
-        params = [f"%{word}%" for word in query_tokens]
-        
-        query_sql = f"SELECT content FROM knowledge_base WHERE {conditions} ORDER BY id DESC LIMIT 100"
-        rows = conn.execute(query_sql, params).fetchall()
+        # Fetch all documents since we cleaned the DB to only contain core data
+        query_sql = "SELECT content FROM knowledge_base"
+        rows = conn.execute(query_sql).fetchall()
         
         if not rows:
             return "No relevant context found."
             
-        # Re-score the paragraphs in Python
         retrieved_chunks = []
         for row in rows:
             content = row['content']
             paragraphs = re.split(r'\n\s*\n', content)
             for p in paragraphs:
-                if len(p.strip()) > 50:
+                if len(p.strip()) > 20:
                     retrieved_chunks.append(p.strip())
                     
-        # Score the extracted paragraphs
+        # Implement BM25 Scoring
+        k1 = 1.5
+        b = 0.75
+        
+        doc_lengths = [len(re.findall(r'\w+', doc.lower())) for doc in retrieved_chunks]
+        avg_dl = sum(doc_lengths) / max(1, len(doc_lengths))
+        
+        idfs = {}
+        N = len(retrieved_chunks)
+        for q in query_tokens:
+            n_q = sum(1 for doc in retrieved_chunks if q in re.findall(r'\w+', doc.lower()))
+            idf = math.log(((N - n_q + 0.5) / (n_q + 0.5)) + 1)
+            idfs[q] = max(0.01, idf)
+            
         scores = []
-        for chunk in retrieved_chunks:
+        for i, chunk in enumerate(retrieved_chunks):
             chunk_tokens = re.findall(r'\w+', chunk.lower())
             chunk_counts = Counter(chunk_tokens)
-            score = sum(chunk_counts[q] for q in query_tokens)
-            score = score / (math.sqrt(len(chunk_tokens)) + 1) if chunk_tokens else 0
+            dl = doc_lengths[i]
+            
+            score = 0
+            for q in query_tokens:
+                tf = chunk_counts[q]
+                if tf > 0:
+                    numerator = tf * (k1 + 1)
+                    denominator = tf + k1 * (1 - b + b * (dl / max(1, avg_dl)))
+                    score += idfs[q] * (numerator / denominator)
             scores.append(score)
             
         top_indices = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:top_k]
@@ -162,7 +178,7 @@ def retrieve_context(query, top_k=5):
         
         return "\n\n---\n\n".join(best_chunks) if best_chunks else "No relevant context found."
     except Exception as e:
-        print("SQLite RAG Error:", e)
+        print("SQLite BM25 Error:", e)
         return "No relevant context found."
     finally:
         conn.close()

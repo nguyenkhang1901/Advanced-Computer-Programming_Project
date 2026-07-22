@@ -1,0 +1,152 @@
+Nguồn: https://asia-vn.edu.vn/chuyen-gia-do-van-huong-thiet-ke-chip-ai/
+--------------------------------------------------
+
+Chuyên gia Đỗ Văn Hướng chia sẻ về thiết kế chip AI
+Bỏ qua nội dung
+Tại Hội thảo quốc tế “AI Semiconductors and the Future Workforce: Opportunities for Vietnam and Beyond” do Asia University Vietnam tổ chức, ông Đỗ Văn Hướng, Nhà nghiên cứu cao cấp tại ASICLAND (Hàn Quốc), đã mang đến một bài tham luận sâu về chủ đề “Thiết kế chip AI và triển khai trên nền tảng Edge” (AI Chip and Edge Deployment), phác thảo hành trình 5 năm biến ý tưởng thành một con chip AI chuyên dụng.
+Mở đầu bài chia sẻ, ông Hướng nhấn mạnh bối cảnh ngành công nghiệp bán dẫn đang thay đổi mạnh mẽ, đặc biệt tại Hàn Quốc, nơi các “unicorn” (kỳ lân) về AI Semiconductor đang phát triển nhanh chóng.
+Ông cho rằng thế giới đang bước vào một cuộc cách mạng mới, vượt ra ngoài giới hạn của CPU (Bộ xử lý trung tâm) hay GPU (Bộ xử lý đồ họa) truyền thống để tiến tới các chip AI chuyên dụng (như NPUs, TPUs,..) cho các tác vụ cụ thể.
+Hành trình 5 năm tạo ra chip AI chuyên dụng AB9
+Để minh họa cho quá trình này, ông Đỗ Văn Hướng đã giới thiệu một case study thực tế: chip AI AB9. Đây là dự án kéo dài 5 năm (từ 2017 đến 2022) do chính phủ Hàn Quốc đầu tư 100%, với sự hợp tác của ASICLAND và Viện ETRI.
+“Con chip AB9 này được sản xuất dựa trên công nghệ 28nm của TSMC. Để có được con chip này, chúng tôi mất 5 năm”,
+ông Hướng cho biết.
+Theo ông Hướng, điểm đột phá trong thiết kế chip AI nằm ở khối lõi xử lý trung tâm, gọi là STC hay Tensor Core. Đây chính là “bộ não” đảm nhiệm các phép tính ma trận – nền tảng của hầu hết các mô hình AI. Trong khi đó, những thành phần khác như giao tiếp PCI-E hay DMA chỉ đóng vai trò hỗ trợ, giúp kết nối và truyền dữ liệu giữa các bộ phận của chip.
+Ông nhận định, phát triển phần cứng (hardware) mới chỉ là bước khởi đầu. Thách thức lớn hơn nằm ở việc làm sao để các mô hình AI phổ biến có thể tương thích và vận hành hiệu quả trên con chip chuyên dụng vừa được thiết kế.
+Để giải quyết bài toán đó, nhóm phát triển đã xây dựng bộ phần mềm SDK – công cụ giúp biên dịch và chuyển đổi các mô hình học sâu (deep learning models) sao cho chúng có thể hoạt động trên bộ xử lý STC của con chip.
+Ông Đỗ Văn Hướng đã có bài chia sẻ chuyên sâu về chủ đề “Thiết kế chip AI và triển khai trên nền tảng Edge” tại Hội thảo quốc tế “AI Semiconductors and the Future Workforce: Opportunities for Vietnam and Beyond” do Asia University Vietnam tổ chức
+Ông Đỗ Văn Hướng đã có bài chia sẻ chuyên sâu về chủ đề “Thiết kế chip AI và triển khai trên nền tảng Edge” tại Hội thảo quốc tế “AI Semiconductors and the Future Workforce: Opportunities for Vietnam and Beyond” do Asia University Vietnam tổ chức
+Bộ SDK này được phát triển chủ yếu bằng ngôn ngữ C++, kết hợp với Python và thư viện PyTorch, nhằm chuyển đổi các mô hình AI từ những nền tảng phổ biến như Google Tensor hay NVIDIA CUDA sang tập lệnh riêng của chip AB9, giúp chip có thể hiểu và thực thi các mô hình đó.
+Xu hướng tương lai chính là “AI at the Edge”
+Hiệu quả của AB9 được thể hiện rõ qua hàng loạt ứng dụng thực tế mà ông Hướng trực tiếp trình bày tại hội thảo như:
+N
+hận diện khuôn mặt (Face Recognition): Sử dụng mô hình InsightFace, hệ thống trên chip AB9 có thể nhận diện và đối chiếu ID nhân viên theo thời gian thực.
+Nhận diện chữ viết tay (Handwriting Recognition): Đặc biệt với bài toán chữ viết tay tiếng Hàn, nhóm đã triển khai thành công mô hình Swin Transformer – một thuật toán AI phức tạp để số hóa tài liệu viết tay.
+Nhận diện biển số xe (License Plate Recognition): Hệ thống sử dụng mô hình YOLO để phát hiện và Deep-OCR để “đọc” chính xác biển số xe.
+Hệ thống Homecare: Một ứng dụng thực tiễn khác là hệ thống camera giám sát, sử dụng AI để phát hiện người già bị ngã (fall-down detection) và gửi cảnh báo.
+Kết thúc phần trình bày, chuyên gia Đỗ Văn Hướng nhấn mạnh rằng “AI tại biên” (AI at the Edge) sẽ là xu hướng phát triển tất yếu trong tương lai.
+Khái niệm AI tại biên đề cập đến việc xử lý dữ liệu và vận hành trí tuệ nhân tạo trực tiếp trên thiết bị, chẳng hạn như thiết bị IoT (Internet of Things – Internet vạn vật), xe tự hành hoặc camera thông minh.
+Theo ông Hướng, thay vì sử dụng các CPU đa năng như hiện nay, những thiết bị này sẽ cần đến chip AI chuyên dụng, được thiết kế riêng cho từng loại tác vụ nhằm tăng tốc độ xử lý, tiết kiệm năng lượng và đảm bảo khả năng phản hồi tức thời.
+“Lợi ích của việc này là tiết kiệm năng lượng , tiết kiệm chi phí và tối ưu hiệu suất”,
+ông Hướng phân tích. Ông cho rằng đây chính là cơ hội lớn để lực lượng lao động trẻ của Việt Nam, đặc biệt là các sinh viên đang theo học tại
+Asia University Vietnam,
+có thể nắm bắt, trau dồi kiến thức về cả AI và thiết kế vi mạch (semiconductor) để đón đầu làn sóng công nghệ thiết yếu này.
+LIÊN HỆ VỚI CHÚNG TÔI
+Cơ sở Hà Nội:
+Số 8 Tôn Thất Thuyết, Phường Cầu Giấy, TP. Hà Nội
+asiaunivietnam@fpt.edu.vn
+0775 127 333
+Cơ sở TP. Hồ Chí Minh:
+Global Education Space, số 485 Lê Quang Định, Phường Hạnh Thông, TP. Hồ Chí Minh
+asiaunivietnam@fpt.edu.vn
+0775 867 333
+TIN TỨC MỚI NHẤT
+Asia University
+2026/07/15
+Mùa hoa tử vi nở rộ tại Asia University – một góc Đài Loan đang chờ sinh viên Asia University Program khám phá
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/15
+Asia University tăng 100 bậc tại THE Impact Rankings 2026, gắn phát triển bền vững với chương trình học và trải nghiệm quốc tế
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+“Asia Summer Cup 2026” khởi tranh, khuấy động mùa hè bằng những trận cầu sinh viên rực lửa
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+Ngoại ngữ trở thành lợi thế giúp nam sinh Đồng Tháp “bước vào” ngành bán dẫn
+9 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/13
+Học Tài chính trong kỷ nguyên AI: 3 nhóm vị trí đòi hỏi năng lực dữ liệu và công nghệ
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Tin tức liên quan
+Asia University
+2026/07/15
+Mùa hoa tử vi nở rộ tại Asia University – một góc Đài Loan đang chờ sinh viên Asia University Program khám phá
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/15
+Asia University tăng 100 bậc tại THE Impact Rankings 2026, gắn phát triển bền vững với chương trình học và trải nghiệm quốc tế
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+“Asia Summer Cup 2026” khởi tranh, khuấy động mùa hè bằng những trận cầu sinh viên rực lửa
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Tải thêm
+Về chúng tôi
+Giới thiệu chung
+Lý do chọn chúng tôi
+Giải thưởng và thành tựu
+Giảng viên và chuyên gia
+Các câu hỏi thường gặp
+Mẫu văn bằng
+Quy định cho phép mở ngành
+Kết nối doanh nghiệp
+Cuộc sống sinh viên
+Công dân toàn cầu
+Cuộc sống sinh viên ở Đài Loan
+Cuộc sống sinh viên ở Việt Nam
+Trải nghiệm quốc tế
+Dịch vụ sinh viên
+Ngành học
+Công nghệ bán dẫn
+Trí tuệ nhân tạo (AI)
+Quản trị kinh doanh
+Tài chính
+Nghiên cứu khoa học
+Tuyển sinh
+Thông báo tuyển sinh
+Học bổng
+Học phí
+Tài liệu tuyển sinh
+Tin tức
+Sự kiện
+Sinh viên hiện tại
+Đăng nhập
+Đăng nhập Canvas
+Quy định đào tạo
+Dịch vụ sinh viên
+Hỗ trợ học tập
+Kết nối phụ huynh
+Career success
+Sinh viên tương lai
+Liên hệ
+Chat Zalo
+Chat Zalo
+Hotline 0775127333
+Hotline 0775127333
+Đăng ký tư vấn
+Đăng ký tư vấn

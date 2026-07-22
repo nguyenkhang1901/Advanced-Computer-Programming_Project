@@ -1,0 +1,148 @@
+Nguồn: https://asia-vn.edu.vn/sinh-vien-asia-vietnam-ung-dung-ai/
+--------------------------------------------------
+
+Sinh viên Asia Vietnam ứng dụng AI vào bài toán quản lý kết nối cá nhân
+Bỏ qua nội dung
+Không chỉ dừng ở một bài tập trên lớp, dự án cho thấy cách sinh viên từng bước chuyển từ việc tiếp cận khái niệm trí tuệ nhân tạo sang nhận diện vấn đề, thiết kế giải pháp, xây dựng bản demo và trình bày hướng phát triển sản phẩm.
+Khi sinh viên AI tìm giải pháp cho một vấn đề đời thường
+Theo chia sẻ từ các bạn sinh viên, namecard (thẻ tên) giấy có nhiều hạn chế trong bối cảnh kết nối hiện nay. Thông tin trên namecard có thể nhanh chóng lỗi thời khi người dùng thay đổi chức danh, số điện thoại hoặc địa chỉ liên hệ. Bên cạnh đó, namecard giấy dễ thất lạc, khó tìm kiếm lại khi số lượng mối quan hệ tăng lên và không hỗ trợ phân tích dữ liệu sau các hoạt động networking (xây dựng và mở rộng mạng lưới quan hệ).
+Từ quan sát đó, nhóm sinh viên lựa chọn phát triển ứng dụng namecard số, giúp người dùng tạo, chỉnh sửa, chia sẻ và quản lý thông tin liên hệ thuận tiện hơn. Nguyễn Khánh Duy, Trưởng nhóm dự án, cho biết nhóm bắt đầu từ một vấn đề gần gũi trong đời sống và công việc: việc in, lưu giữ và quản lý danh thiếp giấy không còn thật sự phù hợp với nhịp kết nối nhanh hiện nay.
+“Người dùng sẽ không cần nhớ chính xác tên người mình cần tìm, mà chỉ cần nhập nghề nghiệp, địa điểm, AI sẽ tự lọc và đưa ra những ứng cử viên phù hợp”
+, Duy chia sẻ.
+Từ một bất tiện nhỏ trong hoạt động giao tiếp, nhóm đã phát triển ý tưởng thành một sản phẩm có quy trình sử dụng cụ thể. Đây là bước chuyển quan trọng trong tư duy học tập của sinh viên AI: không chỉ hỏi công nghệ hoạt động như thế nào, mà còn đặt câu hỏi công nghệ có thể giải quyết vấn đề gì cho người dùng.
+Sinh viên ngànhTrí tuệ nhân tạo Asia Vietnam demo ứng dụng namecard số trong học phần “Introduction to AI”
+Từ ý tưởng đến bản demo: Sinh viên học ứng dụng AI vào sản phẩm
+Trong phần demo, nhóm trình bày hành trình sử dụng cơ bản của ứng dụng gồm tạo tài khoản, chỉnh sửa thông tin cá nhân, tạo namecard số, xuất file hoặc chia sẻ qua QR code (mã QR). Ứng dụng hướng tới trải nghiệm chia sẻ nhanh, không tiếp xúc, giúp người nhận có thể truy cập thông tin liên hệ mà không cần cài đặt thêm ứng dụng.
+Ở giai đoạn hiện tại, nhóm tự đánh giá tính năng chỉnh sửa namecard và quét mã QR là hai phần đã hoàn thiện tốt nhất. Đây là các tính năng lõi giúp sản phẩm mô phỏng tương đối rõ cách một người dùng tạo và chia sẻ danh thiếp số trong thực tế.
+Điểm đáng chú ý của dự án nằm ở định hướng tích hợp AI vào tính năng tìm kiếm thông minh. Thay vì phải nhớ chính xác tên một người trong danh bạ, người dùng có thể nhập các thông tin gợi ý như nghề nghiệp hoặc địa điểm. Hệ thống sẽ hỗ trợ lọc và đề xuất những liên hệ phù hợp hơn.
+Dù mới ở giai đoạn đánh giá giữa kỳ, dự án đã cho thấy sinh viên có sự tiến bộ trong cách tiếp cận một bài toán công nghệ. Từ việc học các khái niệm nền tảng về AI, nhóm đã biết phân tích vấn đề, xác định người dùng, xây dựng luồng trải nghiệm, lựa chọn tính năng ưu tiên và trình bày lộ trình phát triển tiếp theo.
+Sau học phần, sinh viên hiểu rõ hơn về cách một dự án công nghệ được phát triển
+Với các bạn sinh viên, khó khăn lớn nhất là ở quá trình biến ý tưởng thành sản phẩm có thể vận hành. Phần lập trình ứng dụng là thử thách lớn, đặc biệt khi phải làm quen với công cụ phát triển app (ứng dụng) và chuẩn bị cho việc tích hợp mô hình AI ở các bước tiếp theo.
+Theo thầy Nguyễn Huy Toán – Giảng viên học phần Introduction to AI, mục tiêu của học phần là giúp sinh viên tiếp cận các khái niệm nền tảng của trí tuệ nhân tạo, đồng thời hiểu cách AI được ứng dụng trong đời sống và trong vòng đời phát triển phần mềm.
+Từ góc độ giảng viên, thầy Nguyễn Huy Toán đánh giá phần trình bày giữa kỳ cho thấy sinh viên đã bước đầu hiểu cách một dự án công nghệ được tổ chức và phát triển. “
+Các em đã cho thấy sự hiểu biết về vòng đời phát triển phần mềm, đây là bước đi đầu tiên trên con đường trở thành kỹ sư AI hoặc nhà phát triển phần mềm
+”, thầy nhận định.
+Thông qua dự án AI-Powered Smart Digital Namecard, sinh viên được thử nghiệm đưa công nghệ vào một tình huống sử dụng cụ thể. Từ nhu cầu trao đổi thông tin liên hệ trong đời sống và công việc, nhóm đã phát triển một bản demo có khả năng mở rộng, đồng thời xác định các hướng hoàn thiện tiếp theo như lưu trữ dữ liệu, tìm kiếm thông minh và phân tích mạng lưới kết nối.
+Buổi trình bày giữa kỳ của học phần Introduction to AI phản ánh quá trình sinh viên
+Asia Vietnam
+từng bước hình thành tư duy sản phẩm, kỹ năng làm việc nhóm, năng lực trình bày giải pháp và khả năng nhìn nhận một dự án AI trong bối cảnh ứng dụng thực tế.
+LIÊN HỆ VỚI CHÚNG TÔI
+Cơ sở Hà Nội:
+Số 8 Tôn Thất Thuyết, Phường Cầu Giấy, TP. Hà Nội
+asiaunivietnam@fpt.edu.vn
+0775 127 333
+Cơ sở TP. Hồ Chí Minh:
+Global Education Space, số 485 Lê Quang Định, Phường Hạnh Thông, TP. Hồ Chí Minh
+asiaunivietnam@fpt.edu.vn
+0775 867 333
+TIN TỨC MỚI NHẤT
+Asia University
+2026/07/15
+Mùa hoa tử vi nở rộ tại Asia University – một góc Đài Loan đang chờ sinh viên Asia University Program khám phá
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/15
+Asia University tăng 100 bậc tại THE Impact Rankings 2026, gắn phát triển bền vững với chương trình học và trải nghiệm quốc tế
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+“Asia Summer Cup 2026” khởi tranh, khuấy động mùa hè bằng những trận cầu sinh viên rực lửa
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+Ngoại ngữ trở thành lợi thế giúp nam sinh Đồng Tháp “bước vào” ngành bán dẫn
+9 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/13
+Học Tài chính trong kỷ nguyên AI: 3 nhóm vị trí đòi hỏi năng lực dữ liệu và công nghệ
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Tin tức liên quan
+Asia University
+2026/07/15
+Mùa hoa tử vi nở rộ tại Asia University – một góc Đài Loan đang chờ sinh viên Asia University Program khám phá
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/15
+Asia University tăng 100 bậc tại THE Impact Rankings 2026, gắn phát triển bền vững với chương trình học và trải nghiệm quốc tế
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+“Asia Summer Cup 2026” khởi tranh, khuấy động mùa hè bằng những trận cầu sinh viên rực lửa
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Tải thêm
+Về chúng tôi
+Giới thiệu chung
+Lý do chọn chúng tôi
+Giải thưởng và thành tựu
+Giảng viên và chuyên gia
+Các câu hỏi thường gặp
+Mẫu văn bằng
+Quy định cho phép mở ngành
+Kết nối doanh nghiệp
+Cuộc sống sinh viên
+Công dân toàn cầu
+Cuộc sống sinh viên ở Đài Loan
+Cuộc sống sinh viên ở Việt Nam
+Trải nghiệm quốc tế
+Dịch vụ sinh viên
+Ngành học
+Công nghệ bán dẫn
+Trí tuệ nhân tạo (AI)
+Quản trị kinh doanh
+Tài chính
+Nghiên cứu khoa học
+Tuyển sinh
+Thông báo tuyển sinh
+Học bổng
+Học phí
+Tài liệu tuyển sinh
+Tin tức
+Sự kiện
+Sinh viên hiện tại
+Đăng nhập
+Đăng nhập Canvas
+Quy định đào tạo
+Dịch vụ sinh viên
+Hỗ trợ học tập
+Kết nối phụ huynh
+Career success
+Sinh viên tương lai
+Liên hệ
+Chat Zalo
+Chat Zalo
+Hotline 0775127333
+Hotline 0775127333
+Đăng ký tư vấn
+Đăng ký tư vấn

@@ -1,0 +1,153 @@
+Nguồn: https://asia-vn.edu.vn/en/swin-aiis-2026-hoi-thao-ung-dung-tri-tue-nhan-tao/
+--------------------------------------------------
+
+Swin-AIIS 2026: Ứng dụng Trí tuệ Nhân tạo và Giải pháp Thông minh cho Doanh nghiệp
+Skip to content
+Trí tuệ nhân tạo không còn là khái niệm gắn với những thuật toán trừu tượng hay các công bố học thuật xa rời thực tế. Ngày nay, công nghệ này đã và đang hiện diện trong những quy trình vận hành cụ thể của doanh nghiệp, bệnh viện, tổ chức giáo dục và cơ quan quản lý. AI không chỉ phân tích dữ liệu mà đang tham gia trực tiếp vào quá trình ra quyết định, tối ưu nguồn lực và định hình chiến lược phát triển.
+Trong bối cảnh đó, một diễn đàn chuyên sâu quy tụ các chuyên gia học thuật và đại diện doanh nghiệp sẽ diễn ra vào sáng ngày 6/3/2026 tại Đà Nẵng, do Asia University Vietnam phối hợp cùng Swinburne Vietnam tổ chức.
+Hội thảo “Ứng dụng Trí tuệ Nhân tạo và Giải pháp Thông minh cho Doanh nghiệp” (Swin-AIIS 2026) được thiết kế với một định hướng rõ ràng: không dừng lại ở việc bàn luận về bản chất hay tiềm năng của trí tuệ nhân tạo, mà tập trung vào cách công nghệ này được triển khai trong thực tiễn, nhằm giải quyết những bài toán cụ thể của doanh nghiệp, tổ chức và cộng đồng.
+Sự kiện nằm trong khuôn khổ “Hội nghị quốc tế lần thứ 11 về Công nghệ Thông tin Thông minh” – một diễn đàn học thuật quốc tế quy tụ các nhà nghiên cứu, chuyên gia và đại diện doanh nghiệp từ nhiều quốc gia nhằm trao đổi về các giải pháp công nghệ tiên tiến và xu hướng phát triển mới trong lĩnh vực công nghệ thông tin thông minh.
+AI không chỉ là xu hướng mà là năng lực vận hành
+Điểm khác biệt của hội thảo năm nay nằm ở cách đặt vấn đề. Trí tuệ nhân tạo được nhìn nhận như một công cụ tạo giá trị thực tiễn, thay vì một chủ đề mang tính xu hướng. Các phiên thảo luận tập trung vào việc ứng dụng AI trong môi trường công nghiệp và kinh doanh thực tế: từ chuyển hóa dữ liệu thành quyết định chiến lược, tối ưu quy trình vận hành, đến nâng cao năng lực cạnh tranh bền vững của tổ chức.
+Các nội dung trao đổi xoay quanh những trục chủ đề thiết thực như: ứng dụng trí tuệ nhân tạo và dữ liệu lớn trong ra quyết định thông minh; chuyển đổi dữ liệu thành giá trị kinh doanh; xây dựng hệ thống vận hành thông minh nhằm nâng cao hiệu suất và đổi mới sáng tạo; ứng dụng phân tích dữ liệu trong doanh nghiệp và lĩnh vực y tế; cũng như chuẩn bị nguồn nhân lực cho một nền công nghiệp được vận hành bởi trí tuệ nhân tạo.
+Thông qua các tham luận và trao đổi chuyên sâu, người tham dự có cơ hội tiếp cận những trường hợp ứng dụng cụ thể, lắng nghe kinh nghiệm triển khai thực tế và cả những thách thức khi đưa hệ thống thông minh vào môi trường vận hành phức tạp. Đây là quá trình giúp hình dung rõ hơn con đường AI đi từ nghiên cứu, qua thử nghiệm, đến tạo ra tác động có thể đo lường trong sản xuất, dịch vụ và quản trị.
+Swin-AIIS 2026 do Asia University Vietnam đồng tổ chức diễn ra vào ngày 6/3/2026 tại Đà Nẵng
+Gắn kết học thuật với công nghiệp và định hướng nghề nghiệp
+Hội thảo quy tụ các nhà khoa học, chuyên gia công nghệ và nhà hoạch định chiến lược đến từ môi trường đại học và doanh nghiệp. Các diễn giả không chỉ chia sẻ góc nhìn lý thuyết mà còn mang đến trải nghiệm triển khai thực tế trong lĩnh vực y tế, phân tích dữ liệu doanh nghiệp, hệ thống tự động và quản trị công nghệ.
+Đối với Asia University Vietnam, sự kiện lần này đồng thời khẳng định một định hướng quan trọng: giáo dục công nghệ và trí tuệ nhân tạo phải gắn liền với bối cảnh công nghiệp. Sinh viên và giảng viên không chỉ tiếp cận kiến thức nền tảng mà còn cần hiểu cách công nghệ được vận hành trong thực tế, cách giải pháp được thiết kế để đáp ứng yêu cầu của tổ chức, và cách nguồn nhân lực công nghệ thích ứng với những thay đổi nhanh chóng của thị trường lao động số.
+Những câu hỏi được đặt ra không còn dừng ở “AI có thể làm gì”, mà chuyển sang “AI cần được triển khai như thế nào để tạo giá trị bền vững”. Làm sao để trí tuệ nhân tạo trở thành một phần của hạ tầng vận hành, thay vì chỉ là một dự án thử nghiệm? Làm sao để hệ thống thông minh vận hành hiệu quả trong môi trường đa biến động? Và làm sao để thế hệ nhân lực trẻ đủ năng lực đảm nhận vai trò này?
+Hội thảo dành cho ai?
+Lãnh đạo doanh nghiệp và nhà khởi nghiệp: Mong muốn ứng dụng trí tuệ nhân tạo và phân tích dữ liệu nhằm nâng cao hiệu suất vận hành, tối ưu hoạch định chiến lược và cải thiện kết quả kinh doanh.
+Chuyên gia trong ngành và chuyên gia công nghệ: Tìm kiếm những góc nhìn thực tiễn về ứng dụng AI, phân tích dữ liệu, tự động hóa và hệ thống thông minh để hỗ trợ ra quyết định hiệu quả hơn và quản lý rủi ro tốt hơn.
+Nhà nghiên cứu và giảng viên đại học: Quan tâm đến việc kết nối nghiên cứu học thuật với thực tiễn công nghiệp, đồng thời khám phá các mô hình, khung phương pháp và trường hợp ứng dụng trí tuệ nhân tạo trong bối cảnh thực tế.
+Sinh viên và chuyên gia trẻ: Mong muốn tiếp cận trí tuệ công nghiệp ứng dụng, phát triển kỹ năng thực hành và tìm hiểu các cơ hội nghề nghiệp mới trong lĩnh vực dữ liệu, trí tuệ nhân tạo và chuyển đổi số.
+Những người quan tâm đến trí tuệ công nghiệp: Kỳ vọng nâng cao hiểu biết về cách các phương pháp tiếp cận dựa trên trí tuệ dữ liệu và hệ thống thông minh đang tái định hình các ngành nghề và tổ chức.
+Thông tin sự kiện
+Thời gian
+: 8h00 đến 12h00 ngày 06/03/2026
+Địa điểm
+: Swinburne Vietnam (Cơ sở Đà Nẵng) – Lô A1–A2, Khu đô thị FPT City, Hòa Hải, Ngũ Hành Sơn, Đà Nẵng
+Người tham dự có thể đăng ký theo các hạng vé với ưu đãi dành cho đăng ký sớm đến hết ngày 04/03/2026.
+Đăng ký tham dự:
+Tại đây
+Trong thời đại mà trí tuệ nhân tạo đang hiện diện ngày càng sâu rộng trong mọi lĩnh vực của đời sống kinh tế – công nghệ – xã hội, (Swin-AIIS 2026) không chỉ là nơi chia sẻ tri thức, mà còn là điểm kết nối giữa ý tưởng và tác động thực tế. Đây là diễn đàn dành cho những ai mong muốn nhìn thấy AI không chỉ như một xu hướng công nghệ, mà như một năng lực vận hành chiến lược của tổ chức và nền kinh tế số.
+LIÊN HỆ VỚI CHÚNG TÔI
+Cơ sở Hà Nội:
+Số 8 Tôn Thất Thuyết, Phường Cầu Giấy, TP. Hà Nội
+asiaunivietnam@fpt.edu.vn
+0775 127 333
+Cơ sở TP. Hồ Chí Minh:
+Global Education Space, số 485 Lê Quang Định, Phường Hạnh Thông, TP. Hồ Chí Minh
+asiaunivietnam@fpt.edu.vn
+0775 867 333
+TIN TỨC MỚI NHẤT
+Asia University
+2026/07/15
+Mùa hoa tử vi nở rộ tại Asia University – một góc Đài Loan đang chờ sinh viên Asia University Program khám phá
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/15
+Asia University tăng 100 bậc tại THE Impact Rankings 2026, gắn phát triển bền vững với chương trình học và trải nghiệm quốc tế
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+“Asia Summer Cup 2026” khởi tranh, khuấy động mùa hè bằng những trận cầu sinh viên rực lửa
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+Ngoại ngữ trở thành lợi thế giúp nam sinh Đồng Tháp “bước vào” ngành bán dẫn
+9 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/13
+Học Tài chính trong kỷ nguyên AI: 3 nhóm vị trí đòi hỏi năng lực dữ liệu và công nghệ
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Tin tức liên quan
+Asia University
+2026/07/15
+Mùa hoa tử vi nở rộ tại Asia University – một góc Đài Loan đang chờ sinh viên Asia University Program khám phá
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/15
+Asia University tăng 100 bậc tại THE Impact Rankings 2026, gắn phát triển bền vững với chương trình học và trải nghiệm quốc tế
+11 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Asia University
+2026/07/14
+“Asia Summer Cup 2026” khởi tranh, khuấy động mùa hè bằng những trận cầu sinh viên rực lửa
+7 min. read
+Share
+Share
+Copy Link
+Link copied to clipboard!
+Tải thêm
+Về chúng tôi
+Giới thiệu chung
+Lý do chọn chúng tôi
+Giải thưởng và thành tựu
+Giảng viên và chuyên gia
+Các câu hỏi thường gặp
+Mẫu văn bằng
+Quy định cho phép mở ngành
+Kết nối doanh nghiệp
+Cuộc sống sinh viên
+Công dân toàn cầu
+Cuộc sống sinh viên ở Đài Loan
+Cuộc sống sinh viên ở Việt Nam
+Trải nghiệm quốc tế
+Dịch vụ sinh viên
+Ngành học
+Công nghệ bán dẫn
+Trí tuệ nhân tạo (AI)
+Quản trị kinh doanh
+Tài chính
+Nghiên cứu khoa học
+Tuyển sinh
+Thông báo tuyển sinh
+Học bổng
+Học phí
+Tài liệu tuyển sinh
+Tin tức
+Sự kiện
+Sinh viên hiện tại
+Đăng nhập
+Đăng nhập Canvas
+Quy định đào tạo
+Dịch vụ sinh viên
+Hỗ trợ học tập
+Kết nối phụ huynh
+Career success
+Sinh viên tương lai
+Liên hệ
+Chat Zalo
+Chat Zalo
+Hotline 0775127333
+Hotline 0775127333
+Đăng ký tư vấn
+Đăng ký tư vấn
