@@ -62,17 +62,17 @@ def main():
     data_raw_dir = '../data/data_raw'
     
     print("Processing JSON files...")
-    if os.path.exists(os.path.join(data_dir, 'scholarships.json')):
-        process_json_scholarships(os.path.join(data_dir, 'scholarships.json'))
-    if os.path.exists(os.path.join(data_dir, 'programs.json')):
-        process_json_programs(os.path.join(data_dir, 'programs.json'))
-    if os.path.exists(os.path.join(data_dir, 'faqs.json')):
-        process_json_faqs(os.path.join(data_dir, 'faqs.json'))
+    if os.path.exists(os.path.join(data_raw_dir, 'scholarships.json')):
+        process_json_scholarships(os.path.join(data_raw_dir, 'scholarships.json'))
+    if os.path.exists(os.path.join(data_raw_dir, 'programs.json')):
+        process_json_programs(os.path.join(data_raw_dir, 'programs.json'))
+    if os.path.exists(os.path.join(data_raw_dir, 'faqs.json')):
+        process_json_faqs(os.path.join(data_raw_dir, 'faqs.json'))
         
     print("Processing TXT files...")
     if os.path.exists(data_raw_dir):
         for filename in os.listdir(data_raw_dir):
-            if filename.endswith('.txt') and not filename.startswith('crawled'):
+            if filename.endswith('.txt'):
                 filepath = os.path.join(data_raw_dir, filename)
                 process_txt_file(filepath)
                 
