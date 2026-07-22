@@ -141,15 +141,25 @@ def retrieve_context(query, top_k=5):
     conn = get_db_connection()
     try:
         # Fetch all documents since we cleaned the DB to only contain core data
-        query_sql = "SELECT content FROM knowledge_base"
+        # Fetch filename as well to boost structured data
+        query_sql = "SELECT filename, content FROM knowledge_base"
         rows = conn.execute(query_sql).fetchall()
         
         if not rows:
             return "No relevant context found."
             
         retrieved_chunks = []
+        chunk_filenames = []
         for row in rows:
             content = row['content']
+            filename = row['filename']
+            
+            # Do not chunk if the entire document is reasonably small (e.g., < 3000 chars)
+            if len(content) < 3000:
+                retrieved_chunks.append(content)
+                chunk_filenames.append(filename)
+                continue
+                
             lines = content.split('\n')
             current_chunk = []
             current_len = 0
@@ -159,12 +169,14 @@ def retrieve_context(query, top_k=5):
                     continue
                 current_chunk.append(line)
                 current_len += len(line)
-                if current_len > 800:
+                if current_len > 1200:
                     retrieved_chunks.append('\n'.join(current_chunk))
+                    chunk_filenames.append(filename)
                     current_chunk = []
                     current_len = 0
             if current_chunk:
                 retrieved_chunks.append('\n'.join(current_chunk))
+                chunk_filenames.append(filename)
                     
         # Implement N-Gram BM25 Scoring
         k1 = 1.5
@@ -195,6 +207,11 @@ def retrieve_context(query, top_k=5):
                     numerator = tf * (k1 + 1)
                     denominator = tf + k1 * (1 - b + b * (dl / max(1, avg_dl)))
                     score += idfs[q] * (numerator / denominator) * n_gram_weight
+            
+            # Boost score for structured data (JSON derived) to ensure it beats random news articles
+            if chunk_filenames[i].endswith('.json') or chunk_filenames[i] == 'all_scholarships_combined.txt':
+                score *= 20.0
+                
             scores.append(score)
             
         top_indices = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:top_k]
