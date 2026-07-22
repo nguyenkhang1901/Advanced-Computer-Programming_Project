@@ -139,10 +139,21 @@ def retrieve_context(query, top_k=5):
         retrieved_chunks = []
         for row in rows:
             content = row['content']
-            paragraphs = re.split(r'\n\s*\n', content)
-            for p in paragraphs:
-                if len(p.strip()) > 20:
-                    retrieved_chunks.append(p.strip())
+            lines = content.split('\n')
+            current_chunk = []
+            current_len = 0
+            for line in lines:
+                line = line.strip()
+                if not line:
+                    continue
+                current_chunk.append(line)
+                current_len += len(line)
+                if current_len > 800:
+                    retrieved_chunks.append('\n'.join(current_chunk))
+                    current_chunk = []
+                    current_len = 0
+            if current_chunk:
+                retrieved_chunks.append('\n'.join(current_chunk))
                     
         # Implement BM25 Scoring
         k1 = 1.5
