@@ -123,7 +123,18 @@ def load_knowledge():
     pass
 
 def retrieve_context(query, top_k=5):
-    query_tokens = [t for t in re.findall(r'\w+', query.lower()) if len(t) > 2]
+    query_lower = query.lower()
+    words = re.findall(r'\w+', query_lower)
+    
+    query_tokens = []
+    # Generate 1-gram, 2-gram, 3-gram
+    for n in range(1, 4):
+        for i in range(len(words) - n + 1):
+            query_tokens.append(' '.join(words[i:i+n]))
+            
+    # Filter out very short tokens and duplicates
+    query_tokens = list(set([t for t in query_tokens if len(t) > 2]))
+    
     if not query_tokens:
         query_tokens = ['asia', 'university'] # fallback default
     
@@ -155,7 +166,7 @@ def retrieve_context(query, top_k=5):
             if current_chunk:
                 retrieved_chunks.append('\n'.join(current_chunk))
                     
-        # Implement BM25 Scoring
+        # Implement N-Gram BM25 Scoring
         k1 = 1.5
         b = 0.75
         
@@ -164,24 +175,26 @@ def retrieve_context(query, top_k=5):
         
         idfs = {}
         N = len(retrieved_chunks)
+        retrieved_chunks_lower = [doc.lower() for doc in retrieved_chunks]
+        
         for q in query_tokens:
-            n_q = sum(1 for doc in retrieved_chunks if q in re.findall(r'\w+', doc.lower()))
+            n_q = sum(1 for doc_lower in retrieved_chunks_lower if q in doc_lower)
             idf = math.log(((N - n_q + 0.5) / (n_q + 0.5)) + 1)
             idfs[q] = max(0.01, idf)
             
         scores = []
-        for i, chunk in enumerate(retrieved_chunks):
-            chunk_tokens = re.findall(r'\w+', chunk.lower())
-            chunk_counts = Counter(chunk_tokens)
+        for i, chunk_lower in enumerate(retrieved_chunks_lower):
             dl = doc_lengths[i]
             
             score = 0
             for q in query_tokens:
-                tf = chunk_counts[q]
+                # Count exact phrase occurrences in the document chunk
+                tf = chunk_lower.count(q)
                 if tf > 0:
+                    n_gram_weight = len(q.split()) # Give 2x weight to 2-grams, 3x weight to 3-grams
                     numerator = tf * (k1 + 1)
                     denominator = tf + k1 * (1 - b + b * (dl / max(1, avg_dl)))
-                    score += idfs[q] * (numerator / denominator)
+                    score += idfs[q] * (numerator / denominator) * n_gram_weight
             scores.append(score)
             
         top_indices = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:top_k]
