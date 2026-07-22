@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { Send, GraduationCap, Users, Globe, Sun, Moon, Mic, Volume2, Paperclip, X, Compass } from 'lucide-react';
+import { Send, Compass, Users, Sun, Moon, Globe, Mic, Volume2, Paperclip, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const TRANSLATIONS = {
   en: {
     welcome: "Hello! Welcome to Asia University Vietnam. I'm your AI admission consultant. How can I help you today?",
-    placeholder: "Ask anything about Asia University Vietnam...",
+    placeholder: "Ask about programs, scholarships, admissions...",
     lead_prompt: "Would you like us to contact you with more personalized information?",
     name: "Your Name",
     email: "Your Email",
@@ -18,17 +18,30 @@ const TRANSLATIONS = {
     recommend_btn: "Get Personalized Recommendation",
     server_error: "Sorry, the server is currently unavailable. Please try again later.",
     lead_thanks: "Thank you! Our admission team will contact you soon with more details.",
-    quick_replies: [
-      { icon: "🤖", text: "Does the university offer AI programs?" },
-      { icon: "🔌", text: "Tell me about Semiconductor Technology" },
-      { icon: "⚽", text: "Are there any student clubs?" },
-      { icon: "💰", text: "What is the tuition fee?" }
+    headerSub: "AI Admission Consulting Assistant · 24/7",
+    statusText: "Online",
+    emptyTitle: "Hello! How can I<br/>help you today?",
+    emptySubtitle: "Ask anything about <strong>Asia University Vietnam</strong> – programs, scholarships, admissions, life in Taiwan.",
+    footerHint: "Press Enter to send · Shift+Enter for new line",
+    newChat: "New Conversation",
+    langNotice: "🇬🇧 Switched to English – AI will respond in English.",
+    toastNewChat: "✅ New conversation started",
+    emptyTags: [
+      '🏆 Available scholarships?', '📚 Programs & majors',
+      '📋 Admission requirements', '💰 How much is tuition?',
+      '✈️ Life in Taiwan', '🎯 Career opportunities'
     ],
-    lang_btn: "EN"
+    quick_replies: [
+      { icon: "🏆", text: "What scholarships are available?" },
+      { icon: "📋", text: "What are the admission requirements?" },
+      { icon: "📚", text: "What programs does Asia Vietnam offer?" },
+      { icon: "💰", text: "How much is the tuition fee?" },
+      { icon: "✈️", text: "What is life like in Taiwan?" }
+    ]
   },
   vi: {
     welcome: "Xin chào! Chào mừng đến với Asia University Vietnam. Tôi là tư vấn viên tuyển sinh AI. Tôi có thể giúp gì cho bạn hôm nay?",
-    placeholder: "Hỏi bất cứ điều gì về Asia University Vietnam...",
+    placeholder: "Hỏi về ngành học, học bổng, tuyển sinh...",
     lead_prompt: "Bạn có muốn chúng tôi liên hệ để tư vấn chi tiết hơn không?",
     name: "Họ và tên",
     email: "Email của bạn",
@@ -40,13 +53,26 @@ const TRANSLATIONS = {
     recommend_btn: "Nhận Gợi Ý Cá Nhân Hóa",
     server_error: "Xin lỗi, máy chủ hiện không khả dụng. Vui lòng thử lại sau.",
     lead_thanks: "Cảm ơn bạn! Đội ngũ tuyển sinh sẽ sớm liên hệ với bạn.",
-    quick_replies: [
-      { icon: "🤖", text: "Trường có đào tạo ngành AI không?" },
-      { icon: "🔌", text: "Ngành Bán dẫn học những gì?" },
-      { icon: "⚽", text: "Có các câu lạc bộ sinh viên nào?" },
-      { icon: "💰", text: "Học phí một năm bao nhiêu?" }
+    headerSub: "Trợ lý Tư vấn Tuyển sinh AI · 24/7",
+    statusText: "Đang hoạt động",
+    emptyTitle: "Xin chào! Tôi có thể<br/>giúp gì cho bạn?",
+    emptySubtitle: "Hỏi bất kỳ điều gì về <strong>Asia University Vietnam</strong> – ngành học, học bổng, tuyển sinh, cuộc sống tại Đài Loan.",
+    footerHint: "Enter để gửi · Shift+Enter xuống dòng",
+    newChat: "Cuộc trò chuyện mới",
+    langNotice: "🇻🇳 Đã chuyển sang Tiếng Việt – AI sẽ trả lời bằng tiếng Việt.",
+    toastNewChat: "✅ Đã bắt đầu cuộc trò chuyện mới",
+    emptyTags: [
+      '🏆 Học bổng có gì?', '📚 Các ngành học',
+      '📋 Điều kiện tuyển sinh', '💰 Học phí bao nhiêu?',
+      '✈️ Học ở Đài Loan ra sao?', '🎯 Cơ hội việc làm sau tốt nghiệp'
     ],
-    lang_btn: "VI"
+    quick_replies: [
+      { icon: "🏆", text: "Học bổng có những loại nào?" },
+      { icon: "📋", text: "Điều kiện xét tuyển là gì?" },
+      { icon: "📚", text: "Các ngành học tại Asia Vietnam?" },
+      { icon: "💰", text: "Học phí khoảng bao nhiêu?" },
+      { icon: "✈️", text: "Cuộc sống tại Đài Loan như thế nào?" }
+    ]
   }
 };
 
@@ -57,13 +83,7 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
   const [messages, setMessages] = useState(() => {
     const saved = localStorage.getItem('chat_messages');
     if (saved) return JSON.parse(saved);
-    return [
-      {
-        id: 1,
-        sender: 'bot',
-        text: t.welcome
-      }
-    ];
+    return [];
   });
   
   const [inputMessage, setInputMessage] = useState('');
@@ -73,20 +93,23 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
   const [leadData, setLeadData] = useState({ name: '', email: '', phone: '', program: '' });
   const [leadSubmitted, setLeadSubmitted] = useState(false);
   
-  const [sessionId] = useState(() => {
+  const [sessionId, setSessionId] = useState(() => {
     const saved = localStorage.getItem('chat_session_id');
     if (saved) return saved;
     const newId = 'sess_' + Date.now().toString(36) + Math.random().toString(36).substr(2);
     localStorage.setItem('chat_session_id', newId);
     return newId;
   });
+  
   const [showRecommendationBtn, setShowRecommendationBtn] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [speakingMsgId, setSpeakingMsgId] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [toastMessage, setToastMessage] = useState(null);
+  
   const fileInputRef = useRef(null);
-
   const messagesEndRef = useRef(null);
+  const textareaRef = useRef(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -101,12 +124,31 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
     localStorage.setItem('chat_messages', JSON.stringify(messages));
   }, [messages, isLoading, leadSubmitted, showLeadForm, leadDismissed]);
 
-  // Update initial message when language changes
+  // Initial bot greeting
   useEffect(() => {
-    if (messages.length === 1 && messages[0].sender === 'bot') {
-      setMessages([{ id: 1, sender: 'bot', text: t.welcome }]);
+    if (messages.length === 0) {
+      // Don't auto-greet if empty, let the empty state show. Or auto-greet if you prefer.
+      // Based on HTML, it fetches from /api/greeting. Let's just use empty state for now.
     }
-  }, [lang, t.welcome]);
+  }, []);
+
+  const showToast = (msg, duration = 3000) => {
+    setToastMessage(msg);
+    setTimeout(() => setToastMessage(null), duration);
+  };
+
+  const handleLanguageChange = (newLang) => {
+    if (lang === newLang) return;
+    setLang(newLang);
+    showToast(TRANSLATIONS[newLang].langNotice, 5000);
+  };
+
+  // Auto-resize textarea
+  const handleTextareaInput = (e) => {
+    setInputMessage(e.target.value);
+    e.target.style.height = 'auto';
+    e.target.style.height = Math.min(e.target.scrollHeight, 140) + 'px';
+  };
 
   const handleSendMessage = async (text) => {
     if (!text.trim() && !selectedImage) return;
@@ -116,6 +158,9 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
     
     const imageToSend = selectedImage;
     setInputMessage('');
+    if (textareaRef.current) {
+      textareaRef.current.style.height = 'auto';
+    }
     setSelectedImage(null);
     setIsLoading(true);
 
@@ -124,7 +169,7 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
       
       const payload = { message: text, history, sessionId, language: lang };
       if (imageToSend) {
-        payload.imageBase64 = imageToSend; // Format: "data:image/png;base64,iVBORw0KGgo..."
+        payload.imageBase64 = imageToSend;
       }
 
       const response = await fetch('/api/chat', {
@@ -174,7 +219,7 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
                   ));
                 } else if (parsed.error) {
                   setIsLoading(false);
-                  fullText = "⚠️ " + parsed.error + ". Please try again in a minute (API Rate Limit).";
+                  fullText = "⚠️ " + parsed.error;
                   setMessages(prev => prev.map(m => 
                     m.id === botMessageId ? { ...m, text: fullText } : m
                   ));
@@ -260,6 +305,10 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
     recognition.onresult = (event) => {
       const transcript = event.results[0][0].transcript;
       setInputMessage(prev => (prev ? prev + ' ' : '') + transcript);
+      if (textareaRef.current) {
+         textareaRef.current.style.height = 'auto';
+         textareaRef.current.style.height = Math.min(textareaRef.current.scrollHeight, 140) + 'px';
+      }
     };
     recognition.onerror = (e) => console.error(e);
     recognition.onend = () => setIsListening(false);
@@ -278,7 +327,6 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
     const targetLang = lang === 'vi' ? 'vi-VN' : 'en-US';
     utterance.lang = targetLang;
     
-    // Explicitly set voice to fix Vietnamese reading issue in some browsers
     const voices = window.speechSynthesis.getVoices();
     if (voices.length > 0) {
       const voice = voices.find(v => v.lang === targetLang || v.lang.startsWith(lang));
@@ -293,7 +341,7 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      if (file.size > 5 * 1024 * 1024) { // 5MB limit
+      if (file.size > 5 * 1024 * 1024) {
         alert("Image size should be less than 5MB");
         return;
       }
@@ -305,67 +353,107 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
     }
   };
 
+  const handleNewChat = () => {
+    const newId = 'sess_' + Date.now().toString(36) + Math.random().toString(36).substr(2);
+    setSessionId(newId);
+    localStorage.setItem('chat_session_id', newId);
+    setMessages([]);
+    showToast(t.toastNewChat);
+  };
+
+  const getTime = () => {
+    return new Date().toLocaleTimeString(lang === 'vi' ? 'vi-VN' : 'en-US', { hour: '2-digit', minute: '2-digit' });
+  };
+
   return (
     <div className="app-container">
-      <div className="header">
-        <div className="header-title">
-          <GraduationCap className="header-icon" size={40} color="var(--asia-green)" />
-          <h1>Asia Uni AI Admission</h1>
+      {/* ── HEADER ── */}
+      <header className="header">
+        <div className="header-brand">
+          <div className="logo-badge">🎓</div>
+          <div className="brand-text">
+            <div className="name">Asia University Vietnam</div>
+            <div className="sub">{t.headerSub}</div>
+          </div>
         </div>
-        <div className="header-actions">
-          <button className="admin-btn" onClick={() => navigate('/quiz')} title="Career Quiz" style={{ background: 'var(--asia-gold)', color: '#000', fontWeight: 'bold' }}>
-            <Compass size={18} />
-            <span>Quiz</span>
-          </button>
-          <button className="admin-btn" onClick={() => navigate('/admin')} title="Admin Dashboard">
-            <Users size={18} />
-            <span>Admin</span>
-          </button>
-          <button className="theme-btn" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} title="Toggle Theme">
-            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
-          <button className="lang-btn" onClick={() => setLang(lang === 'en' ? 'vi' : 'en')} title="Toggle Language">
-            <Globe size={18} />
-            <span>{t.lang_btn}</span>
-          </button>
-        </div>
-      </div>
 
-      <div className="chat-container">
-        <div className="messages-area">
-          {messages.map((msg) => (
-            <div key={msg.id} className={`message ${msg.sender}`}>
-              <div className="message-content">
-                {msg.sender === 'bot' ? (
-                  <div style={{ position: 'relative' }}>
-                    <ReactMarkdown>{msg.text}</ReactMarkdown>
-                    {msg.text && (
-                      <button 
-                        onClick={() => handleSpeak(msg.text, msg.id)}
-                        style={{ position: 'absolute', top: '0', right: '-25px', background: 'none', border: 'none', color: speakingMsgId === msg.id ? 'var(--asia-green)' : 'var(--text-primary)', cursor: 'pointer', padding: '5px' }}
-                        title="Read aloud"
-                      >
-                        <Volume2 size={16} />
-                      </button>
-                    )}
-                  </div>
-                ) : (
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
-                    {msg.hasImage && (
-                      <div style={{ fontSize: '0.8rem', opacity: 0.8, marginBottom: '0.5rem', background: 'rgba(255,255,255,0.2)', padding: '2px 8px', borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                        <Paperclip size={12}/> Image Attached
-                      </div>
-                    )}
-                    <p>{msg.text}</p>
-                  </div>
-                )}
+        <div className="header-controls">
+          <button className="icon-btn" onClick={() => navigate('/quiz')} title="Career Quiz">
+            <Compass size={18} />
+          </button>
+          <button className="icon-btn" onClick={() => navigate('/admin')} title="Admin Dashboard">
+            <Users size={18} />
+          </button>
+          <button className="icon-btn" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} title="Toggle Theme">
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+          
+          <div className="lang-toggle">
+            <button className={`lang-btn ${lang === 'vi' ? 'active' : ''}`} onClick={() => handleLanguageChange('vi')}>🇻🇳 VI</button>
+            <button className={`lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => handleLanguageChange('en')}>🇬🇧 EN</button>
+          </div>
+
+          <div className="header-status">
+            <span className="status-dot"></span>
+            <span>{t.statusText}</span>
+          </div>
+        </div>
+      </header>
+
+      {/* ── MAIN CHAT ── */}
+      <div className="chat-wrapper">
+        <div id="messages">
+          {messages.length === 0 ? (
+            <div className="empty-state">
+              <div className="empty-logo">🎓</div>
+              <div className="empty-title" dangerouslySetInnerHTML={{ __html: t.emptyTitle }} />
+              <div className="empty-subtitle" dangerouslySetInnerHTML={{ __html: t.emptySubtitle }} />
+              <div className="empty-tags">
+                {t.emptyTags.map((tag, idx) => (
+                  <span key={idx} className="tag" onClick={() => handleSendMessage(tag)}>{tag}</span>
+                ))}
               </div>
             </div>
-          ))}
+          ) : (
+            messages.map((msg) => (
+              <div key={msg.id} className={`message ${msg.sender}`}>
+                <div className={`avatar ${msg.sender}`}>{msg.sender === 'bot' ? '🤖' : '👤'}</div>
+                <div>
+                  <div className={`bubble ${msg.sender}`}>
+                    {msg.sender === 'bot' ? (
+                      <div style={{ position: 'relative' }}>
+                        <ReactMarkdown>{msg.text}</ReactMarkdown>
+                        {msg.text && (
+                          <button 
+                            onClick={() => handleSpeak(msg.text, msg.id)}
+                            style={{ position: 'absolute', top: '0', right: '-25px', background: 'none', border: 'none', color: speakingMsgId === msg.id ? 'var(--primary-light)' : 'var(--text-secondary)', cursor: 'pointer', padding: '5px' }}
+                            title="Read aloud"
+                          >
+                            <Volume2 size={16} />
+                          </button>
+                        )}
+                      </div>
+                    ) : (
+                      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+                        {msg.hasImage && (
+                          <div style={{ fontSize: '0.8rem', opacity: 0.8, marginBottom: '0.5rem', background: 'rgba(255,255,255,0.2)', padding: '2px 8px', borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                            <Paperclip size={12}/> Image Attached
+                          </div>
+                        )}
+                        <span>{msg.text}</span>
+                      </div>
+                    )}
+                  </div>
+                  <div className="msg-time">{getTime()}</div>
+                </div>
+              </div>
+            ))
+          )}
           
           {isLoading && (
             <div className="message bot">
-              <div className="typing-indicator">
+              <div className="avatar bot">🤖</div>
+              <div className="typing-dots">
                 <div className="dot"></div>
                 <div className="dot"></div>
                 <div className="dot"></div>
@@ -373,16 +461,12 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
             </div>
           )}
 
-
-
           {showRecommendationBtn && (
             <div className="message bot">
-              <div className="message-content" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <div className="avatar bot">🤖</div>
+              <div className="bubble bot" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <p>{t.recommend_prompt}</p>
-                <button 
-                  className="submit-btn" 
-                  onClick={handleRecommendation}
-                >
+                <button className="submit-btn" onClick={handleRecommendation}>
                   {t.recommend_btn}
                 </button>
               </div>
@@ -392,21 +476,19 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
           <div ref={messagesEndRef} />
         </div>
 
-        {!isLoading && messages.length < 3 && !showLeadForm && (
+        {/* Quick Replies */}
+        {!isLoading && messages.length > 0 && messages.length < 3 && !showLeadForm && (
           <div className="quick-replies">
             {t.quick_replies.map((reply, idx) => (
-              <button 
-                key={idx} 
-                className="quick-reply-chip"
-                onClick={() => handleSendMessage(reply.text)}
-              >
-                <span className="quick-reply-icon">{reply.icon}</span>
-                <span className="quick-reply-text">{reply.text}</span>
+              <button key={idx} className="quick-btn" onClick={() => handleSendMessage(reply.text)}>
+                <span>{reply.icon}</span>
+                <span>{reply.text}</span>
               </button>
             ))}
           </div>
         )}
 
+        {/* Input Area */}
         <div style={{ position: 'relative' }}>
           {selectedImage && (
             <div className="image-preview-container">
@@ -416,53 +498,74 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
               </button>
             </div>
           )}
+          
           <div className="input-area">
-            <input 
-              type="file" 
-              accept="image/*" 
-              ref={fileInputRef} 
-              style={{ display: 'none' }} 
-              onChange={handleImageChange} 
-            />
-            <button 
-              className="send-button"
-              onClick={() => fileInputRef.current?.click()}
-              disabled={isLoading}
-              style={{ marginRight: '0.5rem', background: 'var(--panel-border)', color: selectedImage ? 'var(--asia-green)' : 'var(--text-primary)' }}
-              title="Attach Image"
-            >
-              <Paperclip size={20} />
-            </button>
-            <input
-              type="text"
-              className="chat-input"
-              placeholder={t.placeholder}
-              value={inputMessage}
-              onChange={(e) => setInputMessage(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') handleSendMessage(inputMessage);
-              }}
-            />
-            <button 
-              className="send-button"
-              onClick={handleListen}
-              disabled={isLoading}
-              style={{ marginRight: '0.5rem', background: isListening ? '#ff4d4d' : 'var(--panel-border)', color: isListening ? '#fff' : 'var(--text-primary)' }}
-              title="Speak"
-            >
-              <Mic size={20} />
-            </button>
-            <button 
-              className="send-button"
-              onClick={() => handleSendMessage(inputMessage)}
-              disabled={(!inputMessage.trim() && !selectedImage) || isLoading}
-            >
-              <Send size={20} />
-            </button>
+            <div className="input-box">
+              <input 
+                type="file" 
+                accept="image/*" 
+                ref={fileInputRef} 
+                style={{ display: 'none' }} 
+                onChange={handleImageChange} 
+              />
+              <button 
+                className="icon-btn"
+                onClick={() => fileInputRef.current?.click()}
+                disabled={isLoading}
+                style={{ width: '32px', height: '32px', border: 'none', color: selectedImage ? 'var(--primary)' : 'var(--text-secondary)' }}
+                title="Attach Image"
+              >
+                <Paperclip size={18} />
+              </button>
+              
+              <textarea
+                id="userInput"
+                ref={textareaRef}
+                placeholder={t.placeholder}
+                rows="1"
+                maxLength="2000"
+                value={inputMessage}
+                onChange={handleTextareaInput}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    handleSendMessage(inputMessage);
+                  }
+                }}
+              />
+              
+              <button 
+                className="icon-btn"
+                onClick={handleListen}
+                disabled={isLoading}
+                style={{ width: '32px', height: '32px', border: 'none', background: isListening ? '#ff4d4d' : 'transparent', color: isListening ? '#fff' : 'var(--text-secondary)' }}
+                title="Speak"
+              >
+                <Mic size={18} />
+              </button>
+              
+              <button 
+                className="send-btn"
+                onClick={() => handleSendMessage(inputMessage)}
+                disabled={(!inputMessage.trim() && !selectedImage) || isLoading}
+              >
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={{ width: '17px', height: '17px', fill: 'currentColor' }}>
+                  <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
+              </button>
+            </div>
+            
+            <div className="footer-bar">
+              <span className="footer-hint">{t.footerHint}</span>
+              <button className="new-chat-btn" onClick={handleNewChat}>
+                🔄 <span>{t.newChat}</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
       
+      {/* Lead Form Modal */}
       {showLeadForm && (
         <div className="modal-overlay">
           <div className="modal-content">
@@ -484,6 +587,11 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
           </div>
         </div>
       )}
+
+      {/* Toast Notification */}
+      <div id="toast" className={toastMessage ? 'show' : ''}>
+        {toastMessage}
+      </div>
     </div>
   );
 }
