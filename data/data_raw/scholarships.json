@@ -1,16 +1,50 @@
 [
   {
-    "id": "excellence_scholarship",
-    "name": "Asia University Excellence Scholarship",
-    "value": "50% to 100% of tuition fee",
-    "eligibility": "High GPA, outstanding academic records, and interview pass.",
-    "deadline": "August 30th"
+    "name": "Asia Change Maker",
+    "value": "10%",
+    "gpa_requirement": "GPA >= 8.0",
+    "english_transcript_requirement": "Điểm trung bình tiếng Anh học bạ >= 6.5",
+    "ielts_requirement": "Thêm 10% nếu IELTS >= 5.5",
+    "interview_exam": "Thí sinh có thể được đề nghị tham gia thi học bổng để đánh giá kỹ hơn năng lực và thái độ học tập"
   },
   {
-    "id": "academic_merit",
-    "name": "Academic Merit Scholarship",
-    "value": "20% to 30% of tuition fee",
-    "eligibility": "Good high school academic records.",
-    "deadline": "Rolling basis"
+    "name": "Asia Future Delight",
+    "value": "20%",
+    "gpa_requirement": "GPA >= 8.0",
+    "english_transcript_requirement": "Điểm trung bình tiếng Anh học bạ >= 6.5",
+    "ielts_requirement": "Thêm 10% nếu >= IELTS 6.5",
+    "interview_exam": "Thí sinh có thể được đề nghị tham gia thi học bổng để đánh giá kỹ hơn năng lực và thái độ học tập"
+  },
+  {
+    "name": "Asia Pioneer",
+    "value": "30%",
+    "gpa_requirement": "Học sinh giỏi Tỉnh/TP (đạt giải Nhất/Nhì/Ba các môn văn hóa, trừ môn Ngoại Ngữ)",
+    "english_transcript_requirement": "Điểm trung bình tiếng Anh học bạ >= 6.5",
+    "ielts_requirement": "Thêm 10% nếu >= IELTS 6.5",
+    "interview_exam": "Thí sinh có thể được đề nghị tham gia thi học bổng để đánh giá kỹ hơn năng lực và thái độ học tập"
+  },
+  {
+    "name": "Asia Pioneer ++",
+    "value": "40%",
+    "gpa_requirement": "Học sinh giỏi Tỉnh/TP (đạt giải Nhất/Nhì/Ba các môn văn hóa, trừ môn Ngoại Ngữ)",
+    "english_transcript_requirement": "Điểm trung bình tiếng Anh học bạ >= 6.5",
+    "ielts_requirement": "Thêm 10% nếu >= IELTS 7.0",
+    "interview_exam": "Thí sinh có thể được đề nghị tham gia thi học bổng để đánh giá kỹ hơn năng lực và thái độ học tập"
+  },
+  {
+    "name": "Asia Next Gen",
+    "value": "50% - 100%",
+    "gpa_requirement": "Học sinh giỏi Quốc gia (trừ môn Ngoại ngữ)",
+    "english_transcript_requirement": "Điểm trung bình tiếng Anh học bạ >= 6.5",
+    "ielts_requirement": "Thêm 10% nếu >= IELTS 5.5",
+    "interview_exam": "Thí sinh có thể được đề nghị tham gia thi học bổng để đánh giá kỹ hơn năng lực và thái độ học tập"
+  },
+  {
+    "name": "Asia Talent",
+    "value": "50% - 100%",
+    "gpa_requirement": "Học sinh giỏi Quốc gia (trừ môn Ngoại ngữ)",
+    "english_transcript_requirement": "Điểm trung bình tiếng Anh học bạ >= 6.5",
+    "ielts_requirement": "Thêm 10% nếu >= IELTS 5.5",
+    "interview_exam": "Thí sinh có thể được đề nghị tham gia thi học bổng để đánh giá kỹ hơn năng lực và thái độ học tập"
   }
 ]
