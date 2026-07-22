@@ -423,15 +423,6 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
                     {msg.sender === 'bot' ? (
                       <div style={{ position: 'relative' }}>
                         <ReactMarkdown>{msg.text}</ReactMarkdown>
-                        {msg.text && (
-                          <button 
-                            onClick={() => handleSpeak(msg.text, msg.id)}
-                            style={{ position: 'absolute', top: '0', right: '-25px', background: 'none', border: 'none', color: speakingMsgId === msg.id ? 'var(--primary-light)' : 'var(--text-secondary)', cursor: 'pointer', padding: '5px' }}
-                            title="Read aloud"
-                          >
-                            <Volume2 size={16} />
-                          </button>
-                        )}
                       </div>
                     ) : (
                       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
@@ -444,7 +435,18 @@ export default function Chat({ lang, setLang, theme, setTheme }) {
                       </div>
                     )}
                   </div>
-                  <div className="msg-time">{getTime()}</div>
+                  <div className="msg-time" style={{ display: 'flex', alignItems: 'center', justifyContent: msg.sender === 'user' ? 'flex-start' : 'flex-end', gap: '6px' }}>
+                    {msg.sender === 'bot' && msg.text && (
+                      <button 
+                        onClick={() => handleSpeak(msg.text, msg.id)}
+                        style={{ background: 'none', border: 'none', color: speakingMsgId === msg.id ? 'var(--primary-light)' : 'var(--text-secondary)', cursor: 'pointer', padding: '2px', display: 'flex' }}
+                        title="Read aloud"
+                      >
+                        <Volume2 size={13} />
+                      </button>
+                    )}
+                    {getTime()}
+                  </div>
                 </div>
               </div>
             ))

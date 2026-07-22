@@ -434,6 +434,7 @@ body.light-theme::before {
   resize: none;
   max-height: 140px;
   min-height: 24px;
+  padding: 8px 0;
   overflow-y: auto;
   scrollbar-width: none;
 }
