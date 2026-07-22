@@ -307,7 +307,7 @@ RULES:
         # Helper function for retry logic
         def ai_call(client, contents, config):
             return client.models.generate_content_stream(
-                model='gemini-1.5-flash',
+                model='gemini-2.5-flash',
                 contents=contents,
                 config=config
             )
@@ -397,7 +397,7 @@ YÊU CẦU:
         
         def quiz_ai_call(client, contents, config):
             return client.models.generate_content(
-                model='gemini-1.5-flash',
+                model='gemini-2.5-flash',
                 contents=contents,
                 config=config
             )
@@ -558,7 +558,7 @@ Provide a direct, enthusiastic, and personalized recommendation highlighting why
 {'IMPORTANT: Answer entirely in English.' if language == 'en' else 'IMPORTANT: Answer entirely in Vietnamese.'}"""
 
         response = ai_client.models.generate_content(
-            model='gemini-1.5-flash',
+            model='gemini-2.5-flash',
             contents=prompt,
             config={'temperature': 0.5}
         )
