@@ -56,6 +56,20 @@ def process_json_faqs(filepath):
             content = f"Câu hỏi: {item.get('question', '')}\nTrả lời: {item.get('answer', '')}"
             insert_document(os.path.basename(filepath), content)
 
+def process_json_curriculum(filepath):
+    with open(filepath, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+        lines = []
+        for item in data:
+            col1 = item.get('Nội dung đào tạo', '').strip()
+            col2 = item.get('field 2', '').strip()
+            col3 = item.get('field 3', '').strip()
+            row_str = " | ".join(filter(None, [col1, col2, col3]))
+            if row_str:
+                lines.append(row_str)
+        content = "Chương trình đào tạo (Curriculum):\n" + "\n".join(lines)
+        insert_document(os.path.basename(filepath), content)
+
 def process_txt_file(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
@@ -75,6 +89,8 @@ def main():
         process_json_programs(os.path.join(data_raw_dir, 'programs.json'))
     if os.path.exists(os.path.join(data_raw_dir, 'faqs.json')):
         process_json_faqs(os.path.join(data_raw_dir, 'faqs.json'))
+    if os.path.exists(os.path.join(data_raw_dir, 'data.json')):
+        process_json_curriculum(os.path.join(data_raw_dir, 'data.json'))
         
     print("Processing TXT files...")
     if os.path.exists(data_raw_dir):
