@@ -31,16 +31,17 @@ def insert_document(filename, content):
 def process_json_scholarships(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
         data = json.load(f)
+        all_scholarships_text = "Danh sách tất cả các loại học bổng của Asia University Vietnam:\n"
         for item in data:
-            content = (
-                f"Học bổng: {item.get('name', '')}\n"
-                f"Giá trị học bổng được cấp: {item.get('value', '')}\n"
-                f"Tiêu chuẩn GPA: {item.get('gpa_requirement', '')}\n"
-                f"Tiêu chuẩn Tiếng Anh học bạ: {item.get('english_transcript_requirement', '')}\n"
-                f"Tiêu chuẩn IELTS: {item.get('ielts_requirement', '')}\n"
-                f"Quy định Phỏng vấn/Thi: {item.get('interview_exam', '')}"
+            all_scholarships_text += (
+                f"- Học bổng: {item.get('name', '')}\n"
+                f"  Giá trị: {item.get('value', '')}\n"
+                f"  GPA: {item.get('gpa_requirement', '')}\n"
+                f"  Tiếng Anh: {item.get('english_transcript_requirement', '')}\n"
+                f"  IELTS: {item.get('ielts_requirement', '')}\n"
+                f"  Thi/Phỏng vấn: {item.get('interview_exam', '')}\n\n"
             )
-            insert_document(os.path.basename(filepath), content)
+        insert_document("all_scholarships_combined.txt", all_scholarships_text)
 
 def process_json_programs(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
