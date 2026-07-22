@@ -1,0 +1,65 @@
+Hướng dẫn sử dụng Parent Portal Asia University Vietnam
+Nhằm tăng cường kết nối giữa nhà trường và gia đình trong quá trình học tập của sinh viên, Asia University Vietnam triển khai Parent Portal – cổng thông tin trực tuyến giúp phụ huynh theo dõi đầy đủ và minh bạch tình hình học tập của con em mình.
+Thông qua Parent Portal, phụ huynh có thể chủ động cập nhật các thông tin học vụ quan trọng, từ thời khóa biểu, điểm danh đến kết quả học tập theo từng học kỳ.
+Parent Portal mang lại những thông tin gì cho phụ huynh?
+Parent Portal được thiết kế như một bảng tổng quan học tập, giúp phụ huynh nắm bắt nhanh tình hình của sinh viên, bao gồm:
+Thời khóa biểu (Timetable): Lịch học các môn trong tuần
+Danh sách môn học (Courses): Các môn đang theo học trong học kỳ hiện tại
+Báo cáo điểm danh (Attendance Report): Tỷ lệ tham gia lớp học, số buổi vắng – có mặt theo từng môn
+Kết quả học tập (Grades): GPA, số tín chỉ tích lũy, điểm thành phần từng môn
+Hồ sơ sinh viên (Profile): Thông tin cá nhân và học vụ cơ bản
+Những dữ liệu này giúp phụ huynh theo dõi tiến độ học tập một cách hệ thống, đồng thời kịp thời đồng hành và hỗ trợ sinh viên khi cần thiết.
+Hướng dẫn đăng nhập Parent Portal
+Phụ huynh có thể truy cập Parent Portal tại địa chỉ:
+https://portal.asia-vn.edu.vn
+Lưu ý: Khi sinh viên nhập học, nhà trường đã thu thập email và số điện thoại của phụ huynh/người thân để phục vụ liên lạc trong các trường hợp cần thiết. Phụ huynh vui lòng sử dụng email đã đăng ký để đăng nhập hệ thống.
+Giao diện khi đăng nhập vào hệ thống Parent Portal của Asia University Vietnam
+Các bước đăng nhập:
+Bước 1
+: Truy cập website Parent Portal
+Bước 2
+: Chọn vai trò “Parent” (Phụ huynh)
+Bước 3
+: Chọn “Đăng nhập bằng Google” và sử dụng email đã đăng ký với nhà trường
+Sau khi đăng nhập thành công, phụ huynh sẽ được dẫn vào giao diện quản lý thông tin học tập của sinh viên.
+Các chức năng chính trên Parent Portal
+1. Dashboard – Tổng quan học tập
+Ngay tại trang chính, phụ huynh có thể theo dõi nhanh:
+GPA hiện tại của sinh viên, số môn đang học trong kỳ, tỷ lệ điểm danh, số môn đã hoàn thành tính đến thời điểm hiện tại.
+Đây là khu vực giúp phụ huynh có cái nhìn tổng thể về quá trình học tập của sinh viên chỉ trong một lần truy cập.
+Giao diện Dashboard – Tổng quan học tập
+2. Timetable – Thời khóa biểu
+Mục Timetable hiển thị chi tiết lịch học theo tuần, bao gồm: n
+gày học, m
+ôn học, g
+iảng viên, t
+hời gian và địa điểm học.
+Phụ huynh có thể dễ dàng theo dõi lịch sinh hoạt học tập của sinh viên trong từng tuần.
+Giao diện Timetable – Thời khóa biểu trong Parent Portal
+3. Courses – Danh sách môn học
+Mục Courses cung cấp thông tin về các môn học mà sinh viên đang theo học trong học kỳ hiện tại, giúp phụ huynh nắm rõ chương trình học theo từng giai đoạn.
+Giao diện mục Courses – Danh sách môn học
+4. Attendance Report – Báo cáo điểm danh
+Đây là chức năng quan trọng giúp phụ huynh theo dõi mức độ tham gia lớp học của sinh viên, bao gồm: s
+ố buổi đi học, s
+ố buổi vắng mặt, t
+ỷ lệ chuyên cần theo từng môn học.
+Thông tin này hỗ trợ phụ huynh kịp thời trao đổi và nhắc nhở sinh viên duy trì ý thức học tập.
+Giao diện Attendance Report – Báo cáo điểm danh tại Parent Portal của Asia University Vietnam
+5. Grade – Kết quả học tập
+Tại mục Grade, phụ huynh có thể xem: s
+ố môn đã hoàn thành, s
+ố tín chỉ tích lũy,
+GPA (điểm trung bình), đ
+iểm thành phần và kết quả từng môn học.
+Dữ liệu được cập nhật theo học kỳ, giúp phụ huynh theo dõi tiến trình học tập một cách liên tục.
+Giao diện Grade – Kết quả học tập
+6. Profile – Thông tin sinh viên
+Mục Profile cung cấp các thông tin chung về sinh viên như: t
+hông tin cá nhân, c
+hương trình học, t
+ình trạng học vụ, t
+hông tin liên hệ đã đăng ký.
+Giao diện mục Profile
+Sự đồng hành của gia đình luôn đóng vai trò quan trọng trong hành trình trưởng thành của sinh viên. Parent Portal vì vậy không chỉ là một công cụ quản lý học vụ, mà còn là cầu nối giúp tăng cường sự phối hợp giữa nhà trường – sinh viên – gia đình trong suốt quá trình học tập tại Asia University Vietnam.
+Mọi thông tin chi tiết, vui lòng liên hệ hotline Phòng Dịch vụ Sinh viên Asia University Vietnam (Hà Nội & TP.HCM): 1900 633 576 để được hỗ trợ nhanh chóng.

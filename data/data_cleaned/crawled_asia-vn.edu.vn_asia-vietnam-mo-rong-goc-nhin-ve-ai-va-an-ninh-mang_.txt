@@ -1,0 +1,24 @@
+Sinh viên Asia Vietnam mở rộng góc nhìn về AI và an ninh mạng qua buổi hội thảo chuyên sâu
+Hội thảo có sự tham gia chia sẻ của ThS. Henry Hoang Nguyen – Trưởng nhóm kỹ sư an ninh mạng thuộc nhóm Red Team tại CoinHako Singapore (nền tảng giao dịch tài sản số có trụ sở tại Singapore). Với kinh nghiệm làm việc trong môi trường công nghệ quốc tế và từng xuất hiện tại các hội nghị an ninh mạng lớn như Black Hat Europe 2025, Black Hat MEA 2025 và Black Hat Asia 2026, diễn giả sẽ mang đến góc nhìn thực tế về cách AI đang thay đổi hoạt động kiểm thử bảo mật, phát hiện lỗ hổng và quy trình vận hành trong lĩnh vực an ninh mạng.
+AI đang thay đổi cách tiếp cận an ninh mạng
+Khi các nền tảng số, ứng dụng và hệ thống dữ liệu ngày càng phát triển, an ninh mạng trở thành vấn đề cần được quan tâm ngay từ quá trình thiết kế, vận hành và bảo vệ hệ thống. Với sinh viên công nghệ, đặc biệt là sinh viên ngành Trí tuệ nhân tạo, hiểu về bảo mật giúp nhìn rõ hơn trách nhiệm của người làm công nghệ trong môi trường số.
+Tại hội thảo, sinh viên sẽ được tiếp cận chủ đề Offensive Security (kiểm thử bảo mật chủ động). Đây là hoạt động đánh giá mức độ an toàn của hệ thống bằng cách mô phỏng các rủi ro có thể xảy ra trong điều kiện được kiểm soát, từ đó giúp tổ chức phát hiện và xử lý điểm yếu trước khi sự cố thật xảy ra.
+Hội thảo “The Mythos Era: How AI-Powered Tradecraft Is Redefining Offensive Security” về AI và an ninh mạng với sự tham gia chia sẻ của chuyên gia và đại diện doanh nghiệp
+Điểm đáng chú ý của hội thảo là phần chia sẻ của ThS. Henry Hoang Nguyen – Trưởng nhóm kỹ sư an ninh mạng thuộc nhóm Red Team tại CoinHako Singapore. Red Team là nhóm chuyên kiểm tra độ an toàn của hệ thống bằng cách mô phỏng các tình huống rủi ro trong phạm vi cho phép, từ đó giúp doanh nghiệp phát hiện và xử lý điểm yếu bảo mật.
+Từ kinh nghiệm làm việc tại doanh nghiệp công nghệ quốc tế, diễn giả sẽ chia sẻ cách AI đang được ứng dụng trong an ninh mạng, như hỗ trợ phát hiện lỗ hổng, thu thập và phân tích thông tin ban đầu về hệ thống, cũng như tự động hóa một số bước kiểm thử bảo mật. Đây là những nội dung giúp sinh viên hiểu rõ hơn mối liên hệ giữa kiến thức AI và các yêu cầu thực tế của lĩnh vực bảo mật số.
+Thông qua hội thảo, sinh viên có thể hình dung cụ thể hơn về những năng lực cần có khi theo đuổi các vị trí công nghệ hiện đại. Bên cạnh nền tảng kỹ thuật, người học cần tư duy hệ thống, khả năng phân tích rủi ro, ý thức đạo đức nghề nghiệp và năng lực cập nhật công nghệ trong môi trường làm việc quốc tế.
+Sinh viên ngành Trí tuệ nhân tạo Asia Vietnam thêm trải nghiệm học tập ngoài lớp học
+Với sinh viên
+ngành Trí tuệ nhân tạo
+tại Asia Vietnam, hội thảo là một hoạt động học thuật bổ trợ cho quá trình học trên lớp. Thay vì chỉ tiếp cận AI qua bài giảng, bài tập hoặc dự án môn học, sinh viên có thêm cơ hội quan sát cách kiến thức chuyên ngành được đặt trong một tình huống nghề nghiệp cụ thể.
+Sự tham gia của TS. Lê Anh Ngọc góp phần kết nối nội dung hội thảo với định hướng đào tạo sinh viên AI theo hướng cập nhật, thực tiễn và gắn với những vấn đề công nghệ mới. Qua đó, sinh viên có thêm không gian để đặt câu hỏi, trao đổi với chuyên gia và nhìn rõ hơn những yêu cầu ngoài kiến thức chuyên môn.
+Hoạt động này cũng cho thấy việc học đại học không chỉ diễn ra trong lớp học. Những buổi hội thảo chuyên sâu giúp sinh viên rèn thói quen theo dõi xu hướng, chủ động tìm hiểu lĩnh vực mới và chuẩn bị tốt hơn cho các lựa chọn học tập, nghiên cứu hoặc nghề nghiệp trong tương lai.
+Thông tin hội thảo
+Tên sự kiện:
+The Mythos Era: How AI-Powered Tradecraft Is Redefining Offensive Security
+Thời gian:
+9:00 – 11:00, Thứ Năm, ngày 14/05/2026
+Địa điểm:
+Phòng DT 1.1, 80 Duy Tân, phường Cầu Giấy, Hà Nội
+Link đăng ký:
+https://asia-vn.edu.vn/hoi-thao-ai-va-an-ninh-mang

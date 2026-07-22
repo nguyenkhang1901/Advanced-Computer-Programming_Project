@@ -92,11 +92,19 @@ def main():
     if os.path.exists(os.path.join(data_raw_dir, 'data.json')):
         process_json_curriculum(os.path.join(data_raw_dir, 'data.json'))
         
-    print("Processing TXT files...")
+    print("Processing TXT files from data_raw...")
     if os.path.exists(data_raw_dir):
         for filename in os.listdir(data_raw_dir):
             if filename.endswith('.txt'):
                 filepath = os.path.join(data_raw_dir, filename)
+                process_txt_file(filepath)
+                
+    data_cleaned_dir = '../data/data_cleaned'
+    print("Processing TXT files from data_cleaned...")
+    if os.path.exists(data_cleaned_dir):
+        for filename in os.listdir(data_cleaned_dir):
+            if filename.endswith('.txt'):
+                filepath = os.path.join(data_cleaned_dir, filename)
                 process_txt_file(filepath)
                 
     conn = get_db_connection()
