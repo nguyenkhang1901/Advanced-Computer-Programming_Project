@@ -195,13 +195,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Custom Scrollbar */
-.messages-area::-webkit-scrollbar {
+.messages-area::-webkit-scrollbar,
+.quiz-card::-webkit-scrollbar,
+.admin-panel::-webkit-scrollbar {
   width: 6px;
 }
-.messages-area::-webkit-scrollbar-track {
+.messages-area::-webkit-scrollbar-track,
+.quiz-card::-webkit-scrollbar-track,
+.admin-panel::-webkit-scrollbar-track {
   background: transparent;
 }
-.messages-area::-webkit-scrollbar-thumb {
+.messages-area::-webkit-scrollbar-thumb,
+.quiz-card::-webkit-scrollbar-thumb,
+.admin-panel::-webkit-scrollbar-thumb {
   background: var(--panel-border);
   border-radius: 10px;
 }

@@ -100,7 +100,9 @@ function CareerQuiz({ lang }) {
         width: '100%',
         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
         position: 'relative',
-        overflow: 'hidden'
+        maxHeight: '90vh',
+        overflowY: 'auto',
+        overflowX: 'hidden'
       }}>
         {/* Glow effect */}
         <div style={{ position: 'absolute', top: '-10%', left: '-10%', width: '40%', height: '40%', background: 'radial-gradient(circle, var(--asia-gold) 0%, transparent 70%)', opacity: '0.1', filter: 'blur(40px)', zIndex: 0 }} />
