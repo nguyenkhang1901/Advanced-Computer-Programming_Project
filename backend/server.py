@@ -22,7 +22,7 @@ limiter = Limiter(
 )
 
 PORT = int(os.environ.get('PORT', 5000))
-MODEL_NAME = os.environ.get('MODEL_NAME', 'gemini-2.5-flash')
+MODEL_NAME = os.environ.get('MODEL_NAME', 'gemini-3.5-flash-lite')
 
 # Setup database on startup
 setup_database()
