@@ -22,6 +22,7 @@ limiter = Limiter(
 )
 
 PORT = int(os.environ.get('PORT', 5000))
+MODEL_NAME = os.environ.get('MODEL_NAME', 'gemini-2.5-flash')
 
 # Setup database on startup
 setup_database()
@@ -341,7 +342,7 @@ RULES:
         # Helper function for retry logic
         def ai_call(client, contents, config):
             return client.models.generate_content_stream(
-                model='gemini-2.5-flash',
+                model=MODEL_NAME,
                 contents=contents,
                 config=config
             )
