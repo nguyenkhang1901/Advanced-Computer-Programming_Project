@@ -128,10 +128,6 @@ def execute_stream_with_retry(func, *args, **kwargs):
                     # Continue to next key if fallback also fails
             
     raise last_exception
-            print(f"API Stream Client failed (rotating to next): {e}")
-            last_exception = e
-            
-    raise last_exception
 
 # Load Knowledge Data
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
