@@ -85,23 +85,49 @@ def execute_stream_with_retry(func, *args, **kwargs):
     for _ in range(len(ai_clients)):
         client = get_next_ai_client()
         try:
+            # First attempt with primary model
             response = func(client, *args, **kwargs)
             iterator = iter(response)
             
             # Fetch first chunk to trigger any immediate API errors
             try:
                 first_chunk = next(iterator)
+                # If we reach here, the API key and model work!
+                yield first_chunk
+                for chunk in iterator:
+                    yield chunk
+                return # Success
             except StopIteration:
                 return # Empty stream, valid
                 
-            # If we reach here, the API key works!
-            yield first_chunk
-            for chunk in iterator:
-                yield chunk
-                
-            return # Success
-            
         except Exception as e:
+            print(f"API Stream Client failed (rotating to next): {e}")
+            last_exception = e
+            
+            # If the error is likely due to rate limits or quota, try fallback model with SAME key
+            error_msg = str(e).lower()
+            if "429" in error_msg or "quota" in error_msg or "resource_exhausted" in error_msg:
+                try:
+                    print("Attempting fallback to gemini-2.5-flash-lite...")
+                    # Pass a special flag to func to indicate fallback model
+                    fallback_kwargs = kwargs.copy()
+                    fallback_kwargs['fallback'] = True
+                    fallback_response = func(client, *args, **fallback_kwargs)
+                    fallback_iterator = iter(fallback_response)
+                    
+                    try:
+                        first_chunk = next(fallback_iterator)
+                        yield first_chunk
+                        for chunk in fallback_iterator:
+                            yield chunk
+                        return # Success with fallback
+                    except StopIteration:
+                        return
+                except Exception as fallback_e:
+                    print(f"Fallback model also failed: {fallback_e}")
+                    # Continue to next key if fallback also fails
+            
+    raise last_exception
             print(f"API Stream Client failed (rotating to next): {e}")
             last_exception = e
             
@@ -340,9 +366,14 @@ RULES:
                 print("Image decoding error:", e)
         
         # Helper function for retry logic
-        def ai_call(client, contents, config):
+        def ai_call(client, contents, config, fallback=False):
+            target_model = MODEL_NAME
+            if fallback:
+                target_model = 'gemini-2.5-flash-lite' # Fallback to a lighter, higher rate-limit model
+                print(f"Using fallback model: {target_model}")
+            
             return client.models.generate_content_stream(
-                model=MODEL_NAME,
+                model=target_model,
                 contents=contents,
                 config=config
             )
