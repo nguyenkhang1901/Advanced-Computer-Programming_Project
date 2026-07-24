@@ -342,17 +342,17 @@ def chat():
             return jsonify({"reply": reply})
 
         # Check Cache before calling Google API (skip cache if image is provided)
-        cache_key = normalize_query(message) if message else ""
+        cache_key = f"{language}_{normalize_query(message)}" if message else ""
         if not image_base64 and cache_key and cache_key in response_cache:
             print(f"CACHE HIT: {cache_key}")
             from flask import stream_with_context
             import json
             def cached_stream():
                 cached_text = response_cache[cache_key]
-                words = cached_text.split()
-                # Simulate fast streaming
-                for i in range(0, len(words), 5):
-                    chunk = " ".join(words[i:i+5]) + " "
+                # Simulate fast streaming by chunks of characters to preserve newlines
+                chunk_size = 20
+                for i in range(0, len(cached_text), chunk_size):
+                    chunk = cached_text[i:i+chunk_size]
                     yield f"data: {json.dumps({'text': chunk})}\n\n"
                     time.sleep(0.05)
                 yield "data: [DONE]\n\n"
