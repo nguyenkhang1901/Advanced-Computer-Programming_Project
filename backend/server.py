@@ -70,6 +70,16 @@ def execute_with_retry(func, *args, **kwargs):
             print(f"API Client failed (rotating to next): {e}")
             last_exception = e
             
+            error_msg = str(e).lower()
+            if "429" in error_msg or "quota" in error_msg or "resource_exhausted" in error_msg:
+                try:
+                    print("Attempting fallback to gemini-3.1-flash-lite...")
+                    fallback_kwargs = kwargs.copy()
+                    fallback_kwargs['fallback'] = True
+                    return func(client, *args, **fallback_kwargs)
+                except Exception as fallback_e:
+                    print(f"Fallback model also failed: {fallback_e}")
+            
     raise last_exception
 
 def execute_stream_with_retry(func, *args, **kwargs):
@@ -492,9 +502,12 @@ YÊU CẦU:
 """
         lang_instruction = "\nCRITICAL: Reply in English." if language == 'en' else "\nCRITICAL: Reply in Vietnamese."
         
-        def quiz_ai_call(client, contents, config):
+        def quiz_ai_call(client, contents, config, fallback=False):
+            target_model = 'gemini-2.5-flash'
+            if fallback:
+                target_model = 'gemini-3.1-flash-lite'
             return client.models.generate_content(
-                model='gemini-2.5-flash',
+                model=target_model,
                 contents=contents,
                 config=config
             )
