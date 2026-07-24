@@ -147,6 +147,40 @@ def load_knowledge():
 
 def retrieve_context(query, top_k=5):
     query_lower = query.lower()
+    
+    # English to Vietnamese keyword mapping for BM25 search
+    keyword_map = {
+        'admission': 'tuyển sinh xét tuyển',
+        'requirement': 'điều kiện yêu cầu hồ sơ',
+        'requirements': 'điều kiện yêu cầu hồ sơ',
+        'scholarship': 'học bổng',
+        'scholarships': 'học bổng',
+        'major': 'ngành chuyên ngành',
+        'majors': 'ngành chuyên ngành',
+        'program': 'chương trình đào tạo',
+        'programs': 'chương trình đào tạo',
+        'course': 'khóa học môn học',
+        'tuition': 'học phí',
+        'fee': 'chi phí học phí',
+        'fees': 'chi phí học phí',
+        'campus': 'cơ sở địa chỉ',
+        'location': 'cơ sở địa chỉ',
+        'contact': 'liên hệ',
+        'dormitory': 'ký túc xá',
+        'housing': 'chỗ ở ký túc xá',
+        'international': 'quốc tế'
+    }
+    
+    # Append Vietnamese keywords to the query to boost match rates
+    added_keywords = []
+    for eng_word, vi_words in keyword_map.items():
+        if eng_word in query_lower:
+            added_keywords.append(vi_words)
+            
+    if added_keywords:
+        query_lower += " " + " ".join(added_keywords)
+
+    # Extract alphanumeric words
     words = re.findall(r'\w+', query_lower)
     
     query_tokens = []
