@@ -150,6 +150,11 @@ if not os.path.exists(RAW_DIR):
 import re
 import math
 from collections import Counter
+try:
+    from rank_bm25 import BM25Okapi
+    from thefuzz import fuzz
+except ImportError:
+    pass # Will be handled if not installed
 
 # Keep load_knowledge as a dummy function so admin API doesn't crash when reloading
 def load_knowledge():
@@ -235,57 +240,54 @@ def retrieve_context(query, top_k=5):
                 chunk_filenames.append(filename)
                 continue
                 
-            lines = content.split('\n')
+            # Improved chunking: split by paragraphs to preserve meaning
+            paragraphs = re.split(r'\n\s*\n', content)
             current_chunk = []
             current_len = 0
-            for line in lines:
-                line = line.strip()
-                if not line:
+            for p in paragraphs:
+                p = p.strip()
+                if not p:
                     continue
-                current_chunk.append(line)
-                current_len += len(line)
+                current_chunk.append(p)
+                current_len += len(p)
                 if current_len > 1200:
-                    retrieved_chunks.append('\n'.join(current_chunk))
+                    retrieved_chunks.append('\n\n'.join(current_chunk))
                     chunk_filenames.append(filename)
                     current_chunk = []
                     current_len = 0
             if current_chunk:
-                retrieved_chunks.append('\n'.join(current_chunk))
+                retrieved_chunks.append('\n\n'.join(current_chunk))
                 chunk_filenames.append(filename)
                     
-        # Implement N-Gram BM25 Scoring
-        k1 = 1.5
-        b = 0.75
+        # Implement rank_bm25 & Fuzzy Scoring
+        tokenized_corpus = [re.findall(r'\w+', doc.lower()) for doc in retrieved_chunks]
         
-        doc_lengths = [len(re.findall(r'\w+', doc.lower())) for doc in retrieved_chunks]
-        avg_dl = sum(doc_lengths) / max(1, len(doc_lengths))
-        
-        idfs = {}
-        N = len(retrieved_chunks)
-        retrieved_chunks_lower = [doc.lower() for doc in retrieved_chunks]
-        
-        for q in query_tokens:
-            n_q = sum(1 for doc_lower in retrieved_chunks_lower if q in doc_lower)
-            idf = math.log(((N - n_q + 0.5) / (n_q + 0.5)) + 1)
-            idfs[q] = max(0.01, idf)
+        try:
+            bm25 = BM25Okapi(tokenized_corpus)
+            query_words = re.findall(r'\w+', query_lower)
+            bm25_scores = bm25.get_scores(query_words)
+        except NameError:
+            # Fallback if library failed to load
+            bm25_scores = [0] * len(retrieved_chunks)
             
         scores = []
-        for i, chunk_lower in enumerate(retrieved_chunks_lower):
-            dl = doc_lengths[i]
+        for i, chunk in enumerate(retrieved_chunks):
+            # 1. Base BM25 Score
+            base_score = bm25_scores[i]
             
-            score = 0
-            for q in query_tokens:
-                # Count exact phrase occurrences in the document chunk
-                tf = chunk_lower.count(q)
-                if tf > 0:
-                    n_gram_weight = len(q.split()) # Give 2x weight to 2-grams, 3x weight to 3-grams
-                    numerator = tf * (k1 + 1)
-                    denominator = tf + k1 * (1 - b + b * (dl / max(1, avg_dl)))
-                    score += idfs[q] * (numerator / denominator) * n_gram_weight
+            # 2. Fuzzy Match Score (comparing the exact original query with chunk sentences)
+            # Take top 3 lines to check for fuzzy title matching
+            chunk_header = " ".join(chunk.split('\n')[:3])
+            try:
+                fuzzy_score = fuzz.token_set_ratio(query.lower(), chunk_header.lower()) / 10.0
+            except NameError:
+                fuzzy_score = 0
             
-            # Boost score for structured data (JSON derived) to ensure it beats random news articles
+            score = base_score + fuzzy_score
+            
+            # Boost score for structured data (JSON derived)
             if chunk_filenames[i].endswith('.json') or chunk_filenames[i] == 'all_scholarships_combined.txt':
-                score *= 20.0
+                score *= 1.5
                 
             scores.append(score)
             
