@@ -173,10 +173,10 @@ export default function Admin({ lang, setLang, theme, setTheme }) {
     return (
       <div className="app-container" style={{ maxWidth: '400px', margin: '10vh auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <Users size={48} color="var(--asia-gold)" />
+          <div className="logo-badge" style={{ margin: '0 auto', width: '64px', height: '64px', fontSize: '32px' }}>🛡️</div>
           <h1 style={{ color: 'var(--text-primary)', marginTop: '1rem' }}>{t.login}</h1>
         </div>
-        <div style={{ background: 'var(--panel-bg)', padding: '2rem', borderRadius: '20px', border: '1px solid var(--panel-border)' }}>
+        <div style={{ background: 'var(--bg-card)', padding: '2.5rem', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border)', boxShadow: 'var(--shadow-green)' }}>
           <input 
             type="password" 
             placeholder={t.password} 
@@ -195,35 +195,31 @@ export default function Admin({ lang, setLang, theme, setTheme }) {
 
   return (
     <div className="app-container" style={{ maxWidth: '1000px' }}>
-      <div className="header" style={{ justifyContent: 'space-between' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <Users size={32} color="var(--asia-green)" />
-          <h1>{t.dashboard}</h1>
+      {/* ── HEADER ── */}
+      <header className="header">
+        <div className="header-brand">
+          <div className="logo-badge">🛡️</div>
+          <div className="brand-text">
+            <div className="name">Asia University Vietnam</div>
+            <div className="sub">{t.dashboard}</div>
+          </div>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <button 
-            className="admin-btn" 
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} 
-            title="Toggle Theme"
-            style={{ padding: '0.5rem', background: 'var(--panel-border)', borderRadius: '50%', color: 'var(--text-primary)', border: 'none', cursor: 'pointer', display: 'flex' }}
-          >
-            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+
+        <div className="header-controls">
+          <button className="icon-btn" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} title="Toggle Theme">
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
           </button>
           
-          <button 
-            className="admin-btn" 
-            onClick={() => setLang(lang === 'en' ? 'vi' : 'en')} 
-            title="Toggle Language"
-            style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1rem', background: 'var(--panel-border)', borderRadius: '20px', color: 'var(--text-primary)', border: 'none', cursor: 'pointer' }}
-          >
-            <Globe size={18} />
-            <span style={{ fontWeight: 'bold' }}>{t.lang_btn}</span>
-          </button>
-          <button className="admin-btn" onClick={() => navigate('/')}>
-            <ArrowLeft size={24} /> {t.back}
+          <div className="lang-toggle">
+            <button className={`lang-btn ${lang === 'vi' ? 'active' : ''}`} onClick={() => setLang('vi')}>🇻🇳 VI</button>
+            <button className={`lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>🇬🇧 EN</button>
+          </div>
+
+          <button className="icon-btn" onClick={() => navigate('/')} title={t.back}>
+            <ArrowLeft size={18} />
           </button>
         </div>
-      </div>
+      </header>
 
       <div className="admin-tabs">
         <button className={`tab-btn ${activeTab === 'dashboard' ? 'active' : ''}`} onClick={() => setActiveTab('dashboard')}>
@@ -243,8 +239,8 @@ export default function Admin({ lang, setLang, theme, setTheme }) {
       <div className="admin-panel">
         {activeTab === 'dashboard' ? (
           <div>
-            <h2 style={{ color: 'var(--asia-gold)', marginBottom: '1.5rem' }}>{t.stats_programs}</h2>
-            <div style={{ height: '350px', background: 'rgba(0,0,0,0.2)', borderRadius: '16px', padding: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <h2 style={{ color: 'var(--text-primary)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}><PieChartIcon size={24} color="var(--primary)"/> {t.stats_programs}</h2>
+            <div style={{ height: '350px', background: 'var(--bg-input)', borderRadius: 'var(--radius-lg)', padding: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid var(--border)' }}>
               {pieData.length > 0 ? (
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>
@@ -261,15 +257,15 @@ export default function Admin({ lang, setLang, theme, setTheme }) {
               )}
             </div>
             
-            <div style={{ marginTop: '2rem' }}>
-              <h2 style={{ color: 'var(--asia-gold)', marginBottom: '1rem' }}>{t.stats_leads}: {leads.length}</h2>
+            <div style={{ marginTop: '2rem', padding: '1.5rem', background: 'var(--bg-input)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border)' }}>
+              <h2 style={{ color: 'var(--text-primary)', margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Users size={24} color="var(--primary)"/> {t.stats_leads}: {leads.length}</h2>
             </div>
           </div>
         ) : activeTab === 'leads' ? (
-          <>
+           <>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-              <h2 style={{ color: 'var(--asia-gold)', margin: 0 }}>{t.collected_leads}</h2>
-              <button className="submit-btn" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }} onClick={handleExport}>
+              <h2 style={{ color: 'var(--text-primary)', margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Users size={24} color="var(--primary)"/> {t.collected_leads}</h2>
+              <button className="action-btn primary" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', padding: '10px 16px', background: 'var(--primary)', color: '#fff', border: 'none', borderRadius: 'var(--radius-sm)', cursor: 'pointer' }} onClick={handleExport}>
                 <Download size={18} /> {t.export}
               </button>
             </div>
@@ -296,7 +292,7 @@ export default function Admin({ lang, setLang, theme, setTheme }) {
           </>
         ) : activeTab === 'chat' ? (
           <>
-            <h2 style={{ marginBottom: '1.5rem', color: 'var(--asia-gold)' }}>{t.chat_sessions}</h2>
+            <h2 style={{ marginBottom: '1.5rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}><MessageSquare size={24} color="var(--primary)"/> {t.chat_sessions}</h2>
             {loading ? (
               <p>{t.loading_chats}</p>
             ) : Object.keys(chatLogs).length === 0 ? (
@@ -324,25 +320,25 @@ export default function Admin({ lang, setLang, theme, setTheme }) {
         ) : (
           <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
             <div style={{ flex: '1', minWidth: '300px', maxWidth: '500px' }}>
-              <h2 style={{ color: 'var(--asia-gold)', marginBottom: '1.5rem' }}>{t.upload_tab}</h2>
-              <div style={{ background: 'rgba(0,0,0,0.2)', padding: '2rem', borderRadius: '16px', border: '1px dashed var(--asia-green)' }}>
-                <input type="file" accept=".txt" onChange={handleFileChange} style={{ marginBottom: '1rem', color: 'var(--text-primary)' }} />
-                <button className="submit-btn" onClick={handleUpload} disabled={!file} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <h2 style={{ color: 'var(--text-primary)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Upload size={24} color="var(--primary)"/> {t.upload_tab}</h2>
+              <div style={{ background: 'var(--bg-input)', padding: '2rem', borderRadius: 'var(--radius-lg)', border: '1px dashed var(--border)' }}>
+                <input type="file" accept=".txt" onChange={handleFileChange} style={{ marginBottom: '1.5rem', color: 'var(--text-primary)', width: '100%', padding: '1rem', border: '1px solid var(--border)', borderRadius: 'var(--radius-sm)' }} />
+                <button className="action-btn primary" onClick={handleUpload} disabled={!file} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', width: '100%', padding: '12px', background: 'var(--primary)', color: '#fff', border: 'none', borderRadius: 'var(--radius-sm)', cursor: 'pointer', opacity: file ? 1 : 0.5 }}>
                   <Upload size={18} /> {t.upload_btn}
                 </button>
-                {uploadStatus && <p style={{ marginTop: '1rem', color: uploadStatus.includes('success') || uploadStatus.includes('deleted') ? 'var(--asia-green)' : '#ff4d4d' }}>{uploadStatus}</p>}
+                {uploadStatus && <p style={{ marginTop: '1rem', color: uploadStatus.includes('success') || uploadStatus.includes('deleted') ? 'var(--primary-light)' : '#ff4d4d', textAlign: 'center' }}>{uploadStatus}</p>}
               </div>
             </div>
             
             <div style={{ flex: '1', minWidth: '300px' }}>
-              <h2 style={{ color: 'var(--asia-gold)', marginBottom: '1.5rem' }}>Current Knowledge Files</h2>
-              <div style={{ background: 'rgba(0,0,0,0.2)', padding: '1rem', borderRadius: '16px', border: '1px solid var(--panel-border)', maxHeight: '400px', overflowY: 'auto' }}>
+              <h2 style={{ color: 'var(--text-primary)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}><FileText size={24} color="var(--primary)"/> Current Knowledge Files</h2>
+              <div style={{ background: 'var(--bg-input)', padding: '1.5rem', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border)', maxHeight: '400px', overflowY: 'auto' }}>
                 {Array.isArray(files) ? (
-                  files.length === 0 ? <p>No files uploaded yet.</p> : files.map((f, i) => (
-                    <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.75rem', borderBottom: '1px solid var(--panel-border)' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <FileText size={18} color="var(--asia-green)" />
-                        <span>{f}</span>
+                  files.length === 0 ? <p style={{ color: 'var(--text-secondary)' }}>No files uploaded yet.</p> : files.map((f, i) => (
+                    <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem', borderBottom: '1px solid var(--border)' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                        <FileText size={18} color="var(--primary)" />
+                        <span style={{ color: 'var(--text-primary)' }}>{f}</span>
                       </div>
                       <button onClick={() => handleDeleteFile(f)} style={{ background: 'none', border: 'none', color: '#ff4d4d', cursor: 'pointer', display: 'flex' }} title="Delete File">
                         <Trash2 size={18} />
