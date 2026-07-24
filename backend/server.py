@@ -178,7 +178,15 @@ def retrieve_context(query, top_k=5):
         'contact': 'liên hệ',
         'dormitory': 'ký túc xá',
         'housing': 'chỗ ở ký túc xá',
-        'international': 'quốc tế'
+        'international': 'quốc tế',
+        'giảng viên': 'tiến sĩ thạc sĩ giáo sư ts ths pgs gs chuyên gia',
+        'lecturer': 'tiến sĩ thạc sĩ giáo sư ts ths pgs gs chuyên gia',
+        'teacher': 'tiến sĩ thạc sĩ giáo sư ts ths pgs gs chuyên gia',
+        'faculty': 'tiến sĩ thạc sĩ giáo sư ts ths pgs gs chuyên gia',
+        'cán bộ': 'tiến sĩ thạc sĩ giáo sư ts ths pgs gs chuyên gia',
+        'ai dạy': 'tiến sĩ thạc sĩ giáo sư ts ths pgs gs chuyên gia',
+        'thầy cô': 'tiến sĩ thạc sĩ giáo sư ts ths pgs gs chuyên gia',
+        'tên': 'tiến sĩ thạc sĩ giáo sư ts ths pgs gs chuyên gia'
     }
     
     # Append Vietnamese keywords to the query to boost match rates
