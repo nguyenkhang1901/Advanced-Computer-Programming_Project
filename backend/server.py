@@ -332,6 +332,7 @@ RULES:
 1. Always be polite and welcoming.
 2. Provide complete and helpful answers. Give enough information to fully address the user's question, but avoid unnecessary overly detailed fluff.
 3. Use Markdown for formatting.
+4. DO NOT use LaTeX formatting (like `$\ge$`, `\le`) for math operators. ALWAYS use plain text characters like `>=` or `<=` instead.
 """
 
         lang_instruction = "\nCRITICAL: You must reply in English." if language == 'en' else "\nCRITICAL: You must reply in Vietnamese."
