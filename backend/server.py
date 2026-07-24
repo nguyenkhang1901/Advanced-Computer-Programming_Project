@@ -358,7 +358,11 @@ def chat():
                 yield "data: [DONE]\n\n"
             return Response(stream_with_context(cached_stream()), mimetype='text/event-stream')
 
-        chat_contents = "\n".join([h.get('text', '') for h in history]) + (f"\n{message}" if message else "")
+        chat_contents = "\n".join([f"{h.get('role', 'unknown').capitalize()}: {h.get('text', '')}" for h in history]) + (f"\nUser: {message}" if message else "")
+        if language == 'vi':
+            chat_contents += "\n\n[SYSTEM: You MUST reply entirely in Vietnamese.]"
+        elif language == 'en':
+            chat_contents += "\n\n[SYSTEM: You MUST reply entirely in English.]"
         
         # Retrieve context for this specific message using RAG
         context = retrieve_context(message, top_k=3) if message else "No specific query provided. Analyzing image."
@@ -380,7 +384,7 @@ RULES:
 4. DO NOT use LaTeX formatting (like `$\ge$`, `\le`) for math operators. ALWAYS use plain text characters like `>=` or `<=` instead.
 """
 
-        lang_instruction = "\nCRITICAL: You must reply in English." if language == 'en' else "\nCRITICAL: You must reply in Vietnamese."
+        lang_instruction = "\nCRITICAL: You must reply in English. Do not use any Vietnamese." if language == 'en' else "\nCRITICAL: You must reply in Vietnamese. Do not use any English unless it is a proper noun."
         
         import json
         import base64
