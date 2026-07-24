@@ -244,20 +244,26 @@ export default function Admin({ lang, setLang, theme, setTheme }) {
         {activeTab === 'dashboard' ? (
           <div>
             <h2 style={{ color: 'var(--asia-gold)', marginBottom: '1.5rem' }}>{t.stats_programs}</h2>
-            <div style={{ height: '350px', background: 'rgba(0,0,0,0.2)', borderRadius: '16px', padding: '1rem' }}>
-              <ResponsiveContainer width="100%" height="100%">
-                <PieChart>
-                  <Pie data={pieData} cx="50%" cy="50%" labelLine={false} label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`} outerRadius={120} fill="#8884d8" dataKey="value">
-                    {pieData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                    ))}
-                  </Pie>
-                  <RechartsTooltip contentStyle={{ background: '#1e293b', border: 'none', borderRadius: '8px', color: '#fff' }} />
-                </PieChart>
-              </ResponsiveContainer>
+            <div style={{ height: '350px', background: 'rgba(0,0,0,0.2)', borderRadius: '16px', padding: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              {pieData.length > 0 ? (
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie data={pieData} cx="50%" cy="50%" labelLine={false} label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`} outerRadius={120} fill="#8884d8" dataKey="value">
+                      {pieData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                      ))}
+                    </Pie>
+                    <RechartsTooltip contentStyle={{ background: 'var(--panel-bg)', border: '1px solid var(--panel-border)', borderRadius: '8px' }} />
+                  </PieChart>
+                </ResponsiveContainer>
+              ) : (
+                <p style={{ color: 'var(--text-secondary)' }}>{t.no_leads}</p>
+              )}
             </div>
             
-            <h2 style={{ color: 'var(--asia-gold)', marginTop: '2rem', marginBottom: '1.5rem' }}>{t.stats_leads}: {leads.length}</h2>
+            <div style={{ marginTop: '2rem' }}>
+              <h2 style={{ color: 'var(--asia-gold)', marginBottom: '1rem' }}>{t.stats_leads}: {leads.length}</h2>
+            </div>
           </div>
         ) : activeTab === 'leads' ? (
           <>
