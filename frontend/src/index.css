@@ -331,7 +331,7 @@ body.light-theme::before {
 .bubble.bot em     { color: var(--accent-light); font-style: italic; }
 .bubble.bot ul, .bubble.bot ol { margin: 8px 0 8px 18px; }
 .bubble.bot li { margin-bottom: 4px; }
-.bubble.bot p  { margin-bottom: 8px; }
+.bubble.bot p  { margin-bottom: 8px; white-space: pre-wrap; }
 .bubble.bot p:last-child { margin-bottom: 0; }
 .bubble.bot a  { color: var(--primary-light); text-decoration: underline; }
 .bubble.bot code { background: rgba(0,163,75,0.12); padding: 1px 5px; border-radius: 4px; font-family: monospace; font-size: 0.85em; }
