@@ -352,11 +352,14 @@ def chat():
             return jsonify({"reply": reply})
 
         # Check Cache before calling Google API (skip cache if image is provided)
-        cache_key = f"{language}_{normalize_query(message)}" if message else ""
+        import hashlib
+        import json
+        history_str = json.dumps(history, sort_keys=True) if history else ""
+        history_hash = hashlib.md5(history_str.encode('utf-8')).hexdigest()[:8]
+        cache_key = f"{language}_{history_hash}_{normalize_query(message)}" if message else ""
         if not image_base64 and cache_key and cache_key in response_cache:
             print(f"CACHE HIT: {cache_key}")
             from flask import stream_with_context
-            import json
             def cached_stream():
                 cached_text = response_cache[cache_key]
                 # Simulate fast streaming by chunks of characters to preserve newlines
@@ -374,8 +377,17 @@ def chat():
         elif language == 'en':
             chat_contents += "\n\n[SYSTEM: You MUST reply entirely in English.]"
         
+        # Improve RAG context by including recent user messages to handle conversational follow-ups
+        search_query = message
+        if message and history:
+            user_msgs = [h.get('text', '') for h in history if h.get('role') == 'user']
+            if user_msgs:
+                # Take up to the last 2 user messages for context, appended to current message
+                context_msgs = user_msgs[-2:]
+                search_query = " ".join(context_msgs) + " " + message
+                
         # Retrieve context for this specific message using RAG
-        context = retrieve_context(message, top_k=3) if message else "No specific query provided. Analyzing image."
+        context = retrieve_context(search_query, top_k=3) if message else "No specific query provided. Analyzing image."
         
         system_prompt = f"""You are a professional admission consultant for Asia University Vietnam.
 Use the following RELEVANT CONTEXT to answer the student's question. If the context doesn't contain the answer, say you don't know and advise them to contact admissions@asia-vn.edu.vn.
