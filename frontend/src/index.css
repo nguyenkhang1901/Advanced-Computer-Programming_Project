@@ -587,7 +587,7 @@ body.light-theme .lang-notice {
 /* Toast */
 #toast {
   position: fixed;
-  bottom: 80px; left: 50%;
+  bottom: 120px; left: 50%;
   transform: translateX(-50%) translateY(20px);
   background: rgba(17, 26, 20, 0.95);
   border: 1px solid var(--border);
