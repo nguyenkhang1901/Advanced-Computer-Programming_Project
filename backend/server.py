@@ -118,7 +118,7 @@ def execute_stream_with_retry(func, *args, **kwargs):
             error_msg = str(e).lower()
             if "429" in error_msg or "quota" in error_msg or "resource_exhausted" in error_msg:
                 try:
-                    print("Attempting fallback to gemini-3.1-flash-lite...")
+                    print("Attempting fallback to gemini-2.5-flash-lite...")
                     # Pass a special flag to func to indicate fallback model
                     fallback_kwargs = kwargs.copy()
                     fallback_kwargs['fallback'] = True
@@ -410,7 +410,7 @@ RULES:
         def ai_call(client, contents, config, fallback=False):
             target_model = MODEL_NAME
             if fallback:
-                target_model = 'gemini-3.1-flash-lite' # Fallback to a lighter, higher rate-limit model
+                target_model = 'gemini-2.5-flash-lite' # Fallback to a lighter, higher rate-limit model
                 print(f"Using fallback model: {target_model}")
             
             return client.models.generate_content_stream(
@@ -505,7 +505,7 @@ YÊU CẦU:
         def quiz_ai_call(client, contents, config, fallback=False):
             target_model = 'gemini-2.5-flash'
             if fallback:
-                target_model = 'gemini-3.1-flash-lite'
+                target_model = 'gemini-2.5-flash-lite'
             return client.models.generate_content(
                 model=target_model,
                 contents=contents,
@@ -670,7 +670,7 @@ Provide a direct, enthusiastic, and personalized recommendation highlighting why
         def recommend_ai_call(client, contents, config, fallback=False):
             target_model = 'gemini-2.5-flash'
             if fallback:
-                target_model = 'gemini-3.1-flash-lite'
+                target_model = 'gemini-2.5-flash-lite'
             return client.models.generate_content(
                 model=target_model,
                 contents=contents,
