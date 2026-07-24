@@ -645,7 +645,7 @@ def recommend():
         history = data.get('history', [])
         language = data.get('language', 'en')
         
-        if not ai_client:
+        if not ai_clients:
             return jsonify({"recommendation": "AI is currently offline. Based on your profile, please review our website programs."})
             
         history_text = "\n".join([f"{h.get('role', 'unknown')}: {h.get('text', '')}" for h in history]) if history else "No history provided."
@@ -667,10 +667,20 @@ RELEVANT UNIVERSITY INFORMATION:
 Provide a direct, enthusiastic, and personalized recommendation highlighting why a specific program fits them, and suggest a scholarship they should apply for based on their interest. Use Markdown for formatting.
 {'IMPORTANT: Answer entirely in English.' if language == 'en' else 'IMPORTANT: Answer entirely in Vietnamese.'}"""
 
-        response = ai_client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=prompt,
-            config={'temperature': 0.5}
+        def recommend_ai_call(client, contents, config, fallback=False):
+            target_model = 'gemini-2.5-flash'
+            if fallback:
+                target_model = 'gemini-3.1-flash-lite'
+            return client.models.generate_content(
+                model=target_model,
+                contents=contents,
+                config=config
+            )
+
+        response = execute_with_retry(
+            recommend_ai_call,
+            prompt,
+            {'temperature': 0.5}
         )
         
         return jsonify({"recommendation": response.text})
