@@ -317,13 +317,14 @@ def health_check():
 def chat():
     try:
         data = request.json
-        message = data.get('message')
+        message = data.get('message', '')
         history = data.get('history', [])
         session_id = data.get('sessionId', 'anonymous')
         language = data.get('language', 'en')
+        image_base64 = data.get('imageBase64')
         
-        if not message:
-            return jsonify({"error": "Message is required"}), 400
+        if not message and not image_base64:
+            return jsonify({"error": "Message or image is required"}), 400
 
         conn = get_db_connection()
         conn.execute('INSERT INTO chat_logs (session_id, role, message) VALUES (?, ?, ?)',
@@ -340,9 +341,9 @@ def chat():
             conn.close()
             return jsonify({"reply": reply})
 
-        # Check Cache before calling Google API
-        cache_key = normalize_query(message)
-        if cache_key and cache_key in response_cache:
+        # Check Cache before calling Google API (skip cache if image is provided)
+        cache_key = normalize_query(message) if message else ""
+        if not image_base64 and cache_key and cache_key in response_cache:
             print(f"CACHE HIT: {cache_key}")
             from flask import stream_with_context
             import json
@@ -357,10 +358,10 @@ def chat():
                 yield "data: [DONE]\n\n"
             return Response(stream_with_context(cached_stream()), mimetype='text/event-stream')
 
-        chat_contents = "\n".join([h.get('text', '') for h in history]) + f"\n{message}"
+        chat_contents = "\n".join([h.get('text', '') for h in history]) + (f"\n{message}" if message else "")
         
         # Retrieve context for this specific message using RAG
-        context = retrieve_context(message, top_k=3)
+        context = retrieve_context(message, top_k=3) if message else "No specific query provided. Analyzing image."
         
         system_prompt = f"""You are a professional admission consultant for Asia University Vietnam.
 Use the following RELEVANT CONTEXT to answer the student's question. If the context doesn't contain the answer, say you don't know and advise them to contact admissions@asia-vn.edu.vn.
