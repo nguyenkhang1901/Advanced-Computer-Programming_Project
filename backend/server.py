@@ -250,20 +250,14 @@ def retrieve_context(query, top_k=5):
     if added_keywords:
         query_lower += " " + " ".join(added_keywords)
 
-    # Extract alphanumeric words
-    words = re.findall(r'\w+', query_lower)
-    
-    query_tokens = []
-    # Generate 1-gram, 2-gram, 3-gram
-    for n in range(1, 4):
-        for i in range(len(words) - n + 1):
-            query_tokens.append(' '.join(words[i:i+n]))
-            
-    # Filter out very short tokens and duplicates
-    query_tokens = list(set([t for t in query_tokens if len(t) > 2]))
-    
-    if not query_tokens:
-        query_tokens = ['asia', 'university'] # fallback default
+    def get_ngrams(text):
+        words = re.findall(r'\w+', text.lower())
+        tokens = list(words)
+        for i in range(len(words) - 1):
+            tokens.append(f"{words[i]} {words[i+1]}")
+        for i in range(len(words) - 2):
+            tokens.append(f"{words[i]} {words[i+1]} {words[i+2]}")
+        return tokens
     
     conn = get_db_connection()
     try:
@@ -306,13 +300,13 @@ def retrieve_context(query, top_k=5):
                 retrieved_chunks.append('\n\n'.join(current_chunk))
                 chunk_filenames.append(filename)
                     
-        # Implement rank_bm25 & Fuzzy Scoring
-        tokenized_corpus = [re.findall(r'\w+', doc.lower()) for doc in retrieved_chunks]
+        # Implement rank_bm25 & Fuzzy Scoring with N-grams (1, 2, 3-grams) for Vietnamese compound words
+        tokenized_corpus = [get_ngrams(doc) for doc in retrieved_chunks]
         
         try:
             bm25 = BM25Okapi(tokenized_corpus)
-            query_words = re.findall(r'\w+', query_lower)
-            bm25_scores = bm25.get_scores(query_words)
+            query_tokens = get_ngrams(query_lower)
+            bm25_scores = bm25.get_scores(query_tokens)
         except NameError:
             # Fallback if library failed to load
             bm25_scores = [0] * len(retrieved_chunks)
@@ -420,7 +414,7 @@ def chat():
 
         chat_contents = "\n".join([f"{h.get('role', 'unknown').capitalize()}: {h.get('text', '')}" for h in history]) + (f"\nUser: {message}" if message else "")
         if language == 'vi':
-            chat_contents += "\n\n[SYSTEM: You MUST reply entirely in Vietnamese.]"
+            chat_contents += "\n\n[SYSTEM: You MUST reply entirely in Vietnamese (UNLESS the user explicitly asks in English, then reply in English).]"
         elif language == 'en':
             chat_contents += "\n\n[SYSTEM: You MUST reply entirely in English.]"
         
@@ -453,7 +447,7 @@ RULES:
 4. DO NOT use LaTeX formatting (like `$\ge$`, `\le`) for math operators. ALWAYS use plain text characters like `>=` or `<=` instead.
 """
 
-        lang_instruction = "\nCRITICAL: You must reply in English. Do not use any Vietnamese." if language == 'en' else "\nCRITICAL: You must reply in Vietnamese. Do not use any English unless it is a proper noun."
+        lang_instruction = "\nCRITICAL: You must reply in English. Do not use any Vietnamese." if language == 'en' else "\nCRITICAL: You must reply in Vietnamese (UNLESS the user's latest message is clearly in English, then you must reply in English)."
         
         import json
         import base64
