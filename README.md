@@ -23,6 +23,147 @@ An enterprise-grade, automated admission consulting and career guidance system p
 
 ---
 
+## 💻 System Requirements
+To run or develop the AI Admission Consultant System locally, your environment must meet the following minimum system requirements:
+
+- **Operating System (HĐH):** Windows 10 / Windows 11 (Recommended for automated `.bat` scripts), macOS, or Linux (Ubuntu/Debian/CentOS).
+- **Node.js:** v18.0.0 or higher (with `npm` v9.0.0+ for frontend package management).
+- **Python:** v3.10.0 or higher (with `pip` and virtual environment support).
+- **Git:** Latest stable version for version control and repository cloning.
+- **Hardware:** Minimum 4GB RAM, dual-core CPU (required for local N-gram BM25 lexical indexing and real-time chunk tokenization without external cloud vector databases).
+- **Internet Connection:** Required for querying Google Gemini GenAI cloud endpoints.
+
+---
+
+## 📥 Installation Steps
+Follow these step-by-step instructions to set up the project from scratch on your local machine:
+
+### Step 1: Clone the Repository
+Open your terminal or command prompt and clone the source code from GitHub:
+```bash
+git clone https://github.com/nguyenkhang1901/Advanced-Computer-Programming_Project.git
+cd Advanced-Computer-Programming_Project
+```
+
+### Step 2: Install Frontend Dependencies
+Navigate into the `frontend` directory and install the necessary React & Node.js packages:
+```bash
+cd frontend
+npm install
+cd ..
+```
+
+### Step 3: Install Backend Dependencies
+Navigate into the `backend` directory and install the required Python packages:
+```bash
+cd backend
+pip install -r requirements.txt
+cd ..
+```
+
+### Step 4: Configure Environment Variables (.env)
+The backend requires Google Gemini API keys to power the AI responses and fallback rotation pool.
+1. Navigate to the `backend/` directory.
+2. Copy the sample environment file `.env.example` to create your local `.env` file:
+   ```bash
+   cp backend/.env.example backend/.env
+   ```
+3. Open `backend/.env` in a text editor and insert your free Google Gemini API keys (comma-separated if using multiple keys for rotation):
+   ```env
+   AI_API_KEYS="AIzaSy...YourKey1...,AIzaSy...YourKey2..."
+   MODEL_NAME="gemini-3.5-flash-lite"
+   ```
+   *(Note: You can obtain free API keys from Google AI Studio at `https://aistudio.google.com/`).*
+
+---
+
+## 📦 Dependencies & Libraries
+The system relies on a curated list of high-performance libraries and frameworks across the full-stack architecture:
+
+### Backend Dependencies (Python - `backend/requirements.txt`)
+- **`flask` (v3.0+) & `flask-cors`:** Core WSGI web application framework and Cross-Origin Resource Sharing handler for RESTful API and Server-Sent Events (SSE) endpoints.
+- **`google-genai` / `google-generativeai`:** Official Google GenAI SDK for streaming content generation, vision multimodal analysis, and model fallback execution (`gemini-3.5-flash-lite`).
+- **`rank-bm25`:** High-speed lexical search algorithm implementing N-gram Okapi BM25 for local RAG chunk scoring.
+- **`thefuzz` & `python-Levenshtein`:** Fuzzy string matching library utilizing Levenshtein distance to score document titles and gracefully handle user typos or phonetic misspellings.
+- **`beautifulsoup4` & `requests`:** HTML parsing and HTTP request automation libraries used in `crawler.py` to ingest live admissions articles from official university web pages.
+- **`werkzeug`:** WSGI utilities providing secure filename handling and multipart file upload processing for the Admin Knowledge Base portal.
+
+### Frontend Dependencies (Node.js / React - `frontend/package.json`)
+- **`react` & `react-dom` (v19.x):** Modern component-based UI library for building reactive client-side interfaces.
+- **`vite` (v8.x):** Next-generation frontend build tool and ultra-fast Hot Module Replacement (HMR) development server.
+- **`tailwindcss` (v3.x):** Utility-first CSS framework enabling responsive, modern, and aesthetic styling (dark mode, glassmorphism, dynamic gradients).
+- **`lucide-react`:** Comprehensive suite of clean, customizable SVG icons for interactive UI elements.
+- **`react-markdown` & `remark-gfm`:** Advanced Markdown rendering engine supporting GitHub Flavored Markdown (tables, syntax highlighting, lists, bold formatting) in real-time AI chat streams.
+- **`axios`:** Promise-based HTTP client for managing REST API communications between client and server.
+- **`react-router-dom` (v7.x):** Client-side routing library managing navigation across Chat, Career Quiz, and Admin portals.
+- **`recharts`:** Composable charting library used in the Admin Dashboard to visualize analytics, lead statistics, and chat metrics.
+
+---
+
+## ⚙️ Execution Procedures
+You can execute and run the system locally using either **manual terminal commands** (cross-platform compatible) or the **automated Windows quick-start script**.
+
+### Option A: Manual Terminal Commands (Cross-Platform: Windows, macOS, Linux)
+To run the full-stack application manually, open **two separate terminal windows**:
+
+1. **Start the Backend API Server (Terminal Window 1):**
+   ```bash
+   cd backend
+   python server.py
+   ```
+   *The Flask API server and SQLite database engine will initialize and listen on `http://localhost:5000`.*
+
+2. **Start the Frontend Web Server (Terminal Window 2):**
+   ```bash
+   cd frontend
+   npm run dev
+   ```
+   *The Vite development server will start on `http://localhost:5173`. Open this link in your web browser to use the application.*
+
+### Option B: Automated Startup (Windows Quick-Start Script)
+For Windows developers, the project includes an all-in-one automation script:
+1. Double-click **`run.bat`** in the project root directory.
+2. Select your preferred execution mode:
+   - **Mode `[1]` - Offline Dev Mode:** Automatically launches both the Flask Backend (Port 5000) and Vite Frontend Dev Server (Port 5173) in separate command windows with HMR enabled.
+   - **Mode `[2]` - Public Demo Mode (Cloudflare Tunnel):** Builds the production React bundle, serves the full-stack application natively on Port 5000, and automatically generates a secure public HTTPS URL (e.g., `https://random-words.trycloudflare.com`) for sharing live demos with advisors or clients.
+
+---
+
+## 💡 Sample Usage
+Once the application is running (locally or via the live cloud link at [https://asia-uni-admission.vercel.app](https://asia-uni-admission.vercel.app)), here are concrete examples of how students and administrators can interact with the AI assistant:
+
+### 1. Bilingual Admission Consulting (Tư vấn tuyển sinh song ngữ)
+- **Student Prompt (VI):** *"Trường mình có cơ sở ở TP.HCM không? Địa chỉ chính xác là gì và học phí ngành AI là bao nhiêu?"*
+- **AI Response (VI - Streaming via RAG):**
+  > **Trường Đại học Asia Vietnam (AUV)** hiện có cơ sở đào tạo tại TP. Hồ Chí Minh!
+  > - **📍 Địa chỉ cơ sở TP.HCM:** `485 Lê Quang Định, Phường Hạnh Thông, TP. Hồ Chí Minh`.
+  > - **🤖 Ngành Trí tuệ Nhân tạo (AI):** Chương trình đào tạo chuẩn quốc tế với mức học phí cực kỳ ưu đãi, được hỗ trợ bởi các chuyên gia và giảng viên hàng đầu. Bạn có cơ hội nhận học bổng từ 50% đến 100% học phí tuỳ theo kết quả xét tuyển học bạ!
+- **Student Prompt (EN Switch):** *"Can you tell me about the scholarships available for the Semiconductor Technology major?"*
+- **AI Response (EN - Streaming):**
+  > Asia University Vietnam offers prestigious merit-based scholarships for the **Semiconductor Technology** program! High-achieving candidates can qualify for 50%, 80%, or 100% tuition fee waivers. To apply, you need to submit your academic transcripts and English proficiency certificates...
+
+### 2. Interactive Career Quiz (Trắc nghiệm định hướng nghề nghiệp)
+- **User Workflow:** Click the **"Career Quiz" (Trắc nghiệm Ngành học)** tab in the navigation bar.
+- **Sample Interaction:** Answer 5 multiple-choice questions assessing your personality traits, working style (e.g., analytical solving vs. creative leadership), and academic strengths.
+- **AI Diagnosis Result:** The system generates a personalized diagnostic report recommending **Finance** or **Artificial Intelligence**, explaining exactly why your skills match the major and suggesting specific scholarship tracks to pursue.
+
+### 3. Multimodal Document Evaluation (Đánh giá học bạ / chứng chỉ bằng hình ảnh)
+- **User Workflow:** Click the **Paperclip Icon** 📎 in the chat bar and upload an image of your High School Transcript, IELTS Certificate, or Award Diploma.
+- **Student Prompt:** *"Đây là bảng điểm học kỳ 1 lớp 12 của em, AI xem giúp em có đủ điều kiện xét tuyển học bổng ngành AI không nhé?"*
+- **AI Response:** The AI vision model reads the academic grades directly from the image, calculates your GPA, evaluates eligibility against AUV's admission rules, and provides immediate feedback on your qualification status.
+
+### 4. Automated Lead Capture (Đăng ký nhận tư vấn)
+- **User Workflow:** After 3-4 meaningful chat turns, a non-intrusive modal appears inviting the candidate to connect with human admission officers.
+- **Sample Submission:** Enter Name (*Nguyen Van A*), Phone (*0901234567*), Email (*nguyenvana@example.com*), and Major of Interest (*Artificial Intelligence*).
+- **System Action:** The lead is automatically stored in `database.db` and becomes instantly visible on the Admin Dashboard CRM table for recruitment follow-up.
+
+### 5. Admin Knowledge Base Management (Quản lý dữ liệu tuyển sinh)
+- **Admin Workflow:** Navigate to `/admin` and log in with password `admin123`.
+- **Sample Action:** Go to **Knowledge Base Management** -> Click **Upload Document** -> Upload a new text file `scholarship_rules_2026.txt`.
+- **System Action:** The backend automatically chunks the document by paragraph boundaries, re-indexes the SQLite BM25 lexical tables, and immediately equips the AI bot to answer student questions using the newly uploaded 2026 rules without requiring server restarts!
+
+---
+
 ## 🏗️ System Architecture & Technical Highlights
 
 ```mermaid
@@ -51,65 +192,6 @@ To overcome the high API costs and rate limits of cloud vector embeddings, we de
 ### 3. Context-Aware Streaming Cache
 - **MD5 History Hashing:** The caching mechanism hashes the exact conversation history (`history_hash`) combined with language toggle and normalized query strings.
 - **Streaming Cache Replay:** Cache hits bypass Google API entirely, simulating natural character-chunked streaming via SSE while preserving complex Markdown formatting (tables, bullet points, line breaks).
-
----
-
-## 🛠️ Technology Stack
-
-| Layer | Technologies Used |
-| :--- | :--- |
-| **Frontend** | React 18, Vite, Tailwind CSS, React Router, Lucide Icons, React-Markdown |
-| **Backend** | Python 3.10+, Flask, Flask-CORS, Werkzeug |
-| **Database** | SQLite 3 (`database.db` - Tables: `knowledge_base`, `chat_logs`, `leads`) |
-| **AI & RAG** | Google GenAI SDK (`gemini-3.5-flash-lite`), Rank-BM25, TheFuzz |
-| **Deployment** | Vercel (Frontend Cloud), Render (Backend Cloud) & Cloudflare Tunnels |
-
----
-
-## 🚀 Setup & Installation Guide
-
-### Prerequisite Requirements
-- **Node.js:** v18.0.0 or higher
-- **Python:** v3.9.0 or higher
-- **Git:** Latest version
-
-### Step 1: Clone & Configure Dependencies
-1. Clone the repository and navigate to the project root:
-   ```bash
-   git clone https://github.com/nguyenkhang1901/Advanced-Computer-Programming_Project.git
-   cd Advanced-Computer-Programming_Project
-   ```
-2. Install Frontend dependencies:
-   ```bash
-   cd frontend
-   npm install
-   cd ..
-   ```
-3. Install Backend dependencies:
-   ```bash
-   cd backend
-   pip install -r requirements.txt
-   cd ..
-   ```
-
-### Step 2: Environment Configuration
-1. Navigate to the `backend/` directory.
-2. Copy `.env.example` to create a new `.env` file:
-   ```bash
-   cp backend/.env.example backend/.env
-   ```
-3. Open `backend/.env` and insert your free Google Gemini API keys (comma-separated if multiple):
-   ```env
-   AI_API_KEYS="AIzaSy...YourKey1...,AIzaSy...YourKey2..."
-   MODEL_NAME="gemini-3.5-flash-lite"
-   ```
-
-### Step 3: Running the Application (Windows Quick-Start)
-The project includes an automated startup script for Windows developers:
-1. Double-click **`run.bat`** in the project root.
-2. Select your preferred execution mode:
-   - **Mode [1] - Offline Dev Mode:** Starts Flask API (Port 5000) and Vite Dev Server (Port 5173) in separate windows with hot-module reloading enabled.
-   - **Mode [2] - Public Demo Mode (Cloudflare Tunnel):** Builds the production React bundle, serves full-stack on Port 5000, and automatically generates a secure public HTTPS URL (e.g., `https://random-words.trycloudflare.com`) for external sharing and demos.
 
 ---
 
