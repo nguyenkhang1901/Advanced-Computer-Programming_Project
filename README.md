@@ -2,6 +2,9 @@
 
 An enterprise-grade, automated admission consulting and career guidance system powered by **Artificial Intelligence (Google Gemini 3.5 Flash Lite)** and a **Zero-Cost Hybrid Local RAG Engine**, specifically engineered for **Asia University Vietnam**.
 
+> **🌐 🟢 Live Cloud Web App (Frontend):** [https://asia-uni-admission.vercel.app](https://asia-uni-admission.vercel.app)  
+> **⚙️ 🟢 Live Cloud API Server (Backend):** [https://asia-uni-backend.onrender.com](https://asia-uni-backend.onrender.com)
+
 ---
 
 ## 🌟 Key Features
@@ -60,7 +63,7 @@ To overcome the high API costs and rate limits of cloud vector embeddings, we de
 | **Backend** | Python 3.10+, Flask, Flask-CORS, Werkzeug |
 | **Database** | SQLite 3 (`database.db` - Tables: `knowledge_base`, `chat_logs`, `leads`) |
 | **AI & RAG** | Google GenAI SDK (`gemini-3.5-flash-lite`), Rank-BM25, TheFuzz |
-| **Deployment** | Cloud-ready (Render / Vercel / Docker compatible) & Cloudflare Tunnels |
+| **Deployment** | Vercel (Frontend Cloud), Render (Backend Cloud) & Cloudflare Tunnels |
 
 ---
 
@@ -108,6 +111,13 @@ The project includes an automated startup script for Windows developers:
 2. Select your preferred execution mode:
    - **Mode [1] - Offline Dev Mode:** Starts Flask API (Port 5000) and Vite Dev Server (Port 5173) in separate windows with hot-module reloading enabled.
    - **Mode [2] - Public Demo Mode (Cloudflare Tunnel):** Builds the production React bundle, serves full-stack on Port 5000, and automatically generates a secure public HTTPS URL (e.g., `https://random-words.trycloudflare.com`) for external sharing and demos.
+
+---
+
+## ☁️ Live Cloud Deployment (Production)
+The full-stack application is deployed 24/7 on cloud infrastructure and accessible online:
+- **Frontend Web Portal (Vercel):** [https://asia-uni-admission.vercel.app](https://asia-uni-admission.vercel.app)
+- **Backend API Server (Render):** [https://asia-uni-backend.onrender.com](https://asia-uni-backend.onrender.com) *(API Health Check: `/api/health`)*
 
 ---
 
