@@ -1,6 +1,6 @@
 # 🎓🤖 Asia University Vietnam - AI Admission Consultant System
 
-An enterprise-grade, automated admission consulting and career guidance system powered by **Artificial Intelligence (Google Gemini 2.5 Flash)** and a **Zero-Cost Hybrid Local RAG Engine**, specifically engineered for **Asia University Vietnam**.
+An enterprise-grade, automated admission consulting and career guidance system powered by **Artificial Intelligence (Google Gemini 3.5 Flash Lite)** and a **Zero-Cost Hybrid Local RAG Engine**, specifically engineered for **Asia University Vietnam**.
 
 ---
 
@@ -44,7 +44,7 @@ To overcome the high API costs and rate limits of cloud vector embeddings, we de
 
 ### 2. Multi-Key Rotation & Automatic Fallback Pool
 - **API Key Pool (`AI_API_KEYS`):** Dynamically rotates across multiple Google Gemini API keys to distribute load and prevent quota exhaustion.
-- **Fault-Tolerant Fallback:** Automatic exponential backoff and model degradation from `gemini-2.5-flash` to lightweight models (`gemini-2.5-flash-lite`) upon encountering HTTP 429 (Rate Limit) or quota exceptions, ensuring 99.9% system availability.
+- **Fault-Tolerant Fallback:** Automatic exponential backoff and retry mechanism using `gemini-3.5-flash-lite` upon encountering HTTP 429 (Rate Limit) or quota exceptions, ensuring 99.9% system availability.
 
 ### 3. Context-Aware Streaming Cache
 - **MD5 History Hashing:** The caching mechanism hashes the exact conversation history (`history_hash`) combined with language toggle and normalized query strings.
@@ -59,7 +59,7 @@ To overcome the high API costs and rate limits of cloud vector embeddings, we de
 | **Frontend** | React 18, Vite, Tailwind CSS, React Router, Lucide Icons, React-Markdown |
 | **Backend** | Python 3.10+, Flask, Flask-CORS, Werkzeug |
 | **Database** | SQLite 3 (`database.db` - Tables: `knowledge_base`, `chat_logs`, `leads`) |
-| **AI & RAG** | Google GenAI SDK (`gemini-2.5-flash` / `flash-lite`), Rank-BM25, TheFuzz |
+| **AI & RAG** | Google GenAI SDK (`gemini-3.5-flash-lite`), Rank-BM25, TheFuzz |
 | **Deployment** | Cloud-ready (Render / Vercel / Docker compatible) & Cloudflare Tunnels |
 
 ---
@@ -99,7 +99,7 @@ To overcome the high API costs and rate limits of cloud vector embeddings, we de
 3. Open `backend/.env` and insert your free Google Gemini API keys (comma-separated if multiple):
    ```env
    AI_API_KEYS="AIzaSy...YourKey1...,AIzaSy...YourKey2..."
-   MODEL_NAME="gemini-2.5-flash"
+   MODEL_NAME="gemini-3.5-flash-lite"
    ```
 
 ### Step 3: Running the Application (Windows Quick-Start)

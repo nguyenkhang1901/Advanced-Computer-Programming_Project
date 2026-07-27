@@ -73,7 +73,7 @@ def execute_with_retry(func, *args, **kwargs):
             error_msg = str(e).lower()
             if "429" in error_msg or "quota" in error_msg or "resource_exhausted" in error_msg:
                 try:
-                    print("Attempting fallback to gemini-3.1-flash-lite...")
+                    print(f"Attempting fallback to {MODEL_NAME}...")
                     fallback_kwargs = kwargs.copy()
                     fallback_kwargs['fallback'] = True
                     return func(client, *args, **fallback_kwargs)
@@ -118,7 +118,7 @@ def execute_stream_with_retry(func, *args, **kwargs):
             error_msg = str(e).lower()
             if "429" in error_msg or "quota" in error_msg or "resource_exhausted" in error_msg:
                 try:
-                    print("Attempting fallback to gemini-2.5-flash-lite...")
+                    print(f"Attempting fallback to {MODEL_NAME}...")
                     # Pass a special flag to func to indicate fallback model
                     fallback_kwargs = kwargs.copy()
                     fallback_kwargs['fallback'] = True
@@ -444,7 +444,7 @@ RULES:
 1. Always be polite and welcoming.
 2. Provide complete and helpful answers. Give enough information to fully address the user's question, but avoid unnecessary overly detailed fluff.
 3. Use Markdown for formatting.
-4. DO NOT use LaTeX formatting (like `$\ge$`, `\le`) for math operators. ALWAYS use plain text characters like `>=` or `<=` instead.
+4. DO NOT use LaTeX formatting (like `$\\ge$`, `\\le`) for math operators. ALWAYS use plain text characters like `>=` or `<=` instead.
 """
 
         lang_instruction = "\nCRITICAL: You must reply in English. Do not use any Vietnamese." if language == 'en' else "\nCRITICAL: You must reply in Vietnamese (UNLESS the user's latest message is clearly in English, then you must reply in English)."
@@ -478,7 +478,7 @@ RULES:
         def ai_call(client, contents, config, fallback=False):
             target_model = MODEL_NAME
             if fallback:
-                target_model = 'gemini-2.5-flash-lite' # Fallback to a lighter, higher rate-limit model
+                target_model = 'gemini-3.5-flash-lite' # Fallback to a lighter, higher rate-limit model
                 print(f"Using fallback model: {target_model}")
             
             return client.models.generate_content_stream(
@@ -571,9 +571,9 @@ YÊU CẦU:
         lang_instruction = "\nCRITICAL: Reply in English." if language == 'en' else "\nCRITICAL: Reply in Vietnamese."
         
         def quiz_ai_call(client, contents, config, fallback=False):
-            target_model = 'gemini-2.5-flash'
+            target_model = MODEL_NAME
             if fallback:
-                target_model = 'gemini-2.5-flash-lite'
+                target_model = 'gemini-3.5-flash-lite'
             return client.models.generate_content(
                 model=target_model,
                 contents=contents,
@@ -736,9 +736,9 @@ Provide a direct, enthusiastic, and personalized recommendation highlighting why
 {'IMPORTANT: Answer entirely in English.' if language == 'en' else 'IMPORTANT: Answer entirely in Vietnamese.'}"""
 
         def recommend_ai_call(client, contents, config, fallback=False):
-            target_model = 'gemini-2.5-flash'
+            target_model = MODEL_NAME
             if fallback:
-                target_model = 'gemini-2.5-flash-lite'
+                target_model = 'gemini-3.5-flash-lite'
             return client.models.generate_content(
                 model=target_model,
                 contents=contents,
