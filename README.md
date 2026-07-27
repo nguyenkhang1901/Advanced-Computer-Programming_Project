@@ -2,8 +2,7 @@
 
 An enterprise-grade, automated admission consulting and career guidance system powered by **Artificial Intelligence (Google Gemini 3.5 Flash Lite)** and a **Zero-Cost Hybrid Local RAG Engine**, specifically engineered for **Asia University Vietnam**.
 
-> **🌐 🟢 Live Cloud Web App (Frontend):** [https://asia-uni-admission.vercel.app](https://asia-uni-admission.vercel.app)  
-> **⚙️ 🟢 Live Cloud API Server (Backend):** [https://asia-uni-backend.onrender.com](https://asia-uni-backend.onrender.com)
+> **🌐 🟢 Live Cloud Web App:** [https://asia-uni-admission.vercel.app](https://asia-uni-admission.vercel.app)
 
 ---
 
@@ -115,9 +114,8 @@ The project includes an automated startup script for Windows developers:
 ---
 
 ## ☁️ Live Cloud Deployment (Production)
-The full-stack application is deployed 24/7 on cloud infrastructure and accessible online:
-- **Frontend Web Portal (Vercel):** [https://asia-uni-admission.vercel.app](https://asia-uni-admission.vercel.app)
-- **Backend API Server (Render):** [https://asia-uni-backend.onrender.com](https://asia-uni-backend.onrender.com) *(API Health Check: `/api/health`)*
+The application is deployed 24/7 on cloud infrastructure and accessible online for live demonstration:
+- **Web App Portal:** [https://asia-uni-admission.vercel.app](https://asia-uni-admission.vercel.app)
 
 ---
 
