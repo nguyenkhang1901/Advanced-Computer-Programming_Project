@@ -2,13 +2,13 @@
 
 An enterprise-grade, automated admission consulting and career guidance system powered by **Artificial Intelligence (Google Gemini 3.5 Flash Lite)** and a **Zero-Cost Hybrid Local RAG Engine**, specifically engineered for **Asia University Vietnam**.
 
-## 🚀 🌐 TRẢI NGHIỆM NGAY (LIVE CLOUD DEMO / TRANG WEB TRỰC TUYẾN)
+## 🚀 🌐 LIVE CLOUD DEMO
 
-Hệ thống đã được triển khai hoàn chỉnh 24/7 trên nền tảng điện toán đám mây. Thầy cô và người dùng không cần cài đặt phức tạp, chỉ cần nhấp vào đường dẫn dưới đây để truy cập và sử dụng ngay lập tức:
+The system is fully deployed 24/7 on cloud infrastructure. No complex local installation is required for demonstration purposes. Simply click the link below to access and experience the system immediately:
 
-👉 **LINK WEB TRẢI NGHIỆM:** [**https://asia-uni-admission.vercel.app**](https://asia-uni-admission.vercel.app) 👈
+👉 **LIVE WEB APP PORTAL:** [**https://asia-uni-admission.vercel.app**](https://asia-uni-admission.vercel.app) 👈
 
-*(Trang web tương thích và chạy mượt mà trên cả máy tính, máy tính bảng và điện thoại di động).*
+*(The web application is fully responsive and runs smoothly on desktops, tablets, and mobile devices).*
 
 ---
 
@@ -32,7 +32,7 @@ Hệ thống đã được triển khai hoàn chỉnh 24/7 trên nền tảng đ
 ## 💻 System Requirements
 To run or develop the AI Admission Consultant System locally, your environment must meet the following minimum system requirements:
 
-- **Operating System (HĐH):** Windows 10 / Windows 11 (Recommended for automated `.bat` scripts), macOS, or Linux (Ubuntu/Debian/CentOS).
+- **Operating System:** Windows 10 / Windows 11 (Recommended for automated `.bat` scripts), macOS, or Linux (Ubuntu/Debian/CentOS).
 - **Node.js:** v18.0.0 or higher (with `npm` v9.0.0+ for frontend package management).
 - **Python:** v3.10.0 or higher (with `pip` and virtual environment support).
 - **Git:** Latest stable version for version control and repository cloning.
@@ -138,32 +138,32 @@ For Windows developers, the project includes an all-in-one automation script:
 ## 💡 Sample Usage
 Once the application is running (locally or via the live cloud link at [https://asia-uni-admission.vercel.app](https://asia-uni-admission.vercel.app)), here are concrete examples of how students and administrators can interact with the AI assistant:
 
-### 1. Bilingual Admission Consulting (Tư vấn tuyển sinh song ngữ)
-- **Student Prompt (VI):** *"Trường mình có cơ sở ở TP.HCM không? Địa chỉ chính xác là gì và học phí ngành AI là bao nhiêu?"*
-- **AI Response (VI - Streaming via RAG):**
-  > **Trường Đại học Asia Vietnam (AUV)** hiện có cơ sở đào tạo tại TP. Hồ Chí Minh!
-  > - **📍 Địa chỉ cơ sở TP.HCM:** `485 Lê Quang Định, Phường Hạnh Thông, TP. Hồ Chí Minh`.
-  > - **🤖 Ngành Trí tuệ Nhân tạo (AI):** Chương trình đào tạo chuẩn quốc tế với mức học phí cực kỳ ưu đãi, được hỗ trợ bởi các chuyên gia và giảng viên hàng đầu. Bạn có cơ hội nhận học bổng từ 50% đến 100% học phí tuỳ theo kết quả xét tuyển học bạ!
-- **Student Prompt (EN Switch):** *"Can you tell me about the scholarships available for the Semiconductor Technology major?"*
+### 1. Bilingual Admission Consulting
+- **Student Prompt (Vietnamese Example):** *"Trường mình có cơ sở ở TP.HCM không? Địa chỉ chính xác là gì và học phí ngành AI là bao nhiêu?"* (Does the university have a campus in HCMC? What is the exact address and tuition fee for the AI major?)
+- **AI Response (Streaming via RAG):**
+  > **Asia University Vietnam (AUV)** currently has a campus in Ho Chi Minh City!
+  > - **📍 HCMC Campus Address:** `485 Le Quang Dinh, Hanh Thong Ward, Ho Chi Minh City`.
+  > - **🤖 Artificial Intelligence (AI) Major:** International standard training program with highly preferential tuition fees, supported by leading experts and lecturers. You have the opportunity to receive scholarships from 50% to 100% of tuition fees based on your academic records!
+- **Student Prompt (English Switch):** *"Can you tell me about the scholarships available for the Semiconductor Technology major?"*
 - **AI Response (EN - Streaming):**
   > Asia University Vietnam offers prestigious merit-based scholarships for the **Semiconductor Technology** program! High-achieving candidates can qualify for 50%, 80%, or 100% tuition fee waivers. To apply, you need to submit your academic transcripts and English proficiency certificates...
 
-### 2. Interactive Career Quiz (Trắc nghiệm định hướng nghề nghiệp)
-- **User Workflow:** Click the **"Career Quiz" (Trắc nghiệm Ngành học)** tab in the navigation bar.
+### 2. Interactive Career Quiz
+- **User Workflow:** Click the **"Career Quiz"** tab in the navigation bar.
 - **Sample Interaction:** Answer 5 multiple-choice questions assessing your personality traits, working style (e.g., analytical solving vs. creative leadership), and academic strengths.
 - **AI Diagnosis Result:** The system generates a personalized diagnostic report recommending **Finance** or **Artificial Intelligence**, explaining exactly why your skills match the major and suggesting specific scholarship tracks to pursue.
 
-### 3. Multimodal Document Evaluation (Đánh giá học bạ / chứng chỉ bằng hình ảnh)
+### 3. Multimodal Document Evaluation
 - **User Workflow:** Click the **Paperclip Icon** 📎 in the chat bar and upload an image of your High School Transcript, IELTS Certificate, or Award Diploma.
-- **Student Prompt:** *"Đây là bảng điểm học kỳ 1 lớp 12 của em, AI xem giúp em có đủ điều kiện xét tuyển học bổng ngành AI không nhé?"*
+- **Student Prompt:** *"Here is my high school transcript for the first semester of 12th grade. Can you check if I am eligible for the AI major scholarship?"*
 - **AI Response:** The AI vision model reads the academic grades directly from the image, calculates your GPA, evaluates eligibility against AUV's admission rules, and provides immediate feedback on your qualification status.
 
-### 4. Automated Lead Capture (Đăng ký nhận tư vấn)
+### 4. Automated Lead Capture
 - **User Workflow:** After 3-4 meaningful chat turns, a non-intrusive modal appears inviting the candidate to connect with human admission officers.
 - **Sample Submission:** Enter Name (*Nguyen Van A*), Phone (*0901234567*), Email (*nguyenvana@example.com*), and Major of Interest (*Artificial Intelligence*).
 - **System Action:** The lead is automatically stored in `database.db` and becomes instantly visible on the Admin Dashboard CRM table for recruitment follow-up.
 
-### 5. Admin Knowledge Base Management (Quản lý dữ liệu tuyển sinh)
+### 5. Admin Knowledge Base Management
 - **Admin Workflow:** Navigate to `/admin` and log in with password `admin123`.
 - **Sample Action:** Go to **Knowledge Base Management** -> Click **Upload Document** -> Upload a new text file `scholarship_rules_2026.txt`.
 - **System Action:** The backend automatically chunks the document by paragraph boundaries, re-indexes the SQLite BM25 lexical tables, and immediately equips the AI bot to answer student questions using the newly uploaded 2026 rules without requiring server restarts!
@@ -186,7 +186,7 @@ graph TD
 
 ### 1. Zero-Cost Hybrid Local RAG Engine
 To overcome the high API costs and rate limits of cloud vector embeddings, we designed an optimized local CPU-based retrieval pipeline:
-- **N-gram BM25 Okapi:** Upgraded from standard unigrams to **1, 2, and 3-gram tokenization**, perfectly preserving Vietnamese compound words (e.g., `"cơ sở"`, `"địa chỉ"`, `"học phí"`, `"điểm chuẩn"`).
+- **N-gram BM25 Okapi:** Upgraded from standard unigrams to **1, 2, and 3-gram tokenization**, perfectly preserving compound words.
 - **Fuzzy Title Matching:** Utilizes `thefuzz` (Levenshtein distance) to score document headers and handle user typos or phonetic misspellings gracefully.
 - **Semantic Paragraph Chunking:** Documents are segmented by natural paragraph boundaries (`\n\n`) with intelligent length capping (1200 chars) to preserve semantic context without fragmenting sentences.
 - **Bilingual Keyword Mapping:** A comprehensive domain dictionary automatically bridges English queries (`major`, `tuition`, `scholarship`, `address`, `campus`, `lecturer`...) to Vietnamese knowledge base chunks, enabling zero-latency cross-lingual RAG without external translation APIs.
@@ -209,7 +209,7 @@ The application is deployed 24/7 on cloud infrastructure and accessible online f
 
 ## 📍 University Campus Information
 - **Institution:** Asia University Vietnam (AUV)
-- **Ho Chi Minh City Campus:** `485 Lê Quang Định, Phường Hạnh Thông, TP. Hồ Chí Minh`
+- **Ho Chi Minh City Campus:** `485 Le Quang Dinh, Hanh Thong Ward, Ho Chi Minh City`
 - **Hanoi Campus:** `No. 80 Duy Tan Street, Cau Giay District, Hanoi`
 - **Core Majors:** Artificial Intelligence (AI), Semiconductor Technology, Finance, Business Administration.
 
