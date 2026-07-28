@@ -88,7 +88,7 @@ The system relies on a curated list of high-performance libraries and frameworks
 
 ### Backend Dependencies (Python - `backend/requirements.txt`)
 - **`flask` (v3.0+) & `flask-cors`:** Core WSGI web application framework and Cross-Origin Resource Sharing handler for RESTful API and Server-Sent Events (SSE) endpoints.
-- **`google-genai` / `google-generativeai`:** Official Google GenAI SDK for streaming content generation, vision multimodal analysis, and model fallback execution (`gemini-3.5-flash-lite`).
+- **`google-genai` / `google-generativeai`:** Official Google GenAI SDK for streaming content generation, vision multimodal analysis, and model fallback execution (`gemini-3.1-flash-lite`).
 - **`rank-bm25`:** High-speed lexical search algorithm implementing N-gram Okapi BM25 for local RAG chunk scoring.
 - **`thefuzz` & `python-Levenshtein`:** Fuzzy string matching library utilizing Levenshtein distance to score document titles and gracefully handle user typos or phonetic misspellings.
 - **`beautifulsoup4` & `requests`:** HTML parsing and HTTP request automation libraries used in `crawler.py` to ingest live admissions articles from official university web pages.
@@ -193,7 +193,7 @@ To overcome the high API costs and rate limits of cloud vector embeddings, we de
 
 ### 2. Multi-Key Rotation & Automatic Fallback Pool
 - **API Key Pool (`AI_API_KEYS`):** Dynamically rotates across multiple Google Gemini API keys to distribute load and prevent quota exhaustion.
-- **Fault-Tolerant Fallback:** Automatic exponential backoff and retry mechanism using `gemini-3.5-flash-lite` upon encountering HTTP 429 (Rate Limit) or quota exceptions, ensuring 99.9% system availability.
+- **Fault-Tolerant Fallback:** Automatic exponential backoff and retry mechanism using `gemini-3.1-flash-lite` upon encountering HTTP 429 (Rate Limit) or quota exceptions, ensuring 99.9% system availability.
 
 ### 3. Context-Aware Streaming Cache
 - **MD5 History Hashing:** The caching mechanism hashes the exact conversation history (`history_hash`) combined with language toggle and normalized query strings.

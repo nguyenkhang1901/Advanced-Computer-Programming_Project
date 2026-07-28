@@ -478,7 +478,7 @@ RULES:
         def ai_call(client, contents, config, fallback=False):
             target_model = MODEL_NAME
             if fallback:
-                target_model = 'gemini-3.5-flash-lite' # Fallback to a lighter, higher rate-limit model
+                target_model = 'gemini-3.1-flash-lite' # Fallback to a lighter, higher rate-limit model
                 print(f"Using fallback model: {target_model}")
             
             return client.models.generate_content_stream(
@@ -573,7 +573,7 @@ YÊU CẦU:
         def quiz_ai_call(client, contents, config, fallback=False):
             target_model = MODEL_NAME
             if fallback:
-                target_model = 'gemini-3.5-flash-lite'
+                target_model = 'gemini-3.1-flash-lite'
             return client.models.generate_content(
                 model=target_model,
                 contents=contents,
@@ -738,7 +738,7 @@ Provide a direct, enthusiastic, and personalized recommendation highlighting why
         def recommend_ai_call(client, contents, config, fallback=False):
             target_model = MODEL_NAME
             if fallback:
-                target_model = 'gemini-3.5-flash-lite'
+                target_model = 'gemini-3.1-flash-lite'
             return client.models.generate_content(
                 model=target_model,
                 contents=contents,
